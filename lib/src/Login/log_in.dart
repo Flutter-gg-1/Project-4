@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'log_in_function.dart';
 
 class LogIn extends StatelessWidget {
@@ -23,22 +24,56 @@ class LogIn extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 25),
+                  padding: const EdgeInsets.only(left: 25),
                   child: Image.asset(
                     'lib/Logo/3553710.jpg',
                   ),
                 ),
                 SizedBox(
-                  height: screenHeight * 0.1,
+                  height: screenHeight * 0.05,
+                ),
+                Text(
+                  'Log in',
+                  style: GoogleFonts.dmSerifDisplay(
+                    fontSize: 30,
+                    color: const Color(0xffF05A7E),
+                  ),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.05,
                 ),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   controller: userNameController,
                   decoration: InputDecoration(
                     hintText: 'User name',
+                    filled: true,
+                    fillColor: const Color.fromARGB(255, 243, 240, 240),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
                     ),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: screenHeight * 0.02,
+                      horizontal: screenWidth * 0.05,
+                    ),
+                    // Adding shadow
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
+                    ),
+                    enabled: true,
                   ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Kindly Enter the User name';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(
                   height: screenHeight * 0.02,
@@ -48,8 +83,23 @@ class LogIn extends StatelessWidget {
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   decoration: InputDecoration(
                     hintText: 'Password',
+                    filled: true,
+                    fillColor: const Color.fromARGB(255, 243, 240, 240),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
+                    ),
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: screenHeight * 0.02,
+                      horizontal: screenWidth * 0.05,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
                     ),
                   ),
                   validator: (value) {
@@ -66,32 +116,35 @@ class LogIn extends StatelessWidget {
                   width: screenWidth * 0.9,
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.all(const Color(0xffF05A7E)),
+                      backgroundColor: WidgetStateProperty.all(
+                        const Color(0xffF05A7E),
+                      ),
                     ),
                     onPressed: () {
                       logIn(context, userNameController.text,
                           passwordController.text);
                     },
-                    child: const Text(
+                    child: Text(
                       'Log in',
-                      style: TextStyle(color: Colors.white),
+                      style: GoogleFonts.dmSerifDisplay(
+                          color: Colors.white, fontSize: 19),
                     ),
                   ),
                 ),
                 SizedBox(
                   height: screenHeight * 0.03,
                 ),
-                const Text(
+                Text(
                   'Or you can log in With',
-                  style: TextStyle(color: Color(0xff125B9A)),
+                  style: GoogleFonts.dmSerifDisplay(
+                      color: Color(0xff125B9A), fontSize: 17),
                 ),
                 const Text(
                   '_________________________________',
                   style: TextStyle(color: Color(0xff125B9A)),
                 ),
                 SizedBox(
-                  height: screenHeight * 0.03,
+                  height: screenHeight * 0.01,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -126,7 +179,7 @@ class LogIn extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
