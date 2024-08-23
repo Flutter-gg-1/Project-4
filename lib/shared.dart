@@ -5,10 +5,11 @@ User user1 = User(name: "turki", password: "turki", email: "turki@gmail.com");
 User user2 = User(name: "fahad", password: "fahad", email: "fahad@gmail.com");
 User user3 = User(name: "ahmad", password: "ahmad", email: "ahmad@gmail.com");
 List<User> users = [user1, user2, user3];
-
+User? loggedIn;
+Laptop? selectedLaptop;
 Laptop laptop1 = Laptop(
     id: 1,
-    name: "Huawei MateBook D 14",
+    name: "MateBook D 14",
     brand: "Huawei",
     processor: "Intel Core i5",
     ram: "16 GB",
@@ -18,7 +19,7 @@ Laptop laptop1 = Laptop(
 
 Laptop laptop2 = Laptop(
     id: 2,
-    name: "Asus Vivobook Pro 15 OLED",
+    name: "Vivobook Pro 15 OLED",
     brand: "Asus",
     processor: "AMD Ryzen 5",
     ram: "8 GB",
@@ -27,7 +28,7 @@ Laptop laptop2 = Laptop(
     price: 2699);
 Laptop laptop3 = Laptop(
     id: 3,
-    name: "MSI Cyborg 15 Gaming",
+    name: "Cyborg 15 Gaming",
     brand: "MSI",
     processor: "Intel Core i7",
     ram: "16 GB",
@@ -36,7 +37,7 @@ Laptop laptop3 = Laptop(
     price: 4199);
 Laptop laptop4 = Laptop(
     id: 4,
-    name: "Huawei MateBook 14",
+    name: "MateBook 14",
     brand: "Huawei",
     processor: "Intel Core Ultra 5",
     ram: "16 GB",
@@ -45,7 +46,7 @@ Laptop laptop4 = Laptop(
     price: 2999);
 Laptop laptop5 = Laptop(
     id: 5,
-    name: "Apple MacBook Air 15 M3",
+    name: "MacBook Air 15 M3",
     brand: "Apple",
     processor: "M3",
     ram: "16 GB",
@@ -55,7 +56,7 @@ Laptop laptop5 = Laptop(
 
 Laptop laptop6 = Laptop(
     id: 6,
-    name: "Apple MacBook Air 13 M1 Retina",
+    name: "MacBook Air 13 M1",
     brand: "Apple",
     processor: "M1",
     ram: "8 GB",
