@@ -8,6 +8,7 @@ import 'package:shopping_app/globals/data.dart';
 import 'package:shopping_app/globals/validators.dart';
 import 'package:shopping_app/models/user.dart';
 import 'package:shopping_app/screens/main_screen.dart';
+import 'package:shopping_app/screens/user_screen_navigator.dart';
 import 'package:shopping_app/widgets/alert_with_icon.dart';
 import 'package:shopping_app/widgets/main_logo.dart';
 import 'package:shopping_app/widgets/user_input.dart';
@@ -61,7 +62,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       }
                       catch (err) {
                         await showDialog(
-                          // ignore: use_build_context_synchronously
                           context: context,
                           builder: (context) {
                             return AlertDialog(

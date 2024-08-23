@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/screens/user_screen_navigator.dart';
+import 'package:shopping_app/screens/main_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: UserScreenNavigator()
+      home: MainScreen()
     );
   }
 }
