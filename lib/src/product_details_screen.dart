@@ -18,45 +18,52 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Card(
-              elevation: 10,
-              shape: const RoundedRectangleBorder(
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(30))),
-              child: SizedBox(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height / 2,
-                  child: Image.asset(src)),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 512,
             ),
-            SizedBox(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height / 2 - 80,
-              child: Column(
-                children: [
-                  ListTile(
-                    title: Center(child: Text(name)),
-                    subtitle: Center(child: Text("$price")),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Card(
+                  elevation: 10,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(bottom: Radius.circular(30))),
+                  child: SizedBox(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height / 2,
+                      child: Image.asset(src)),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height / 2 - 80,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: Center(child: Text(name)),
+                        subtitle: Center(child: Text("$price")),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(details),
+                      ),
+                      ElevatedButton(
+                          onPressed: () {
+                            cart.add(Product(
+                                name: name,
+                                src: src,
+                                price: price,
+                                description: details));
+                          },
+                          child: const Text("Add to cart"))
+                    ],
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(details),
-                  ),
-                  ElevatedButton(
-                      onPressed: () {
-                        cart.add(Product(
-                            name: name,
-                            src: src,
-                            price: price,
-                            description: details));
-                      },
-                      child: const Text("Add to cart"))
-                ],
-              ),
-            )
-          ],
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
