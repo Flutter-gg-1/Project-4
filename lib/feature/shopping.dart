@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/all_file.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   @override
@@ -15,8 +17,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(),
       drawer: const Drawer(),
-      body: const Center(
-        child: Text('Shopping'),
+      body: Center(
+        child: Column(
+          children: [
+            myPageViewShopping_1(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: bottomIndex,
