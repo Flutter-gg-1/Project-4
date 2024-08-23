@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../reusable_components/list_item_view.dart';
 
-class FavoritesScreen extends StatelessWidget {
-  FavoritesScreen({super.key});
+class CartScreen extends StatelessWidget {
+  CartScreen({super.key});
 
   final user = MockData().user;
 
@@ -21,8 +21,8 @@ class FavoritesScreen extends StatelessWidget {
               const Text('Favorites').styled(size: 24, weight: FontWeight.w700),
               Expanded(
                 child: ListView(
-                  children: user.favorite.items
-                      .map((item) => ListItemView(item: item))
+                  children: user.cart.items
+                      .map((item) => ListItemView(item: item.$1))
                       .toList(),
                 ),
               ),

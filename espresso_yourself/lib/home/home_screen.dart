@@ -1,3 +1,4 @@
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:espresso_yourself/home/subviews/category_tab_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -64,8 +65,20 @@ class ProfileCard extends StatelessWidget {
             )
           ],
         ),
-        const CircleAvatar(
-          radius: 30,
+        AvatarGlow(
+          child: const Material(
+            // Replace this child with your own
+            elevation: 8.0,
+            shape: CircleBorder(),
+            child: CircleAvatar(
+              backgroundColor: C.accent,
+              radius: 30.0,
+              child: Image(
+                image: Img.beans2,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
         ),
       ],
     );

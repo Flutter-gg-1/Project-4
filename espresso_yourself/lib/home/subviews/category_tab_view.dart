@@ -1,5 +1,6 @@
 import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:espresso_yourself/home/coffee_details/coffee_details_screen.dart';
+import 'package:espresso_yourself/reusable_components/circle_btn_container_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../extensions/color_ext.dart';
@@ -117,12 +118,15 @@ class _TabGridView extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: IconButton(
-                onPressed: () => _navigateToDetails(context, item),
-                icon: const Icon(
-                  CupertinoIcons.arrow_right_circle_fill,
-                  size: 40,
-                  color: C.accent,
+              child: InkWell(
+                onTap: () => _navigateToDetails(context, item),
+                child: const CircleBtnContainerView(
+                  size: 45,
+                  child: Icon(
+                    CupertinoIcons.arrow_right,
+                    size: 30,
+                    color: C.text,
+                  ),
                 ),
               ),
             ),

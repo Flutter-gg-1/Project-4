@@ -21,7 +21,7 @@ class _NavContainerState extends State<NavContainer> {
   List<Widget> tabs = [
     const PopularScreen(),
     const HomeScreen(),
-    const FavoritesScreen(),
+    FavoritesScreen(),
   ];
 
   List<IconData> icons = [
