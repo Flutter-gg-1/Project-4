@@ -11,6 +11,7 @@ class LogInScreen extends StatefulWidget {
 
 class _LogInScreenState extends State<LogInScreen> {
   final formKey = GlobalKey<FormState>();
+
   loginCheck() {
     if (formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -38,6 +39,7 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Scrollbar(
           child: Center(
@@ -46,9 +48,12 @@ class _LogInScreenState extends State<LogInScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Image.asset("assets/images/logo.jpg"),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 412),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Image.asset("assets/images/logo.jpg"),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -58,6 +63,7 @@ class _LogInScreenState extends State<LogInScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           TextFormField(
+                            keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
                               label: Text("User Name"),
                             ),
@@ -71,12 +77,15 @@ class _LogInScreenState extends State<LogInScreen> {
 
                               return null;
                             },
-                            onChanged: (value) => user.userName = value,
+                            onChanged: (value) {
+                              user.userName = value;
+                            },
                           ),
                           const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
+                              obscureText: true,
                               decoration: const InputDecoration(
                                 label: Text("Password"),
                               ),
@@ -86,7 +95,9 @@ class _LogInScreenState extends State<LogInScreen> {
                                 }
                                 return null;
                               },
-                              onChanged: (value) => user.password = value),
+                              onChanged: (value) {
+                                user.password = value;
+                              }),
                           const SizedBox(
                             height: 10,
                           ),

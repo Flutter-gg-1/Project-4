@@ -32,9 +32,8 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ListTile(
-                    title: const Center(child: Text("hello")),
-                    subtitle: Center(
-                        child: Text("${user.userName}\n${user.password}")),
+                    title: Center(child: Text(user.userName)),
+                    subtitle: Center(child: Text(user.password)),
                   ),
                   Expanded(
                     child: ListView(

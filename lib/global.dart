@@ -81,4 +81,4 @@ final List<Product> electronic = [
 
 List<Product> cart = [];
 
-User user = User(userName: "", password: '');
+User user = User(userName: '', password: '');
