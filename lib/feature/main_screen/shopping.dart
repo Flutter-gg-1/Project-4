@@ -18,12 +18,14 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(),
       drawer: const Drawer(),
       body: Center(
-        child: Column(
-          children: [
-            myPageViewShopping_1(),
-            const SizedBox(height: 10),
-            myPageViewShopping_2(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              myPageViewShopping_1(),
+              const SizedBox(height: 10),
+              myPageViewShopping_2(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -33,16 +35,16 @@ class _HomeScreenState extends State<HomeScreen> {
             bottomIndex = index;
           });
         },
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
             label: '',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.business),
             label: '',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: '',
           ),
