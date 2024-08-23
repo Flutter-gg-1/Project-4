@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
-import '../background_custom_shape.dart';
-import '../logo.dart';
+import '../custom_paint.dart/background_custom_shape.dart';
+import '../custom_paint.dart/logo.dart';
 import 'create_account.dart';
 import 'login.dart';
 
-class Regester extends StatelessWidget {
-  const Regester({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {

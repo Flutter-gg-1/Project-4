@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'background_custom_shape.dart';
-import 'logo.dart';
-import 'regestration_screens/regester.dart';
+import 'custom_paint.dart/background_custom_shape.dart';
+import 'custom_paint.dart/logo.dart';
+import 'registration_screens/register.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -53,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                    return const Regester();
+                    return const Register();
                   }));
                 },
                 style: const ButtonStyle(
