@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project_4/feature/pages/wlecome_screen/intro/page_1.dart';
-import 'package:project_4/feature/pages/wlecome_screen/intro/page_2.dart';
+import 'package:project_4/feature/pages/welcome_screen/intro/page_1.dart';
+import 'package:project_4/feature/pages/welcome_screen/intro/page_2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../../../core/all_file.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -39,11 +41,11 @@ class _IntroScreenState extends State<IntroScreen> {
               children: [
                 TextButton(
                   onPressed: () {
-                    // Navigator.pushAndRemoveUntil(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const PhoneLoginPage()),
-                    //     (route) => false);
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                        (route) => false);
                   },
                   child: Text(
                     'skip',
@@ -53,7 +55,13 @@ class _IntroScreenState extends State<IntroScreen> {
                 SmoothPageIndicator(controller: _controller, count: 2),
                 onLastPage
                     ? TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()),
+                              (route) => false);
+                        },
                         child: Text(
                           'done',
                           style: TextStyle(color: Colors.grey.shade600),
