@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/src/landing_screen.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -9,13 +10,23 @@ class LogInScreen extends StatefulWidget {
 
 class _LogInScreenState extends State<LogInScreen> {
   final formKey = GlobalKey<FormState>();
+  loginCheck() {
+    if (formKey.currentState!.validate()) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Processing Data')),
+      );
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const LandingScreen()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth:512),
+            constraints: const BoxConstraints(maxWidth: 512),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -44,7 +55,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           height: 10,
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: loginCheck,
                           child: const Text("Log in"),
                         ),
                       ],
