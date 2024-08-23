@@ -33,11 +33,10 @@ class _IntroScreenState extends State<IntroScreen> {
             ],
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: const Alignment(0, 0.75),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                // skip
                 TextButton(
                   onPressed: () {
                     // Navigator.pushAndRemoveUntil(
@@ -51,11 +50,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     style: TextStyle(color: Colors.grey.shade600),
                   ),
                 ),
-
-                // dot indicator
                 SmoothPageIndicator(controller: _controller, count: 2),
-
-                // next or done
                 onLastPage
                     ? TextButton(
                         onPressed: () {},

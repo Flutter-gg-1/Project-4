@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:project_4/core/images/logo.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(height: 100),
-              Text('Welcome'),
-              SizedBox(height: 30),
-              SizedBox(height: 30),
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Please click on the button below to continue'),
-              ),
-              SizedBox(height: 30),
-            ],
-          ),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            const SizedBox(height: 100),
+            CustomPaint(
+              size: const Size(828, 820),
+              painter: RPSCustomPainter(),
+            ),
+            const SizedBox(height: 30),
+            const SizedBox(height: 30),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text('Please click on the button below to continue'),
+            ),
+            const SizedBox(height: 30),
+          ],
         ),
+      ),
     );
   }
 }
