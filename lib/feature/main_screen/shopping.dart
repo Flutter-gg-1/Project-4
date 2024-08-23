@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromRGBO(190, 160, 250, 1),
+        backgroundColor: Colors.black,
         currentIndex: bottomIndex,
         onTap: (index) {
           setState(() {

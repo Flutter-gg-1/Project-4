@@ -8,7 +8,7 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(190, 160, 250, 1),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           const SizedBox(height: 100),
