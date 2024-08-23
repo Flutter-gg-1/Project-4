@@ -20,11 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Text("Device Shop",
                 style: TextStyle(
                   fontSize: getScreenSize(context).height / 30,
-                  color: const Color.fromRGBO(192, 134, 255, 1),
+                  color: Colors.black,
                 )),
             const SizedBox(width: 25),
-            const Icon(Icons.devices,
-                color: Color.fromRGBO(192, 134, 255, 1), size: 40),
+            const Icon(Icons.devices, color: Colors.black, size: 40),
           ],
         ),
         centerTitle: false,

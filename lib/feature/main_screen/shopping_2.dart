@@ -25,7 +25,7 @@ Widget myPageViewShopping_2() {
                     width: getScreenSize(context).width / 2.1,
                     height: getScreenSize(context).height / 4,
                     child: const Image(
-                      image: AssetImage('assets/images/dev/hp15.6.png'),
+                      image: AssetImage('assets/images/dev/i15.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
