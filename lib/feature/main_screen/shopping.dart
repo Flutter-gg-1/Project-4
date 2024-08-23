@@ -37,16 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: const MyDrawer(),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              myPageViewShopping_1(),
-              const SizedBox(height: 10),
-              myPageViewShopping_2(),
-            ],
-          ),
-        ),
+      body: Column(
+        children: [
+          myPageViewShopping_1(),
+          const SizedBox(height: 10),
+          myPageViewShopping_2(),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromRGBO(190, 160, 250, 1),
