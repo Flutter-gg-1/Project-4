@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:shop_app/home_screen.dart';
+import 'package:shop_app/signin_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -15,7 +16,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => const HomeScreen()),
+      MaterialPageRoute(builder: (_) => const SigninScreen()),
     );
   }
 
@@ -25,17 +26,21 @@ class OnBoardingPageState extends State<OnBoardingPage> {
 
     const pageDecoration = PageDecoration(
       fullScreen: true,
+      imageFlex: 2,
       titleTextStyle: TextStyle(
-          fontSize: 28.0, fontWeight: FontWeight.w700, color: Colors.white),
+          fontSize: 28.0,
+          fontFamily: "DMSherifText",
+          fontWeight: FontWeight.w700,
+          color: Colors.white),
       bodyTextStyle: bodyStyle,
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Color(0xff9dae9c),
+      pageColor: Color(0xff9baa99),
       imagePadding: EdgeInsets.zero,
     );
 
     return IntroductionScreen(
       key: introKey,
-      globalBackgroundColor: const Color(0xff9dae9c),
+      globalBackgroundColor: const Color(0xff9baa99),
       allowImplicitScrolling: true,
       autoScrollDuration: 3000,
       infiniteAutoScroll: true,
@@ -49,11 +54,14 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             image: Padding(
               padding: const EdgeInsets.only(
                 top: 60,
-                left: 70,
               ),
-              child: Image.asset(
-                "assets/onBordingImg1.png",
-                scale: 2,
+              child: Animate(
+                effects: const [
+                  FadeEffect(duration: Duration(seconds: 1)),
+                ],
+                child: Image.asset(
+                  "assets/onBordingImg1.png",
+                ),
               ),
             )),
         PageViewModel(
@@ -62,19 +70,26 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             decoration: pageDecoration,
             image: Padding(
               padding: const EdgeInsets.only(
-                top: 60,
-                left: 70,
+                top: 80,
               ),
               child: Image.asset(
                 "assets/onBordingImg2.png",
-                scale: 2,
               ),
             )),
         PageViewModel(
-          title: "Get started now!",
-          body: "Get your account and start shoping in one step",
-          decoration: pageDecoration,
-        )
+            title: "Get started now!",
+            body: "Get your account and start shoping in one step",
+            decoration: const PageDecoration(
+              fullScreen: true,
+              bodyFlex: 2,
+              titleTextStyle: TextStyle(
+                  fontSize: 30,
+                  fontFamily: "DMSherifText",
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
+              bodyTextStyle: bodyStyle,
+              bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+            ))
       ],
       onDone: () => _onIntroEnd(context),
       onSkip: () => _onIntroEnd(context), // You can override onSkip callback
