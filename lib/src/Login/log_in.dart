@@ -79,6 +79,7 @@ class LogIn extends StatelessWidget {
                   height: screenHeight * 0.02,
                 ),
                 TextFormField(
+                  obscureText: true,
                   controller: passwordController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   decoration: InputDecoration(

@@ -68,6 +68,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "fluid_bottom_nav_bar",
+      "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/fluid_bottom_nav_bar-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/muhannad/development/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -90,6 +96,12 @@
       "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/flutter_signin_button-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/flutter_svg-1.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_test",
@@ -200,6 +212,18 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "path_drawing",
+      "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/path_drawing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/path_parsing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path_provider",
       "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/path_provider-2.1.4",
       "packageUri": "lib/",
@@ -232,6 +256,12 @@
     {
       "name": "path_provider_windows",
       "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/petitparser-6.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -368,13 +398,19 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///Users/muhannad/.pub-cache/hosted/pub.dev/xml-6.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "project4",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-08-23T02:28:59.259982Z",
+  "generated": "2024-08-23T03:02:20.449220Z",
   "generator": "pub",
   "generatorVersion": "3.5.0",
   "flutterRoot": "file:///Users/muhannad/development/flutter",
