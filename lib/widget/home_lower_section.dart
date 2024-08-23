@@ -53,12 +53,12 @@ class LowerSection extends StatelessWidget {
                             CoffeOption(
                               title: 'Cappucino',
                               imagePath: 'assest/image/coffe.jpg',
-                              price: '11.00',
+                              price: 11.00,
                             ),
                             CoffeOption(
                                 title: 'Cappucino',
                                 imagePath: 'assest/image/coffe2.jpg',
-                                price: '9.50'),
+                                price: 9.50),
                           ],
                         ),
                         Row(
@@ -67,12 +67,12 @@ class LowerSection extends StatelessWidget {
                             CoffeOption(
                               title: 'Cappucino',
                               imagePath: 'assest/image/coffe.jpg',
-                              price: '11.00',
+                              price: 11.00,
                             ),
                             CoffeOption(
                                 title: 'Cappucino',
                                 imagePath: 'assest/image/coffe2.jpg',
-                                price: '9.50'),
+                                price: 9.50),
                           ],
                         ),
                       ],
@@ -84,12 +84,12 @@ class LowerSection extends StatelessWidget {
                       CoffeOption(
                         title: 'Mocha',
                         imagePath: 'assest/image/mocha1.jpg',
-                        price: '17.00',
+                        price: 17.00,
                       ),
                       CoffeOption(
                           title: 'Mocha',
                           imagePath: 'assest/image/mocha2.jpg',
-                          price: '10.50'),
+                          price: 10.50),
                     ],
                   ),
                   Row(
@@ -98,12 +98,12 @@ class LowerSection extends StatelessWidget {
                       CoffeOption(
                         title: 'Latte',
                         imagePath: 'assest/image/latte1.jpg',
-                        price: '13.00',
+                        price: 13.00,
                       ),
                       CoffeOption(
                           title: 'Latte',
                           imagePath: 'assest/image/latte2.jpg',
-                          price: '7.50'),
+                          price: 7.50),
                     ],
                   ),
                 ],

@@ -1,3 +1,4 @@
+import 'package:coffeshop_app/src/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,9 +6,13 @@ import 'package:icons_plus/icons_plus.dart';
 
 class CoffeOption extends StatelessWidget {
   const CoffeOption({
-    super.key, required this.title, required this.imagePath, required this.price,
+    super.key,
+    required this.title,
+    required this.imagePath,
+    required this.price,
   });
-final String title,imagePath,price;
+  final String title, imagePath;
+  final double price;
   @override
   Widget build(BuildContext context) {
     FlipCardController controller = FlipCardController();
@@ -49,7 +54,14 @@ final String title,imagePath,price;
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  Order(price: price,title: title,imagePath: imagePath,),
+                          ),
+                        );
+                      },
                       icon: const Icon(
                         Iconsax.add_circle_outline,
                         color: Colors.brown,
@@ -67,7 +79,7 @@ final String title,imagePath,price;
             decoration: BoxDecoration(
                 color: const Color(0xFFFFFBF5),
                 borderRadius: BorderRadius.circular(16)),
-            child:  Text(
+            child: Text(
                 'A $title is an approximatelly 150 ml (5oz) beverage, with 25 ml of espresso coffee and 85 ml of fresh milk')),
         controller: controller,
         rotateSide: RotateSide.bottom);
