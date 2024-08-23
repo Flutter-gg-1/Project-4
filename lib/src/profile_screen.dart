@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/global.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -25,15 +26,15 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2 - 80,
               child: Column(
                 children: [
-                  const ListTile(
-                    title: Center(child: Text("Mahdi Alhelal")),
-                    subtitle: Center(child: Text("example@email.com")),
+                  ListTile(
+                    title: const Center(child: Text("hello")),
+                    subtitle: Center(
+                        child: Text("${user.userName}\n${user.password}")),
                   ),
                   Expanded(
                     child: ListView(

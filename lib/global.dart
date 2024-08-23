@@ -1,4 +1,5 @@
 import 'package:shopping/model/product.dart';
+import 'package:shopping/model/user.dart';
 
 final List<Product> electronics = [
   Product(
@@ -79,3 +80,5 @@ final List<Product> electronic = [
 ];
 
 List<Product> cart = [];
+
+User user = User(userName: "", password: '');
