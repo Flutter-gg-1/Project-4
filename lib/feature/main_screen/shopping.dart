@@ -64,11 +64,16 @@ class _HomeScreenState extends State<HomeScreen> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+            icon: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.shopping_cart_outlined,
+                    color: Colors.white)),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+            icon: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.person_3_outlined, color: Colors.white)),
             label: '',
           ),
         ],
