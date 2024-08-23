@@ -67,7 +67,7 @@ class _MyPageViewState extends State<_MyPageView> {
 
   void _navigateToHome(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => NavContainer()));
+        .push(MaterialPageRoute(builder: (context) => const NavContainer()));
   }
 
   @override
