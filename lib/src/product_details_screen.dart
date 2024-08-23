@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/global.dart';
+import 'package:shopping/model/product.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final String src;
@@ -42,7 +44,15 @@ class ProductDetailsScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(details),
                   ),
-                  ElevatedButton(onPressed: (){}, child:const Text("Add to cart"))
+                  ElevatedButton(
+                      onPressed: () {
+                        cart.add(Product(
+                            name: name,
+                            src: src,
+                            price: price,
+                            description: details));
+                      },
+                      child: const Text("Add to cart"))
                 ],
               ),
             )

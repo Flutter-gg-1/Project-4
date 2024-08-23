@@ -77,3 +77,5 @@ final List<Product> electronic = [
     description: 'super Powerful computing tool',
   ),
 ];
+
+List<Product> cart = [];
