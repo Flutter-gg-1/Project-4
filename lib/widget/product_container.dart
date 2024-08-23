@@ -21,7 +21,7 @@ class ProductContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ConstrainedBox(
-                constraints: const BoxConstraints(maxHeight: 150),
+                constraints: const BoxConstraints(maxHeight: 100),
                 child: Center(
                   child: Image.asset(src),
                 ),
