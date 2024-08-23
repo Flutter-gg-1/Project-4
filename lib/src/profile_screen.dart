@@ -25,23 +25,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // const ListTile(
-            //   title: Center(child: Text("Mahdi Alhelal")),
-            //   subtitle: Center(child: Text("example@email.com")),
-            // ),
-            // Expanded(
-            //   child: ListView(
-            //     children: const [
-            //       Row(
-            //         mainAxisAlignment: MainAxisAlignment.center,
-            //         children: [
-            //           Icon(Icons.location_city_outlined),
-            //           Text("Saudi Arabia")
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // )
+
             SizedBox(
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2 - 80,

@@ -22,6 +22,7 @@ class ProductView extends StatelessWidget {
               src: products[index].src,
               name: products[index].name,
               price: products[index].price,
+              details: products[index].description,
             ),
           );
         });
