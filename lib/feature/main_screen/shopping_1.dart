@@ -5,22 +5,26 @@ Widget myPageViewShopping_1() {
     return Container(
       height: MediaQuery.of(context).size.height / 5,
       width: MediaQuery.of(context).size.width,
-      color: Colors.blue,
-      child: PageView(scrollDirection: Axis.horizontal, children: <Widget>[
-        Container(
+      color: const Color.fromRGBO(192, 134, 255, 1),
+      child:
+          PageView(scrollDirection: Axis.horizontal, children: const <Widget>[
+        SizedBox(
           width: 200,
           height: 200,
-          color: const Color.fromARGB(255, 76, 64, 63),
+          child: Image(
+            image: AssetImage('assets/images/school.png'),
+            width: 400,
+            height: 400,
+          ),
         ),
-        Container(
+        SizedBox(
           width: 200,
           height: 200,
-          color: Colors.green,
-        ),
-        Container(
-          width: 200,
-          height: 200,
-          color: Colors.yellow,
+          child: Image(
+            image: AssetImage('assets/images/school2.png'),
+            width: 400,
+            height: 400,
+          ),
         ),
       ]),
     );
