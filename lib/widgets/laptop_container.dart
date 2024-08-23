@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/laptop.dart';
-import 'package:item_count_number_button/item_count_number_button.dart';
-import 'package:shopping_app/shared.dart';
 import 'package:shopping_app/widgets/loptop_bottom_sheet.dart';
 
 class LaptopContainer extends StatefulWidget {

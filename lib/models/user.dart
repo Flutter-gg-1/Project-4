@@ -1,5 +1,4 @@
 import 'package:shopping_app/models/cart_item.dart';
-import 'package:shopping_app/models/laptop.dart';
 
 class User {
   String name;
