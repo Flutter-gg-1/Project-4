@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/widget/product_container.dart';
+import 'package:shopping/global.dart';
 import 'package:shopping/widget/product_view.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,17 +7,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           SizedBox(
-            height: 140,
-            child: Placeholder(
-              child: Center(
-                child: Text("Welcome screen"),
-              ),
-            ),
+            height: 250,
+            child: Image.asset("assets/images/banner.jpg"),
           ),
           Flexible(
             child: DefaultTabController(
@@ -25,20 +21,20 @@ class HomeScreen extends StatelessWidget {
               length: 3,
               child: Column(
                 children: [
-                  TabBar(
+                  const TabBar(
                     indicatorSize: TabBarIndicatorSize.tab,
                     tabs: [
-                      Tab(child: Text("Bags")),
-                      Tab(child: Text("Tech")),
+                      Tab(child: Text("cloth")),
+                      Tab(child: Text("electronics")),
                       Tab(child: Text("schools")),
                     ],
                   ),
                   Flexible(
                     child: TabBarView(
                       children: [
-                        ProductView(myWidget: ProductContainer()),
-                        ProductView(myWidget: ProductContainer()),
-                        ProductView(myWidget: ProductContainer()),
+                        ProductView(products: electronic),
+                        ProductView(products: electronic),
+                        ProductView(products: electronic),
                       ],
                     ),
                   ),

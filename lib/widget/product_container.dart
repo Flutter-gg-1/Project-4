@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ProductContainer extends StatelessWidget {
-  const ProductContainer({super.key});
+  final String src;
+  final String name;
+  final double price;
+  const ProductContainer(
+      {super.key, required this.src, required this.name, required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +22,14 @@ class ProductContainer extends StatelessWidget {
             children: [
               ConstrainedBox(
                 constraints: const BoxConstraints(maxHeight: 150),
-                child: const Placeholder(
-                  child: Center(
-                    child: Text("image"),
-                  ),
+                child: Center(
+                  child: Image.asset(src),
                 ),
               ),
-              const Center(
-                child: Text("product name"),
+              Center(
+                child: Text(name),
               ),
-              const Text("price")
+              Text("$price")
             ],
           ),
         ),

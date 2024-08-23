@@ -1,22 +1,29 @@
-
 import 'package:flutter/material.dart';
+import 'package:shopping/model/product.dart';
+import 'package:shopping/widget/product_container.dart';
 
 class ProductView extends StatelessWidget {
-  final Widget myWidget;
+  final List<Product> products;
   const ProductView({
     super.key,
-    required this.myWidget,
+    required this.products,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      children: List.generate(10, (index) {
-        return Center(
-          child: myWidget,
-        );
-      }),
-    );
+    return GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemCount: products.length,
+        itemBuilder: (context, index) {
+          return Center(
+            child: ProductContainer(
+              src: products[index].src,
+              name: products[index].name,
+              price: products[index].price,
+            ),
+          );
+        });
   }
 }
