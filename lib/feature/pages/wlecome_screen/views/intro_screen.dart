@@ -11,15 +11,12 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  // controller to keep track of which page we are on
   final PageController _controller = PageController();
 
-  // keep track of if we are on the last page
   bool onLastPage = false;
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       body: Stack(
         children: [
