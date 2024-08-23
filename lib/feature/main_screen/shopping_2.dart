@@ -11,20 +11,27 @@ Widget myPageViewShopping_2() {
           color: Colors.blue,
           child: Column(
             children: [
+              const SizedBox(height: 10),
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     width: getScreenSize(context).width / 2.5,
-                    height: 200,
+                    height: getScreenSize(context).height / 2.5,
                     color: const Color.fromARGB(255, 76, 64, 63),
                   ),
                   Container(
-                    width: 200,
-                    height: 200,
+                    width: getScreenSize(context).width / 2.5,
+                    height: getScreenSize(context).height / 2.5,
                     color: Colors.green,
                   ),
                 ],
+              ),
+              const SizedBox(height: 10),
+              Container(
+                width: getScreenSize(context).width,
+                height: getScreenSize(context).height / 2.5,
+                color: Colors.green,
               ),
             ],
           ),
