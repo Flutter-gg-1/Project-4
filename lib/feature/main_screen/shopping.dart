@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:iconify_flutter/iconify_flutter.dart';
 import '../../core/all_file.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,8 +15,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      drawer: const Drawer(),
+      appBar: AppBar(
+        title: Text("Abu_Mukhlef's Store",
+            style: TextStyle(
+                fontSize: getScreenSize(context).height / 30,
+                color: Colors.amber)),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        actions: const [],
+      ),
+      drawer: const MyDrawer(),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
@@ -40,12 +48,12 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
             label: '',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+          BottomNavigationBarItem(
+            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
             label: '',
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+          BottomNavigationBarItem(
+            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
             label: '',
           ),
         ],

@@ -8,3 +8,4 @@ export '../feature/main_screen/shopping_2.dart';
 export '../feature/pages/welcome_screen/intro/page_1.dart';
 export '../feature/pages/welcome_screen/intro/page_2.dart';
 export '../feature/pages/welcome_screen/views/intro_screen.dart';
+export '../feature/main_screen/my_drawer.dart';
