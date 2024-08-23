@@ -7,7 +7,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: const Color.fromRGBO(190, 160, 250, 1),
+      backgroundColor: Colors.white,
       child: Column(
         children: [
           SizedBox(height: getScreenSize(context).height / 5),
@@ -15,7 +15,7 @@ class MyDrawer extends StatelessWidget {
             children: [
               const CircleAvatar(
                 radius: 100,
-                backgroundColor: Color.fromRGBO(192, 134, 255, 1),
+                backgroundColor: Colors.black,
               ),
               Positioned(
                 top: getScreenSize(context).height / 2 - 400,
@@ -30,7 +30,7 @@ class MyDrawer extends StatelessWidget {
           ),
           SizedBox(height: getScreenSize(context).height / 15),
           MaterialButton(
-            color: const Color.fromRGBO(192, 134, 255, 1),
+            color: Colors.black,
             onPressed: () {},
             child: const Text('Log in', style: TextStyle(color: Colors.white)),
           )
