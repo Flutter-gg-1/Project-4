@@ -7,6 +7,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: const Color.fromRGBO(190, 160, 250, 1),
       child: Column(
         children: [
           SizedBox(height: getScreenSize(context).height / 5),

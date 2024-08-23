@@ -29,7 +29,7 @@ Widget myPageViewShopping_2() {
           Container(
             width: getScreenSize(context).width,
             height: getScreenSize(context).height,
-            color: const Color.fromRGBO(190, 160, 250, 1),
+            color: const Color.fromRGBO(192, 134, 255, 1),
           ),
         ],
       ),
