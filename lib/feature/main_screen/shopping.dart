@@ -16,13 +16,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Abu_Mukhlef's Store",
-            style: TextStyle(
-                fontSize: getScreenSize(context).height / 30,
-                color: Colors.amber)),
-        centerTitle: true,
+        title: Row(
+          children: [
+            Text("Device Shop",
+                style: TextStyle(
+                  fontSize: getScreenSize(context).height / 30,
+                  color: const Color.fromRGBO(192, 134, 255, 1),
+                )),
+            const SizedBox(width: 25),
+            const Icon(Icons.devices,
+                color: Color.fromRGBO(192, 134, 255, 1), size: 40),
+          ],
+        ),
+        centerTitle: false,
         backgroundColor: Colors.white,
-        actions: const [],
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.support_agent,
+                  color: Colors.black, size: 40)),
+        ],
       ),
       drawer: const MyDrawer(),
       body: Center(
@@ -37,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromRGBO(192, 134, 255, 1),
         currentIndex: bottomIndex,
         onTap: (index) {
           setState(() {
@@ -45,7 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.home)),
+            icon: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.home, color: Colors.white)),
             label: '',
           ),
           BottomNavigationBarItem(

@@ -6,22 +6,22 @@ Widget myPageViewShopping_2() {
     return Container(
       height: getScreenSize(context).height,
       width: getScreenSize(context).width,
-      color: Colors.blue,
+      color: const Color.fromRGBO(192, 134, 255, 1),
       child: Column(
         children: [
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: getScreenSize(context).width / 2.2,
                 height: getScreenSize(context).height / 3.5,
-                color: const Color.fromARGB(255, 76, 64, 63),
+                // color: const Color.fromRGBO(192, 134, 255, 1),
               ),
-              Container(
+              SizedBox(
                 width: getScreenSize(context).width / 2.2,
                 height: getScreenSize(context).height / 3.5,
-                color: Colors.green,
+                // color: const Color.fromRGBO(192, 134, 255, 1),
               ),
             ],
           ),
@@ -29,7 +29,7 @@ Widget myPageViewShopping_2() {
           Container(
             width: getScreenSize(context).width,
             height: getScreenSize(context).height,
-            color: Colors.green,
+            color: const Color.fromRGBO(190, 160, 250, 1),
           ),
         ],
       ),
