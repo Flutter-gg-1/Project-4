@@ -26,14 +26,8 @@ class _MyHomePageState extends State<HomeScreen> {
             children: [
               ProfileCard(),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      CategoryTabView(),
-                    ],
-                  ),
-                ),
-              )
+                child: CategoryTabView(),
+              ),
             ],
           ),
         ),

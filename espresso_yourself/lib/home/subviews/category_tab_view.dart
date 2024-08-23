@@ -1,47 +1,51 @@
 import 'package:espresso_yourself/extensions/string_ext.dart';
+import 'package:espresso_yourself/home/coffee_details/coffee_details_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../extensions/color_ext.dart';
-import '../../extensions/image_ext.dart';
+import '../../model/menu_category.dart';
+import '../../model/menu_item.dart';
+import '../../reusable_components/item_shape.dart';
 
 class CategoryTabView extends StatelessWidget {
   const CategoryTabView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: DefaultTabController(
-        length: 3,
+        length: MenuCategory.categories.length,
         child: Column(
           children: [
             TabBar(
-              isScrollable: true,
-              indicator: BoxDecoration(
-                color: Colors.transparent, // Ensures no underline is visible
-              ),
-              labelColor: C.text,
-              indicatorColor: Colors.transparent,
-              labelStyle: TextStyle(
-                fontFamily: 'Pliego',
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-              dividerColor: Colors.transparent,
-              tabs: [
-                Tab(text: 'Classic coffee'),
-                Tab(text: 'Coffee beans'),
-                Tab(text: 'Desserts'),
-              ],
-            ),
-            SizedBox(
-              height: 400,
+                isScrollable: true,
+                indicator: const BoxDecoration(
+                  color: Colors.transparent, // Ensures no underline is visible
+                ),
+                labelColor: C.text,
+                labelPadding: const EdgeInsets.symmetric(horizontal: 16),
+                indicatorColor: Colors.transparent,
+                labelStyle: const TextStyle(
+                  fontFamily: 'Pliego',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                unselectedLabelStyle: const TextStyle(
+                  fontFamily: 'Pliego',
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: C.secondary,
+                ),
+                dividerColor: Colors.transparent,
+                tabs: MenuCategory.categories
+                    .map((category) => Tab(text: category.title))
+                    .toList()),
+            Expanded(
               child: TabBarView(
-                children: [
-                  _TabGridView(),
-                  _TabGridView(),
-                  _TabGridView(),
-                ],
+                children: MenuCategory.categories
+                    .map((category) => _TabGridView(categoryId: category.id))
+                    .toList(),
               ),
             ),
           ],
@@ -51,44 +55,80 @@ class CategoryTabView extends StatelessWidget {
   }
 }
 
+void _navigateToDetails(BuildContext context, MenuItem item) {
+  Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => CoffeeDetailsScreen(item: item)));
+}
+
 class _TabGridView extends StatelessWidget {
-  const _TabGridView();
+  _TabGridView({required this.categoryId})
+      : items = MenuItem.items
+            .where((item) => item.categoryId == categoryId)
+            .toList();
+
+  final int categoryId;
+  final List<MenuItem> items;
 
   @override
   Widget build(BuildContext context) {
     return GridView(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, childAspectRatio: 0.6),
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      children: [
-        SizedBox(
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  decoration: const BoxDecoration(color: C.secondary),
-                  child: AspectRatio(
-                      aspectRatio: 1, child: const Text('Hello').styled()),
-                ),
-              ),
-              const Align(
-                alignment: Alignment.topCenter,
+        crossAxisCount: 2,
+        childAspectRatio: 0.6,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+      ),
+      children: items.map((item) {
+        return Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: CustomPaint(
+                painter: ItemShape(),
                 child: AspectRatio(
-                  aspectRatio: 1,
-                  child: Image(
-                    image: Img.almond,
-                    fit: BoxFit.contain,
+                  aspectRatio: 0.9,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Spacer(),
+                        Text(item.title).styled(size: 20, lineLimit: 1),
+                        Text(item.description)
+                            .styled(size: 14, align: TextAlign.start),
+                        const Spacer(),
+                        Text('${item.price.toStringAsPrecision(2)} SAR')
+                            .styled(size: 24, weight: FontWeight.w700),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-        const Text('Hello'),
-        const Text('Hello'),
-      ],
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: AspectRatio(
+                aspectRatio: 1.3,
+                child: Image(
+                  image: item.img,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: IconButton(
+                onPressed: () => _navigateToDetails(context, item),
+                icon: const Icon(
+                  CupertinoIcons.arrow_right_circle_fill,
+                  size: 40,
+                  color: C.accent,
+                ),
+              ),
+            ),
+          ],
+        );
+      }).toList(),
     );
   }
 }
