@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../extensions/color_ext.dart';
 import '../extensions/image_ext.dart';
 
 class BackgroundImgDecoration extends StatelessWidget {
@@ -20,7 +21,7 @@ class BackgroundImgDecoration extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
         child: Container(
-          decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+          decoration: BoxDecoration(color: C.bg.withOpacity(0.5)),
         ),
       ),
     );

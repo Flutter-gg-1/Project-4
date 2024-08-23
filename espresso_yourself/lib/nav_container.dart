@@ -113,7 +113,7 @@ class _NavContainerState extends State<NavContainer> {
           ),
         ),
       ),
-      backgroundColor: Colors.transparent,
+      backgroundColor: C.bg,
       // body: Center(child: tabs[idx]),
     );
   }

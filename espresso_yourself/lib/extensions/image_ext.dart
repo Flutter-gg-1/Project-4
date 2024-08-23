@@ -5,11 +5,11 @@ extension Img on Image {
   static const logo = AssetImage('assets/appLogo.png');
   static const bg = AssetImage('assets/bg.jpg');
   // Items
-  static const almond = AssetImage('assets/almond.jpg');
-  static const cappuccino = AssetImage('assets/cappuccino.jpg');
-  static const espresso = AssetImage('assets/espresso.jpg');
-  static const latte = AssetImage('assets/latte.jpg');
-  static const pumpkin = AssetImage('assets/pumpkin.jpg');
+  static const almond = AssetImage('assets/items/almond.png');
+  static const cappuccino = AssetImage('assets/items/cappuccino.png');
+  static const espresso = AssetImage('assets/items/espresso.png');
+  static const latte = AssetImage('assets/items/latte.png');
+  static const pumpkin = AssetImage('assets/items/pumpkin.png');
 }
 
 class AppSVG {

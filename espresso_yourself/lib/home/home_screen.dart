@@ -1,5 +1,10 @@
+import 'package:espresso_yourself/extensions/string_ext.dart';
+import 'package:espresso_yourself/home/subviews/category_tab_view.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../extensions/color_ext.dart';
 import '../extensions/image_ext.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,20 +20,60 @@ class _MyHomePageState extends State<HomeScreen> {
     return const Scaffold(
       backgroundColor: Colors.transparent,
       body: SafeArea(
-        child: Center(
+        child: Padding(
+          padding: EdgeInsets.all(32.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              // MARK: - Background Image
-              Padding(
-                padding: EdgeInsets.all(32.0),
-                child: Image(image: Img.logo, fit: BoxFit.fitHeight),
-              ),
-              Spacer(),
+              ProfileCard(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CategoryTabView(),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Good Morning')
+                .styled(size: 28, weight: FontWeight.w600),
+            Row(
+              children: [
+                const Icon(
+                  Icons.pin_drop_rounded,
+                  color: C.text,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: const Text('Riyadh, Saudi').styled(size: 20),
+                ),
+              ],
+            )
+          ],
+        ),
+        const CircleAvatar(
+          radius: 30,
+        ),
+      ],
     );
   }
 }
