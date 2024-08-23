@@ -1,10 +1,10 @@
-export '../core/action.dart';
-export '../core/common.dart';
+export 'comb/action.dart';
+export 'comn/common.dart';
 export '../core/images/logo.dart';
-export 'app_color.dart';
-export '../feature/shopping.dart';
-export '../feature/shopping_1.dart';
-export '../feature/shopping_2.dart';
+export 'comn/app_color.dart';
+export '../feature/main_screen/shopping.dart';
+export '../feature/main_screen/shopping_1.dart';
+export '../feature/main_screen/shopping_2.dart';
 export '../feature/pages/welcome_screen/intro/page_1.dart';
 export '../feature/pages/welcome_screen/intro/page_2.dart';
 export '../feature/pages/welcome_screen/views/intro_screen.dart';

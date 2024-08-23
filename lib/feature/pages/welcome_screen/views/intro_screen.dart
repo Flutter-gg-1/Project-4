@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_4/feature/pages/welcome_screen/intro/page_1.dart';
-import 'package:project_4/feature/pages/welcome_screen/intro/page_2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/all_file.dart';
