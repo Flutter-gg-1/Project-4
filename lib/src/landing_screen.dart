@@ -21,7 +21,6 @@ class _LandingScreenState extends State<LandingScreen> {
         onDestinationSelected: (int index) => setState(() {
           selectedIndex = index;
         }),
-        indicatorColor: Colors.amber,
         selectedIndex: selectedIndex,
         destinations: const [
           NavigationDestination(
