@@ -30,7 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("The service is currently unavailable"),
+                  ),
+                );
+              },
               icon: const Icon(Icons.support_agent,
                   color: Colors.black, size: 40)),
         ],
@@ -44,6 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         backgroundColor: Colors.black,
         currentIndex: bottomIndex,
         onTap: (index) {
