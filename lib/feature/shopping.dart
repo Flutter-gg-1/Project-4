@@ -21,6 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             myPageViewShopping_1(),
+            const SizedBox(height: 30),
+            myPageViewShopping_2(),
           ],
         ),
       ),

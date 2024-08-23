@@ -10,7 +10,7 @@ Widget myPageViewShopping_1() {
         Container(
           width: 200,
           height: 200,
-          color: Colors.red,
+          color: const Color.fromARGB(255, 76, 64, 63),
         ),
         Container(
           width: 200,
