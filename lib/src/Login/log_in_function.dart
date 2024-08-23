@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project4/Bottom_Nav/bottom_nav.dart';
-import 'package:project4/Home/home.dart';
 
 void logIn(BuildContext context, String userName, String password) {
   if (userName.isEmpty || password.isEmpty) {
@@ -10,7 +9,7 @@ void logIn(BuildContext context, String userName, String password) {
         return AlertDialog(
           title: const Center(
               child: Text(
-            'kindly Check your email or password',
+            'Kindly Check your email or password',
             style: TextStyle(fontSize: 15),
           )),
           actions: [
@@ -27,7 +26,9 @@ void logIn(BuildContext context, String userName, String password) {
   } else {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BottomNav()),
+      MaterialPageRoute(
+        builder: (context) => BottomNav(name: userName),
+      ),
     );
   }
 }

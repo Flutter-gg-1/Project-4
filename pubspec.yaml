@@ -13,6 +13,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   google_fonts: ^6.2.1
   fluid_bottom_nav_bar: ^1.4.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +24,4 @@ flutter:
   uses-material-design: true
   assets:
     - lib/Logo/
+    - lib/Home/Add_Pics/

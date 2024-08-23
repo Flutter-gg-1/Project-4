@@ -3,17 +3,17 @@ import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'log_in_function.dart';
+import 'package:project4/Home/home.dart';
 
 class LogIn extends StatelessWidget {
-  const LogIn({super.key});
+  LogIn({super.key});
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-
-    TextEditingController userNameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -57,7 +57,6 @@ class LogIn extends StatelessWidget {
                       vertical: screenHeight * 0.02,
                       horizontal: screenWidth * 0.05,
                     ),
-                    // Adding shadow
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide.none,

@@ -1,61 +1,59 @@
-import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:project4/Home/home.dart';
 
 class BottomNav extends StatefulWidget {
+  final String name;
+  final String? imagePath;
+
+  BottomNav({required this.name, this.imagePath});
+
   @override
   State createState() {
-    return _BottomNav();
+    return _BottomNavState();
   }
 }
 
-class _BottomNav extends State {
+class _BottomNavState extends State<BottomNav> {
   Widget? _child;
 
   @override
   void initState() {
-    _child = const Home();
     super.initState();
+    _child = Home(name: widget.name, imagePath: widget.imagePath); // تعيين الشاشة الافتراضية
   }
 
   @override
-  Widget build(context) {
-    // Build a simple container that switches content based of off the selected navigation item
-    return MaterialApp(
-      home: Scaffold(
-        extendBody: true,
-        body: _child,
-        bottomNavigationBar: FluidNavBar(
-          animationFactor: BorderSide.strokeAlignOutside,
-          icons: [
-            FluidNavBarIcon(
-                icon: Icons.house,
-                backgroundColor: Color(0xffF05A7E),
-                extras: {"label": "home"}),
-            FluidNavBarIcon(
-                icon: Icons.bookmark_border,
-                backgroundColor: Color(0xffF05A7E),
-                extras: {"label": "bookmark"}),
-            FluidNavBarIcon(
-                icon: Icons.apps,
-                backgroundColor: Color(0xffF05A7E),
-                extras: {"label": "partner"}),
-            FluidNavBarIcon(
-                svgPath: "assets/conference.svg",
-                backgroundColor: Color(0xffF05A7E),
-                extras: {"label": "conference"}),
-          ],
-          onChange: _handleNavigationChange,
-          style: FluidNavBarStyle(
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBody: true,
+      body: _child,
+      bottomNavigationBar: FluidNavBar(
+        animationFactor: BorderSide.strokeAlignOutside,
+        icons: [
+          FluidNavBarIcon(
+              icon: Icons.house,
+              backgroundColor: Color(0xffF05A7E),
+              extras: {"label": "home"}),
+          FluidNavBarIcon(
+              icon: Icons.bookmark_border,
+              backgroundColor: Color(0xffF05A7E),
+              extras: {"label": "bookmark"}),
+          FluidNavBarIcon(
+              icon: Icons.apps,
+              backgroundColor: Color(0xffF05A7E),
+              extras: {"label": "partner"}),
+        ],
+        onChange: _handleNavigationChange,
+        style: const FluidNavBarStyle(
             iconUnselectedForegroundColor: Colors.white,
             iconSelectedForegroundColor: Color(0xff821131),
-          ),
-          scaleFactor: 1.5,
-          defaultIndex: 1,
-          itemBuilder: (icon, item) => Semantics(
-            label: icon.extras!["label"],
-            child: item,
-          ),
+            barBackgroundColor: Color.fromARGB(255, 235, 231, 219)),
+        scaleFactor: 1.5,
+        defaultIndex: 0,
+        itemBuilder: (icon, item) => Semantics(
+          label: icon.extras!["label"],
+          child: item,
         ),
       ),
     );
@@ -65,9 +63,16 @@ class _BottomNav extends State {
     setState(() {
       switch (index) {
         case 0:
-          _child = const Home();
+          _child = Home(name: widget.name, imagePath: widget.imagePath);
+          break;
+        case 1:
+          _child = Placeholder(); 
+          break;
+        case 2:
+          _child = Placeholder();
           break;
       }
+
       _child = AnimatedSwitcher(
         switchInCurve: Curves.easeOut,
         switchOutCurve: Curves.easeIn,
