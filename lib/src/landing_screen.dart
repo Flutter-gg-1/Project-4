@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/src/cart_screen.dart';
 import 'package:shopping/src/home_screen.dart';
+import 'package:shopping/src/profile_screen.dart';
 import 'package:shopping/src/special_offer_screen.dart';
 
 class LandingScreen extends StatefulWidget {
@@ -17,6 +18,20 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
+      drawer: Drawer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ProfileScreen()));
+                },
+                child: const Text("Profile"))
+          ],
+        ),
+      ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) => setState(() {
           selectedIndex = index;
@@ -38,7 +53,6 @@ class _LandingScreenState extends State<LandingScreen> {
           ),
         ],
       ),
-      drawer: const Drawer(),
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(

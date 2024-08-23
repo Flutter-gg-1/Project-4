@@ -18,8 +18,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(colorSchemeSeed: Colors.red, useMaterial3: true),
-      // darkTheme: ThemeData(colorSchemeSeed: Colors.red, useMaterial3: true),
+      theme: ThemeData(colorSchemeSeed: Colors.red, useMaterial3: true),
+      darkTheme: ThemeData(colorSchemeSeed: Colors.red, useMaterial3: true),
       themeMode: ThemeMode.system,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
