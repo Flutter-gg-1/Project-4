@@ -22,7 +22,7 @@ Widget myPageViewShopping_2() {
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
                       border: Border.all(color: Colors.black),
                     ),
-                    width: getScreenSize(context).width / 2.1,
+                    width: getScreenSize(context).width / 2.2,
                     height: getScreenSize(context).height / 4,
                     child: const Image(
                       image: AssetImage('assets/images/dev/i15.png'),
@@ -42,7 +42,7 @@ Widget myPageViewShopping_2() {
                       borderRadius: const BorderRadius.all(Radius.circular(10)),
                       border: Border.all(color: Colors.black),
                     ),
-                    width: getScreenSize(context).width / 2.1,
+                    width: getScreenSize(context).width / 2.2,
                     height: getScreenSize(context).height / 4,
                     child: const Image(
                       image: AssetImage('assets/images/dev/hp15.6.png'),
