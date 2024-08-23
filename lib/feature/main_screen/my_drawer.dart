@@ -8,13 +8,13 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: getScreenSize(context).height / 5),
           Stack(
             children: [
               const CircleAvatar(
                 radius: 100,
-                backgroundColor: Colors.white,
+                backgroundColor: Color.fromRGBO(192, 134, 255, 1),
               ),
               Positioned(
                 top: getScreenSize(context).height / 2 - 400,
@@ -27,7 +27,12 @@ class MyDrawer extends StatelessWidget {
               ),
             ],
           ),
-          MaterialButton(onPressed: () {}, child: const Text('Logout'))
+          SizedBox(height: getScreenSize(context).height / 15),
+          MaterialButton(
+            color: const Color.fromRGBO(192, 134, 255, 1),
+            onPressed: () {},
+            child: const Text('Log in', style: TextStyle(color: Colors.white)),
+          )
         ],
       ),
     );
