@@ -41,9 +41,13 @@ class _LandingScreenState extends State<LandingScreen> {
       ),
       drawer: const Drawer(),
       body: SafeArea(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 512),
-          child: pages.elementAt(selectedIndex),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 512,
+            ),
+            child: pages.elementAt(selectedIndex),
+          ),
         ),
       ),
     );
