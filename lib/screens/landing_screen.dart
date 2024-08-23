@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/utils/shapes/blob.dart';
+import 'package:shopping_app/utils/blob.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -31,7 +31,7 @@ class LandingScreen extends StatelessWidget {
                   },
                   child: CustomPaint(
                     size: const Size(200, 200),
-                    painter: Blob1(),
+                    painter: Blob(),
                   ),
                 )
                     .tint(

@@ -31,8 +31,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 186, 237, 233),
-          title: Text(
+ backgroundColor: Colors.yellow[50],          title: Text(
             'Jeem',
             style: TextStyle(
                 fontSize: 30, color: Colors.blue[400], fontFamily: 'Matemasie'),
