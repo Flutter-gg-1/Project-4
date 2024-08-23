@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import '../background_custom_shape.dart';
 import '../logo.dart';
-import '../regestration_screens/create_account.dart';
-import '../regestration_screens/login.dart';
+import 'create_account.dart';
+import 'login.dart';
 
 class Regester extends StatelessWidget {
   const Regester({super.key});

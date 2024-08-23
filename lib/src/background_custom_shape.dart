@@ -13,9 +13,9 @@ Path path_0 = Path();
     path_0.cubicTo(429.159,408.233,361.508,451.608,209.632,438);
     path_0.close();
 
-Paint paint_0_fill = Paint()..style=PaintingStyle.fill;
-paint_0_fill.color = const Color(0xff9B74A9).withOpacity(1.0);
-canvas.drawPath(path_0,paint_0_fill);
+Paint paint0Fill = Paint()..style=PaintingStyle.fill;
+paint0Fill.color = const Color(0xff9B74A9).withOpacity(1.0);
+canvas.drawPath(path_0,paint0Fill);
 
 }
 

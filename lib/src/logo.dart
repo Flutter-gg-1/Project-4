@@ -19,9 +19,9 @@ Path path_0 = Path();
     path_0.cubicTo(66.3906,31.8874,65.4346,30.0624,63.8725,29.0491);
     path_0.close();
 
-Paint paint_0_fill = Paint()..style=PaintingStyle.fill;
-paint_0_fill.color = Color(0xff582277).withOpacity(1.0);
-canvas.drawPath(path_0,paint_0_fill);
+Paint paint0Fill = Paint()..style=PaintingStyle.fill;
+paint0Fill.color = const Color(0xff582277).withOpacity(1.0);
+canvas.drawPath(path_0,paint0Fill);
 
 Path path_1 = Path();
     path_1.moveTo(63.8725,86.378);
@@ -37,9 +37,9 @@ Path path_1 = Path();
     path_1.cubicTo(66.3906,89.2162,65.4347,87.3913,63.8725,86.378);
     path_1.close();
 
-Paint paint_1_fill = Paint()..style=PaintingStyle.fill;
-paint_1_fill.color = Color(0xff582277).withOpacity(1.0);
-canvas.drawPath(path_1,paint_1_fill);
+Paint paint1Fill = Paint()..style=PaintingStyle.fill;
+paint1Fill.color = const Color(0xff582277).withOpacity(1.0);
+canvas.drawPath(path_1,paint1Fill);
 
 Path path_2 = Path();
     path_2.moveTo(72.9126,6.96997);
@@ -53,9 +53,9 @@ Path path_2 = Path();
     path_2.lineTo(72.9126,6.96997);
     path_2.close();
 
-Paint paint_2_fill = Paint()..style=PaintingStyle.fill;
-paint_2_fill.color = Color(0xffFEFBD8).withOpacity(1.0);
-canvas.drawPath(path_2,paint_2_fill);
+Paint paint2Fill = Paint()..style=PaintingStyle.fill;
+paint2Fill.color = const Color(0xffFEFBD8).withOpacity(1.0);
+canvas.drawPath(path_2,paint2Fill);
 
 Path path_3 = Path();
     path_3.moveTo(150.715,7.78937);
@@ -69,9 +69,9 @@ Path path_3 = Path();
     path_3.lineTo(150.715,7.78937);
     path_3.close();
 
-Paint paint_3_fill = Paint()..style=PaintingStyle.fill;
-paint_3_fill.color = Color(0xffFEFBD8).withOpacity(1.0);
-canvas.drawPath(path_3,paint_3_fill);
+Paint paint3Fill = Paint()..style=PaintingStyle.fill;
+paint3Fill.color = const Color(0xffFEFBD8).withOpacity(1.0);
+canvas.drawPath(path_3,paint3Fill);
 
 Path path_4 = Path();
     path_4.moveTo(79.3889,128.597);
@@ -85,9 +85,9 @@ Path path_4 = Path();
     path_4.lineTo(79.3889,128.597);
     path_4.close();
 
-Paint paint_4_fill = Paint()..style=PaintingStyle.fill;
-paint_4_fill.color = Color(0xffFEFBD8).withOpacity(1.0);
-canvas.drawPath(path_4,paint_4_fill);
+Paint paint4Fill = Paint()..style=PaintingStyle.fill;
+paint4Fill.color = const Color(0xffFEFBD8).withOpacity(1.0);
+canvas.drawPath(path_4,paint4Fill);
 
 Path path_5 = Path();
     path_5.moveTo(146.529,154.416);
@@ -101,9 +101,9 @@ Path path_5 = Path();
     path_5.lineTo(146.529,154.416);
     path_5.close();
 
-Paint paint_5_fill = Paint()..style=PaintingStyle.fill;
-paint_5_fill.color = Color(0xffFEFBD8).withOpacity(1.0);
-canvas.drawPath(path_5,paint_5_fill);
+Paint paint5Fill = Paint()..style=PaintingStyle.fill;
+paint5Fill.color = const Color(0xffFEFBD8).withOpacity(1.0);
+canvas.drawPath(path_5,paint5Fill);
 
 Path path_6 = Path();
     path_6.moveTo(53.3023,149.075);
@@ -117,9 +117,9 @@ Path path_6 = Path();
     path_6.lineTo(53.3023,149.075);
     path_6.close();
 
-Paint paint_6_fill = Paint()..style=PaintingStyle.fill;
-paint_6_fill.color = Color(0xffFEFBD8).withOpacity(1.0);
-canvas.drawPath(path_6,paint_6_fill);
+Paint paint6Fill = Paint()..style=PaintingStyle.fill;
+paint6Fill.color = const Color(0xffFEFBD8).withOpacity(1.0);
+canvas.drawPath(path_6,paint6Fill);
 
 Path path_7 = Path();
     path_7.moveTo(63.6462,28.9082);
@@ -135,9 +135,9 @@ Path path_7 = Path();
     path_7.cubicTo(66.3906,31.7843,65.3356,29.8827,63.6462,28.9082);
     path_7.close();
 
-Paint paint_7_fill = Paint()..style=PaintingStyle.fill;
-paint_7_fill.color = Color(0xff6D2B92).withOpacity(1.0);
-canvas.drawPath(path_7,paint_7_fill);
+Paint paint7Fill = Paint()..style=PaintingStyle.fill;
+paint7Fill.color = const Color(0xff6D2B92).withOpacity(1.0);
+canvas.drawPath(path_7,paint7Fill);
 
 Path path_8 = Path();
     path_8.moveTo(63.6462,85.9299);
@@ -154,9 +154,9 @@ Path path_8 = Path();
     path_8.cubicTo(66.3906,88.8061,65.3356,86.9048,63.6462,85.9299);
     path_8.close();
 
-Paint paint_8_fill = Paint()..style=PaintingStyle.fill;
-paint_8_fill.color = Color(0xff6D2B92).withOpacity(1.0);
-canvas.drawPath(path_8,paint_8_fill);
+Paint paint8Fill = Paint()..style=PaintingStyle.fill;
+paint8Fill.color = const Color(0xff6D2B92).withOpacity(1.0);
+canvas.drawPath(path_8,paint8Fill);
 
 Path path_9 = Path();
     path_9.moveTo(145.105,52.4409);
@@ -173,9 +173,9 @@ Path path_9 = Path();
     path_9.cubicTo(147.623,55.2792,146.667,53.4539,145.105,52.4409);
     path_9.close();
 
-Paint paint_9_fill = Paint()..style=PaintingStyle.fill;
-paint_9_fill.color = Color(0xffFFDBDF).withOpacity(1.0);
-canvas.drawPath(path_9,paint_9_fill);
+Paint paint9Fill = Paint()..style=PaintingStyle.fill;
+paint9Fill.color = const Color(0xffFFDBDF).withOpacity(1.0);
+canvas.drawPath(path_9,paint9Fill);
 
 Path path_10 = Path();
     path_10.moveTo(145.105,109.77);
@@ -191,9 +191,9 @@ Path path_10 = Path();
     path_10.cubicTo(147.623,112.608,146.667,110.783,145.105,109.77);
     path_10.close();
 
-Paint paint_10_fill = Paint()..style=PaintingStyle.fill;
-paint_10_fill.color = Color(0xffFFDBDF).withOpacity(1.0);
-canvas.drawPath(path_10,paint_10_fill);
+Paint paint10Fill = Paint()..style=PaintingStyle.fill;
+paint10Fill.color = const Color(0xffFFDBDF).withOpacity(1.0);
+canvas.drawPath(path_10,paint10Fill);
 
 Path path_11 = Path();
     path_11.moveTo(144.878,52.3);
@@ -209,9 +209,9 @@ Path path_11 = Path();
     path_11.cubicTo(147.623,55.1758,146.568,53.2745,144.878,52.3);
     path_11.close();
 
-Paint paint_11_fill = Paint()..style=PaintingStyle.fill;
-paint_11_fill.color = Color(0xffFDD6DB).withOpacity(1.0);
-canvas.drawPath(path_11,paint_11_fill);
+Paint paint11Fill = Paint()..style=PaintingStyle.fill;
+paint11Fill.color = const Color(0xffFDD6DB).withOpacity(1.0);
+canvas.drawPath(path_11,paint11Fill);
 
 Path path_12 = Path();
     path_12.moveTo(144.878,109.322);
@@ -228,9 +228,9 @@ Path path_12 = Path();
     path_12.cubicTo(147.623,112.198,146.568,110.296,144.878,109.322);
     path_12.close();
 
-Paint paint_12_fill = Paint()..style=PaintingStyle.fill;
-paint_12_fill.color = Color(0xffFDD6DB).withOpacity(1.0);
-canvas.drawPath(path_12,paint_12_fill);
+Paint paint12Fill = Paint()..style=PaintingStyle.fill;
+paint12Fill.color = const Color(0xffFDD6DB).withOpacity(1.0);
+canvas.drawPath(path_12,paint12Fill);
 
 }
 

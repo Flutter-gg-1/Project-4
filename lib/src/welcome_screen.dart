@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'background_custom_shape.dart';
 import 'logo.dart';
-import 'registration_screens/regester.dart';
+import 'regestration_screens/regester.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
