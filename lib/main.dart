@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_4/shopping.dart';
-
+import 'package:project_4/feature/pages/wlecome_screen/views/intro_screen.dart';
 import 'package:device_preview/device_preview.dart';
 
 void main() => runApp(
@@ -16,7 +15,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeScreen(),
+      home: IntroScreen(),
     );
   }
 }

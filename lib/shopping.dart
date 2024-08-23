@@ -7,6 +7,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int bottomIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +17,11 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text('Shopping'),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: bottomIndex,
+        
+        onTap:(index){
+          bottomIndex = index;
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
