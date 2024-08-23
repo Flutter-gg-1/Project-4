@@ -23,7 +23,9 @@ class _LogInScreenState extends State<LogInScreen> {
                   width: MediaQuery.of(context).size.width,
                   height: 300,
                   child: const Placeholder(
-                    child: Center(child: Text("Logo")),
+                    child: Center(
+                      child: Text("Logo"),
+                    ),
                   ),
                 ),
                 Padding(
@@ -42,7 +44,9 @@ class _LogInScreenState extends State<LogInScreen> {
                           height: 10,
                         ),
                         ElevatedButton(
-                            onPressed: () {}, child: const Text("Log in"))
+                          onPressed: () {},
+                          child: const Text("Log in"),
+                        ),
                       ],
                     ),
                   ),
