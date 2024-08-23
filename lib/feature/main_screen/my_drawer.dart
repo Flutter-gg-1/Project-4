@@ -20,10 +20,15 @@ class MyDrawer extends StatelessWidget {
               Positioned(
                 top: getScreenSize(context).height / 2 - 400,
                 left: getScreenSize(context).width / 2 - 175,
-                child: const CircleAvatar(
-                  radius: 80,
-                  backgroundImage: NetworkImage(
-                      'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png'),
+                child: InkWell(
+                  onTap: () {
+                    print('tapped');
+                  },
+                  child: const CircleAvatar(
+                    radius: 80,
+                    backgroundImage: NetworkImage(
+                        'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png'),
+                  ),
                 ),
               ),
             ],
