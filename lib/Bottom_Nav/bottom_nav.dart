@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
+import 'package:project4/Cart/cart.dart';
 import 'package:project4/Home/home.dart';
 
 class BottomNav extends StatefulWidget {
@@ -20,7 +21,7 @@ class _BottomNavState extends State<BottomNav> {
   @override
   void initState() {
     super.initState();
-    _child = Home(name: widget.name, imagePath: widget.imagePath); // تعيين الشاشة الافتراضية
+    _child = Home(name: widget.name, imagePath: widget.imagePath);
   }
 
   @override
@@ -36,13 +37,9 @@ class _BottomNavState extends State<BottomNav> {
               backgroundColor: Color(0xffF05A7E),
               extras: {"label": "home"}),
           FluidNavBarIcon(
-              icon: Icons.bookmark_border,
+              icon: Icons.shopping_cart,
               backgroundColor: Color(0xffF05A7E),
               extras: {"label": "bookmark"}),
-          FluidNavBarIcon(
-              icon: Icons.apps,
-              backgroundColor: Color(0xffF05A7E),
-              extras: {"label": "partner"}),
         ],
         onChange: _handleNavigationChange,
         style: const FluidNavBarStyle(
@@ -66,10 +63,7 @@ class _BottomNavState extends State<BottomNav> {
           _child = Home(name: widget.name, imagePath: widget.imagePath);
           break;
         case 1:
-          _child = Placeholder(); 
-          break;
-        case 2:
-          _child = Placeholder();
+          _child = Cart(name: widget.name, imagePath: widget.imagePath);
           break;
       }
 

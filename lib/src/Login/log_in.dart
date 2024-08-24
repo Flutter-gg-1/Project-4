@@ -3,8 +3,9 @@ import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'log_in_function.dart';
-import 'package:project4/Home/home.dart';
 
+
+// ignore: must_be_immutable
 class LogIn extends StatelessWidget {
   LogIn({super.key});
   TextEditingController userNameController = TextEditingController();
@@ -137,7 +138,7 @@ class LogIn extends StatelessWidget {
                 Text(
                   'Or you can log in With',
                   style: GoogleFonts.dmSerifDisplay(
-                      color: Color(0xff125B9A), fontSize: 17),
+                      color: const Color(0xff125B9A), fontSize: 17),
                 ),
                 const Text(
                   '_________________________________',
