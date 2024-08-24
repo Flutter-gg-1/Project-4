@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_shoes_app/data/app_helper.dart';
 import 'package:shopping_shoes_app/data/global_variabels.dart';
+import 'package:shopping_shoes_app/model/cart_model.dart';
+import 'package:shopping_shoes_app/screen/checkout_screen.dart';
 
 class MyCartScreen extends StatefulWidget {
   const MyCartScreen({super.key});
@@ -10,8 +12,6 @@ class MyCartScreen extends StatefulWidget {
 }
 
 class _MyCartScreenState extends State<MyCartScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -46,6 +46,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     ? ListView.builder(
                         itemCount: myCart.length,
                         itemBuilder: (context, index) {
+                          CartModel model = myCart[index];
                           return Stack(
                             children: [
                               Container(
@@ -61,7 +62,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                         width: 100,
                                         height: 100,
                                         decoration: BoxDecoration(
-                                            color: myCart[index].modelColor,
+                                            color: model.modelColor,
                                             borderRadius:
                                                 BorderRadius.circular(20)),
                                       ),
@@ -73,8 +74,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                               -30 / 360),
                                           child: SizedBox(
                                               width: 150,
-                                              child: Image.asset(
-                                                  myCart[index].img)),
+                                              child: Image.asset(model.img)),
                                         )),
                                     Positioned(
                                         top: 20,
@@ -86,11 +86,11 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              "${myCart[index].name} ${myCart[index].model}",
+                                              "${model.name} ${model.model}",
                                               style:
                                                   const TextStyle(fontSize: 12),
                                             ),
-                                            Text("${myCart[index].price} SAR",
+                                            Text("${model.price} SAR",
                                                 style: const TextStyle(
                                                     fontSize: 14,
                                                     fontWeight:
@@ -102,11 +102,11 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                               children: [
                                                 GestureDetector(
                                                   onTap: () {
-                                                    myCart[index].qnt > 1
+                                                    model.qnt > 1
                                                         ? {
-                                                            myCart[index].qnt--,
+                                                            model.qnt--,
                                                           }
-                                                        : myCart[index].qnt = 1;
+                                                        : model.qnt = 1;
 
                                                     setState(() {});
                                                   },
@@ -123,13 +123,13 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                                 const SizedBox(
                                                   width: 10,
                                                 ),
-                                                Text("${myCart[index].qnt}"),
+                                                Text("${model.qnt}"),
                                                 const SizedBox(
                                                   width: 10,
                                                 ),
                                                 GestureDetector(
                                                   onTap: () {
-                                                    myCart[index].qnt++;
+                                                    model.qnt++;
                                                     setState(() {});
                                                   },
                                                   child: Container(
@@ -175,20 +175,39 @@ class _MyCartScreenState extends State<MyCartScreen> {
             const SizedBox(
               height: 20,
             ),
-            Container(
-              width: size.width,
-              height: size.height / 16,
-              margin: const EdgeInsets.all(16),
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: const Color(0xffcb3759),
-                  borderRadius: BorderRadius.circular(10)),
-              child: const Text(
-                "Continue to pay",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w300),
+            GestureDetector(
+              onTap: () {
+                if (myCart.isNotEmpty) {
+                  var route = MaterialPageRoute(
+                      builder: (BuildContext context) => CheckoutScreen());
+                  Navigator.of(context).push(route);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      backgroundColor: Colors.redAccent,
+                      content: Center(
+                        child: Text(
+                          "Add some items first to the cart!",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      )));
+                }
+              },
+              child: Container(
+                width: size.width,
+                height: size.height / 16,
+                margin: const EdgeInsets.all(16),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    color: const Color(0xffcb3759),
+                    borderRadius: BorderRadius.circular(10)),
+                child: const Text(
+                  "CHECKOUT",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300),
+                ),
               ),
             )
           ],

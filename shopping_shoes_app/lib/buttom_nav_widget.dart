@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_shoes_app/screen/checkout_screen.dart';
 import 'package:shopping_shoes_app/screen/home_screen.dart';
 import 'package:shopping_shoes_app/screen/my_cart_screen.dart';
 
@@ -17,7 +18,7 @@ class _ButtomNavWidgetState extends State<ButtomNavWidget>
   List<Widget> myWidget = [
     const HomeScreen(),
     const MyCartScreen(),
-    const Text("Text Profile"),
+    const CheckoutScreen(),
   ];
 
   @override
