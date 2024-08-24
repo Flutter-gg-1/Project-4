@@ -1,3 +1,5 @@
+import '../../models/user.dart';
+
 List<User> users = [
   User.fromJson(
       {'username': 'aziz', 'password': 'aziz', 'email': 'aziz@gmail.com'}),
@@ -7,18 +9,3 @@ List<User> users = [
 
 User? currentUser = User.fromJson(
     {'username': 'aziz', 'password': 'aziz', 'email': 'aziz@gmail.com'});
-
-class User {
-  final String? username;
-  final String? password;
-  final String? email;
-
-  User({required this.username, required this.password, required this.email});
-
-  factory User.fromJson(Map<String, String> json) {
-    return User(
-        username: json['username'],
-        password: json['password'],
-        email: json['email']);
-  }
-}

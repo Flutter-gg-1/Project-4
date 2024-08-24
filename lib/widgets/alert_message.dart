@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class AlertMessage extends StatelessWidget {
   static final Map<String, dynamic> messages = {
     'about':
@@ -13,12 +14,18 @@ class AlertMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-                          content:  Text(messages[section],textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
-                          actions: [
-                            TextButton(onPressed: (){
-                              Navigator.pop(context);
-                            }, child: const Text('Back'))
-                          ],
-                        );
+      content: Text(
+        messages[section],
+        textAlign: TextAlign.center,
+        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+      ),
+      actions: [
+        TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('Back'))
+      ],
+    );
   }
 }

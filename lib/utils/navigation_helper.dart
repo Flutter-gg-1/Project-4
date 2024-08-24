@@ -5,10 +5,12 @@ import 'package:shopping_app/screens/profile_screen.dart';
 import 'package:shopping_app/screens/explore_screen.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:shopping_app/widgets/alert_message.dart';
-
-import 'data/items_data.dart';
+import '../models/user.dart';
 import '../screens/home_screen.dart';
 import 'data/user_data.dart';
+import 'package:icons_plus/icons_plus.dart';
+
+
 
 class NavigationHelper extends StatefulWidget {
   final User user;
@@ -21,15 +23,21 @@ class NavigationHelper extends StatefulWidget {
 
 class _NavigationHelperState extends State<NavigationHelper> {
   final List<IconData> iconsList = [
-    Icons.home,
-    Icons.favorite,
-    Icons.explore,
-    Icons.person
+    AntDesign.home_outline,
+    AntDesign.heart_outline,
+    AntDesign.compass_outline,
+    Icons.person_2_outlined,
+  ];
+  final List<IconData> iconListFilled = [
+    AntDesign.home_fill,
+    AntDesign.heart_fill,
+    AntDesign.compass_fill,
+    Icons.person_2_sharp,
   ];
 
   final List<Widget> pages = [];
   int pageIndex = 0;
-  final user =currentUser;
+  final user = currentUser;
 
   @override
   void initState() {
@@ -59,7 +67,7 @@ class _NavigationHelperState extends State<NavigationHelper> {
               clipBehavior: Clip.none,
               children: [
                 const Icon(Icons.shopping_cart),
-                if (cartItems != 0)
+                if (currentUser!.cartItems.isNotEmpty)
                   Positioned(
                     left: 7,
                     top: -7,
@@ -71,7 +79,7 @@ class _NavigationHelperState extends State<NavigationHelper> {
                           color: Colors.red),
                       child: Center(
                           child: Text(
-                        '$cartItems',
+                        '${currentUser!.cartItems.length}',
                         style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
@@ -159,7 +167,7 @@ class _NavigationHelperState extends State<NavigationHelper> {
                           fontWeight: FontWeight.w500,
                           color: Colors.black),
                     )),
-              ],
+              ],  
             ),
           ),
         ),
@@ -168,7 +176,7 @@ class _NavigationHelperState extends State<NavigationHelper> {
             itemCount: 4,
             tabBuilder: (int index, bool isActive) {
               return Icon(
-                iconsList[index],
+                isActive ?  iconListFilled[index] : iconsList[index] ,
                 size: isActive ? 30 : 24,
                 color:
                     isActive ? Colors.blue[900] : Colors.black.withOpacity(0.5),

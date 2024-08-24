@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/item_screen.dart';
 import 'package:shopping_app/utils/data/items_data.dart';
 
-import '../utils/item.dart';
+import '../models/item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -38,8 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
               )),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height/2.3,
-          left: (MediaQuery.of(context).size.width -250)/2,
+          top: MediaQuery.of(context).size.height / 2.3,
+          left: (MediaQuery.of(context).size.width - 250) / 2,
           child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   shadowColor: Colors.black,
@@ -52,10 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     context: context,
                     builder: (context) {
                       return Container(
-                        
-                        height: MediaQuery.of(context).size.height/2.5,
+                        height: MediaQuery.of(context).size.height / 2.5,
                         width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/home-background.png',), fit: BoxFit.cover)),
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  'assets/images/home-background.png',
+                                ),
+                                fit: BoxFit.cover)),
                         child: GridView.builder(
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
@@ -65,38 +70,51 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             itemCount: bestSellers.length,
                             itemBuilder: (context, index) {
-                              return Card(
-                                shadowColor: Colors.red,
-                                elevation: 10,
-                                child: Column(
-                                  children: [
-                                    Expanded(
-                                      child: Image.asset(
-                                        bestSellers[index].imagePath,
-                                      ),
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                         Align(
-                                      alignment: Alignment.bottomLeft,
-                                      child: Text(
-                                          '\$${bestSellers[index].price.toStringAsFixed(2)}', style: TextStyle(fontSize: 24,color: Colors.yellow[900], fontWeight: FontWeight.bold),),
-                                    ),
-                                        Text(
-                                          bestSellers[index].name,
-                                          style: const TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.center,
+                              return InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ItemScreen(
+                                              item: bestSellers[index])));
+                                },
+                                child: Card(
+                                  shadowColor: Colors.red,
+                                  elevation: 10,
+                                  child: Column(
+                                    children: [
+                                      Expanded(
+                                        child: Image.asset(
+                                          bestSellers[index].imagePath,
                                         ),
-                                          
-                                      ],
-                                    ),
-                                 
-                                  ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Align(
+                                            alignment: Alignment.bottomLeft,
+                                            child: Text(
+                                              '\$${bestSellers[index].price.toStringAsFixed(2)}',
+                                              style: TextStyle(
+                                                  fontSize: 24,
+                                                  color: Colors.yellow[900],
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                          Text(
+                                            bestSellers[index].name,
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               );
                             }),

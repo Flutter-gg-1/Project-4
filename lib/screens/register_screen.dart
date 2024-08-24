@@ -3,6 +3,8 @@ import 'package:shopping_app/screens/login_screen.dart';
 import 'package:shopping_app/utils/data/user_data.dart';
 import 'package:shopping_app/widgets/login_textfield.dart';
 
+import '../models/user.dart';
+
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -74,8 +76,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   LoginTextfield(
                       hint: 'Password Confirmation',
                       controller: confirmationController,
-                      password: passwordController.text),
-                  SizedBox(
+                      isMatched: confirmationController.text ==
+                          passwordController.text),
+                  const SizedBox(
                     height: 40,
                   ),
                   ElevatedButton(
@@ -83,7 +86,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           shadowColor: Colors.black,
                           elevation: 20,
                           surfaceTintColor: Colors.green,
-                          fixedSize: Size(150, 50),
+                          fixedSize: const Size(150, 50),
                           backgroundColor:
                               const Color.fromARGB(255, 236, 202, 169)),
                       onPressed: () {
@@ -96,13 +99,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
+                                  builder: (context) => const LoginScreen()));
                           setState(() {});
                         }
                       },
-                      child: Text(
+                      child: const Text(
                         'Register',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),

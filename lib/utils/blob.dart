@@ -15,9 +15,9 @@ class Blob extends CustomPainter {
     path_0.cubicTo(14.2, -21.2, 28.5, -31.9, 29.1, -30.2);
     path_0.close();
 
-    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Color(0xffF2F4F8).withOpacity(1.0);
-    canvas.drawPath(path_0, paint_0_fill);
+    Paint paint = Paint()..style = PaintingStyle.fill;
+    paint.color = Color(0xffF2F4F8).withOpacity(1.0);
+    canvas.drawPath(path_0, paint);
   }
 
   @override

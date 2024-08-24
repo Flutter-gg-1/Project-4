@@ -1,4 +1,4 @@
-import '../item.dart';
+import '../../models/item.dart';
 
 List<Item> items = [
   Item.fromJson({
@@ -93,7 +93,3 @@ Map<String, List<List<String>>> categories = {
     ['Keyboard', 'assets/images/keyboard.png'],
   ]
 };
-
-List<Item> favorite = [];
-
-int cartItems = 0;

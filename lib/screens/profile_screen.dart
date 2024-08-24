@@ -1,10 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shopping_app/widgets/login_textfield.dart';
-
 import '../utils/data/user_data.dart';
-import '../utils/reset_password.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({
@@ -21,6 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   TextEditingController confirmationController = TextEditingController();
   final key = GlobalKey<FormState>();
   bool isReset = false;
+  bool isSuccess = false;
 
   @override
   void initState() {
@@ -88,89 +86,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Username: ${currentUser!.username}',
-                        style: const TextStyle(fontSize: 24),
+                      Card(
+                        child: Text(
+                          'Username: ${currentUser!.username}',
+                          style: const TextStyle(fontSize: 24),
+                        ),
                       ),
-                      Text(
-                        'Email: ${currentUser!.email}',
-                        style: const TextStyle(fontSize: 24),
+                      Card(
+                        child: Text(
+                          'Email: ${currentUser!.email}',
+                          style: const TextStyle(fontSize: 24),
+                        ),
                       ),
-                      Row(
-                        children: [
-                          const Text(
-                            'Password: ********',
-                            style: TextStyle(fontSize: 24),
-                          ),
-                          TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  isReset = !isReset;
-                                });
-                              },
-                              child: const Text('Reset Password'))
-                        ],
+                      const Card(
+                        child: Text(
+                          'Password: ********',
+                          style: TextStyle(fontSize: 24),
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
                       )
                     ],
                   ),
-                  if (isReset)
-                    Form(
-                      key: key,
-                      child: Center(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            LoginTextfield(
-                              hint: 'Password',
-                              controller: passwordController,
-                            ),
-                            LoginTextfield(
-                              hint: 'Password Confirmation',
-                              controller: confirmationController,
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  shadowColor: Colors.black,
-                                  elevation: 20,
-                                  surfaceTintColor: Colors.green,
-                                  fixedSize: const Size(150, 50),
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 236, 202, 169)),
-                              onPressed: () {
-                                if (key.currentState!.validate()) {
-                                  resetPassword(
-                                      currentUser!, passwordController.text);
-                                }
-                              },
-                              child: const Text(
-                                'Confirm',
-                                style:  TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                              ),
-                            ),
-                            AlertDialog(
-                              content: const Text(
-                                  'Password is successfully reset!!'),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text('Back'))
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    )
                 ],
               ),
             ),

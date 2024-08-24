@@ -17,6 +17,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

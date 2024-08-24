@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/utils/data/items_data.dart';
-import 'package:shopping_app/utils/navigation_helper.dart';
-
 import '../utils/data/user_data.dart';
-import '../utils/item.dart';
+import '../models/item.dart';
 
 class ItemScreen extends StatefulWidget {
   final Item item;
@@ -22,7 +19,7 @@ class _ItemScreenState extends State<ItemScreen> {
 
   @override
   void initState() {
-    isFavorite = favorite.contains(widget.item);
+    isFavorite = currentUser!.favorites.contains(widget.item);
     super.initState();
   }
 
@@ -33,13 +30,7 @@ class _ItemScreenState extends State<ItemScreen> {
         backgroundColor: Colors.yellow[50],
         leading: BackButton(
           onPressed: () {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) {
-              return NavigationHelper(
-                user: currentUser!,
-                index: 2,
-              );
-            }));
+            Navigator.pop(context);
           },
         ),
         title: Text(
@@ -53,7 +44,7 @@ class _ItemScreenState extends State<ItemScreen> {
             clipBehavior: Clip.none,
             children: [
               const Icon(Icons.shopping_cart),
-              if (cartItems != 0)
+              if (currentUser!.cartItems.length != 0)
                 Positioned(
                   left: 7,
                   top: -7,
@@ -65,7 +56,7 @@ class _ItemScreenState extends State<ItemScreen> {
                         color: Colors.red),
                     child: Center(
                         child: Text(
-                      '$cartItems',
+                      '${currentUser!.cartItems.length}',
                       style: const TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
@@ -82,9 +73,9 @@ class _ItemScreenState extends State<ItemScreen> {
               onTap: () {
                 isFavorite = !isFavorite;
                 if (isFavorite) {
-                  favorite.add(widget.item);
+                  currentUser!.favorites.add(widget.item);
                 } else {
-                  favorite.remove(widget.item);
+                  currentUser!.favorites.remove(widget.item);
                 }
                 setState(() {});
               },
@@ -250,7 +241,7 @@ class _ItemScreenState extends State<ItemScreen> {
                     backgroundColor: Colors.orange[700]),
                 onPressed: () {
                   if (widget.item.stock != 0) {
-                    cartItems++;
+                    currentUser!.cartItems.add(widget.item);
                   } else {
                     showDialog(
                         context: context,

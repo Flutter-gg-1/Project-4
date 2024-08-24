@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/item_screen.dart';
 import 'package:shopping_app/utils/navigation_helper.dart';
-
 import '../utils/data/user_data.dart';
-import '../utils/item.dart';
+import '../models/item.dart';
 
 class ItemPageview extends StatelessWidget {
   final Item item;
