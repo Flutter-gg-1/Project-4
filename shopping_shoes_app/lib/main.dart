@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_shoes_app/buttom_nav_widget.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,11 +11,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false, home: ButtomNavWidget());
   }
 }
