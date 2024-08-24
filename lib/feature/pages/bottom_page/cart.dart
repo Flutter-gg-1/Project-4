@@ -6,10 +6,12 @@ class PersonCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: MyColors.colorWhite,
-      height: 300,
-      child: const Image(image: AssetImage('assets/images/empty.png')),
+    return Center(
+      child: Container(
+        color: MyColors.colorWhite,
+        height: 300,
+        child: const Image(image: AssetImage('assets/images/empty.png')),
+      ),
     );
   }
 }

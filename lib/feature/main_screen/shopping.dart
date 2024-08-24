@@ -10,7 +10,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int bottomIndex = 0;
 
-  List<Widget> pagesNavigationBottomBar = const [HomeView(), PersonCart()];
+  List<Widget> pagesNavigationBottomBar = const [
+    HomeView(),
+    PersonCart(),
+    PersonAccount()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
