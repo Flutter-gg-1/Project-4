@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../extensions/color_ext.dart';
 
-class PaymentAlertView extends StatelessWidget {
-  const PaymentAlertView({super.key});
+class CartEmptyAlertView extends StatelessWidget {
+  const CartEmptyAlertView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class PaymentAlertView extends StatelessWidget {
           size: 40, color: C.text),
       title: const Text('Oops!').styled(size: 24, weight: FontWeight.w700),
       content: const Text(
-              'The Entered Card Information is incorrect.\n Please make sure all fields are filled correctly.')
+              'Your Cart is Empty. Go back to browse our amazing collection')
           .styled(color: C.text.withOpacity(0.7)),
       actions: [
         Row(
@@ -25,9 +25,9 @@ class PaymentAlertView extends StatelessWidget {
                 onPressed: () => Navigator.of(context).pop(),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: C.accent,
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(16),
                 ),
-                child: const Text('Dismiss').styled(weight: FontWeight.w700),
+                child: Text('Dismiss').styled(weight: FontWeight.w700),
               ),
             ),
           ],

@@ -4,6 +4,8 @@ import 'package:espresso_yourself/screens/home/subviews/category_tab_view.dart';
 import 'package:flutter/material.dart';
 import '../../extensions/color_ext.dart';
 import '../../extensions/image_ext.dart';
+import '../../mock_data.dart';
+import '../../model/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,17 +15,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomeScreen> {
+  late User user;
+
+  @override
+  void initState() {
+    setState(() {
+      user = MockData().user;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(32.0),
+          padding: const EdgeInsets.all(32.0),
           child: Column(
             children: [
-              ProfileCard(),
-              Expanded(
+              ProfileCard(user: user),
+              const Expanded(
                 child: CategoryTabView(),
               ),
             ],
@@ -35,7 +47,9 @@ class _MyHomePageState extends State<HomeScreen> {
 }
 
 class ProfileCard extends StatelessWidget {
-  const ProfileCard({super.key});
+  const ProfileCard({super.key, required this.user});
+
+  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +77,7 @@ class ProfileCard extends StatelessWidget {
           ],
         ),
         AvatarGlow(
-          child: const Material(
+          child: Material(
             // Replace this child with your own
             elevation: 8.0,
             shape: CircleBorder(),
@@ -71,7 +85,7 @@ class ProfileCard extends StatelessWidget {
               backgroundColor: C.accent,
               radius: 30.0,
               child: Image(
-                image: Img.beans2,
+                image: user.avatar,
                 fit: BoxFit.contain,
               ),
             ),

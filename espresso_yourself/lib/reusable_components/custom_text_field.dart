@@ -41,6 +41,8 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           suffixIcon: Icon(icon),
           hintText: hint,
+          hintStyle: TextStyle(color: C.text.withOpacity(0.6)),
+          errorStyle: const TextStyle(color: C.accent),
         ),
         validator: (value) => validation(value ?? ''),
       ),

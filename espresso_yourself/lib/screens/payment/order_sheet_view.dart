@@ -17,7 +17,12 @@ class OrderSheetView extends StatelessWidget {
         children: [
           const Text(
             'Order Confirmed',
-            style: TextStyle(fontSize: 24, color: C.text),
+            style: TextStyle(
+                fontSize: 24, color: C.text, fontWeight: FontWeight.w700),
+          ),
+          const Text(
+            'You should receive an email confirmation soon',
+            style: TextStyle(color: C.text, fontWeight: FontWeight.w700),
           ),
           const Divider(),
           Padding(

@@ -1,8 +1,10 @@
+import 'dart:math';
 import 'package:espresso_yourself/model/menu_item.dart';
 
-class Cart {
-  List<(MenuItem, int)> items = [];
+class CartItem {
+  int id = Random().nextInt(300);
+  MenuItem item;
+  int quantity;
 
-  void addItem({required MenuItem item, required int quantity}) =>
-      items.add((item, quantity));
+  CartItem({required this.item, required this.quantity});
 }

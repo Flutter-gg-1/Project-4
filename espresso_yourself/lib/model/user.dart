@@ -6,7 +6,7 @@ import 'cart.dart';
 class User {
   String name;
   AssetImage avatar;
-  Cart cart = Cart();
+  List<CartItem> cartItems = [];
   Favorite favorite = Favorite();
   List<CreditCard> cards = [];
 

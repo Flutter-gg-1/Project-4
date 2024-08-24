@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 extension Img on Image {
   static const logo = AssetImage('assets/appLogo.png');
@@ -19,12 +18,4 @@ extension Img on Image {
   /* Desert */
   static const desert1 = AssetImage('assets/items/desert1.png');
   static const desert2 = AssetImage('assets/items/desert2.png');
-}
-
-// MARK: - Tab bar Icons
-class AppSVG {
-  static const home = SvgAssetLoader('assets/icons/house.svg');
-  static const flame = SvgAssetLoader('assets/icons/flame.svg');
-  static const heart = SvgAssetLoader('assets/icons/heart.svg');
-  static const cart = SvgAssetLoader('assets/icons/cart.svg');
 }

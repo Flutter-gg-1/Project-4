@@ -6,7 +6,7 @@ import '../../../extensions/color_ext.dart';
 import '../../../model/menu_category.dart';
 import '../../../model/menu_item.dart';
 import '../../../reusable_components/shapes/item_shape.dart';
-import '../../item_details/coffee_details_screen.dart';
+import '../../item_details/item_details_screen.dart';
 
 class CategoryTabView extends StatelessWidget {
   const CategoryTabView({super.key});
@@ -58,7 +58,7 @@ class CategoryTabView extends StatelessWidget {
 
 void _navigateToDetails(BuildContext context, MenuItem item) {
   Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => CoffeeDetailsScreen(item: item)));
+      MaterialPageRoute(builder: (context) => ItemDetailsScreen(item: item)));
 }
 
 class _TabGridView extends StatelessWidget {

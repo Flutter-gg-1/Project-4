@@ -1,19 +1,51 @@
 import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:espresso_yourself/mock_data.dart';
+import 'package:espresso_yourself/screens/cart/cart_empty_alert_view.dart';
+import 'package:espresso_yourself/screens/cart/cart_list_view.dart';
 import 'package:espresso_yourself/screens/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
 import '../../extensions/color_ext.dart';
+import '../../model/cart.dart';
+import '../../model/menu_item.dart';
+import '../../model/user.dart';
 import '../../reusable_components/background_img_decoration.dart';
 import '../../reusable_components/buttons/custom_back_btn_view.dart';
-import '../../reusable_components/list_item_view.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   CartScreen({super.key});
 
-  final user = MockData().user;
+  @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  User user = MockData().user;
+
+  void _checkOutTapped(BuildContext context) {
+    if (user.cartItems.isEmpty) {
+      _showEmptyCartAlert(context);
+    } else {
+      _navigateToPayment(context);
+    }
+  }
+
+  void _showEmptyCartAlert(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return const CartEmptyAlertView();
+      },
+    );
+  }
 
   void _navigateToPayment(BuildContext context) => Navigator.of(context)
       .push(MaterialPageRoute(builder: (context) => const PaymentScreen()));
+
+  void _removeItem(BuildContext context, CartItem cartItem) {
+    setState(() {
+      user.cartItems.removeWhere((cartItem) => cartItem.id == cartItem.id);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +62,11 @@ class CartScreen extends StatelessWidget {
                   const _HeaderView(),
                   Expanded(
                     child: ListView(
-                      children: user.cart.items
-                          .map((item) =>
-                              ListItemView(item: item.$1, quantity: item.$2))
+                      children: user.cartItems
+                          .map((cartItem) => CartListView(
+                                cartItem: cartItem,
+                                removeItem: _removeItem,
+                              ))
                           .toList(),
                     ),
                   ),
@@ -43,10 +77,10 @@ class CartScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: C.accent,
                           ),
-                          onPressed: () => _navigateToPayment(context),
+                          onPressed: () => _checkOutTapped(context),
                           child: Padding(
                             padding: const EdgeInsets.all(16.0),
-                            child: Text('Checkout')
+                            child: const Text('Checkout')
                                 .styled(size: 24, weight: FontWeight.w700),
                           ),
                         ),
@@ -74,7 +108,7 @@ class _HeaderView extends StatelessWidget {
       children: [
         CustomBackBtnView(context: context),
         const Text('Cart').styled(size: 20, weight: FontWeight.w700),
-        SizedBox(width: 60),
+        const SizedBox(width: 60),
       ],
     );
   }

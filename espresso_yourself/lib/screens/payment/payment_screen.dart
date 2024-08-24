@@ -48,7 +48,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   void _completeOrder(BuildContext context) {
     if (_isValidated()) {
       _showOrderCompletedSheet(context);
-      MockData().user.cart.items = [];
+      MockData().user.cartItems = [];
     } else {
       _showInvalidCardAlert(context);
     }

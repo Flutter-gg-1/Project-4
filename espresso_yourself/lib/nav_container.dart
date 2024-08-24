@@ -1,12 +1,10 @@
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:espresso_yourself/extensions/image_ext.dart';
+import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
 import 'package:espresso_yourself/reusable_components/background_img_decoration.dart';
 import 'package:espresso_yourself/screens/favorites/favorites_screen.dart';
 import 'package:espresso_yourself/screens/home/home_screen.dart';
 import 'package:espresso_yourself/screens/popular/popular_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'extensions/color_ext.dart';
 
 class NavContainer extends StatefulWidget {
@@ -17,102 +15,107 @@ class NavContainer extends StatefulWidget {
 }
 
 class _NavContainerState extends State<NavContainer> {
-  int idx = 1;
-  List<Widget> tabs = [
+  /// Controller to handle PageView and also handles initial page
+  final _pageController = PageController(initialPage: 1);
+
+  /// Controller to handle bottom nav bar and also handles initial page
+  final NotchBottomBarController _controller =
+      NotchBottomBarController(index: 1);
+
+  int maxCount = 3;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+
+    super.dispose();
+  }
+
+  final List<Widget> bottomBarPages = [
     const PopularScreen(),
     const HomeScreen(),
     FavoritesScreen(),
   ];
 
-  List<IconData> icons = [
-    CupertinoIcons.flame_fill,
-    CupertinoIcons.home,
-    CupertinoIcons.heart_fill,
-  ];
-
-  FloatingActionButtonLocation setFloatingBtnPosition() {
-    switch (idx) {
-      case 0:
-        return FloatingActionButtonLocation.startDocked;
-      case 1:
-        return FloatingActionButtonLocation.centerDocked;
-      case 2:
-        return FloatingActionButtonLocation.endDocked;
-      default:
-        return FloatingActionButtonLocation.centerDocked;
-    }
-  }
-
-  SvgAssetLoader _getSVGAsset() {
-    switch (idx) {
-      case 0:
-        return AppSVG.flame;
-      case 1:
-        return AppSVG.home;
-      case 2:
-        return AppSVG.heart;
-      default:
-        return AppSVG.home;
-    }
-  }
-
-  void _setDestination(int index) {
-    _getSVGAsset();
-    setState(() {
-      idx = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 0.0),
-        child: SizedBox(
-          width: 80,
-          height: 80,
-          child: FloatingActionButton(
-            backgroundColor: C.accent,
-            shape: const CircleBorder(),
-            onPressed: () => (),
-            child: Stack(alignment: Alignment.center, children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: SvgPicture(_getSVGAsset(), fit: BoxFit.contain),
-              ), // Main icon
-            ]),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: setFloatingBtnPosition(),
       body: Stack(
-        children: [const BackgroundImgDecoration(), tabs[idx]],
-      ),
-      bottomNavigationBar: SizedBox(
-        width: MediaQuery.of(context).size.width - 24,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(100),
-            child: AnimatedBottomNavigationBar(
-              backgroundColor: C.secondary,
-              height: 80,
-              icons: icons,
-              iconSize: 40,
-              activeColor: Colors.transparent,
-              inactiveColor: C.text,
-              activeIndex: idx,
-              gapLocation: GapLocation.none,
-              notchSmoothness: NotchSmoothness.softEdge,
-
-              onTap: (index) => setState(() => _setDestination(index)),
-              //other params
-            ),
+        children: [
+          const BackgroundImgDecoration(),
+          PageView(
+            controller: _pageController,
+            physics: const NeverScrollableScrollPhysics(),
+            children: List.generate(
+                bottomBarPages.length, (index) => bottomBarPages[index]),
           ),
-        ),
+        ],
       ),
-      backgroundColor: C.bg,
-      // body: Center(child: tabs[idx]),
+      extendBody: true,
+      bottomNavigationBar: (bottomBarPages.length <= maxCount)
+          ? AnimatedNotchBottomBar(
+              /// Provide NotchBottomBarController
+              notchBottomBarController: _controller,
+              color: C.primary,
+              showLabel: true,
+              textOverflow: TextOverflow.visible,
+              maxLine: 1,
+              shadowElevation: 5,
+              kBottomRadius: 28.0,
+              notchGradient: const LinearGradient(
+                  colors: [C.accent, Colors.black],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight),
+
+              /// restart app if you change removeMargins
+              removeMargins: false,
+              bottomBarWidth: 500,
+              showShadow: false,
+              durationInMilliSeconds: 300,
+
+              itemLabelStyle: const TextStyle(fontSize: 10),
+              elevation: 1,
+              bottomBarItems: const [
+                // POPULAR
+                BottomBarItem(
+                  inActiveItem: Icon(
+                    CupertinoIcons.flame_fill,
+                    color: C.text,
+                  ),
+                  activeItem: Icon(
+                    CupertinoIcons.flame_fill,
+                    color: Colors.orange,
+                  ),
+                ),
+                // HOME
+                BottomBarItem(
+                  inActiveItem: Icon(
+                    CupertinoIcons.home,
+                    color: C.text,
+                  ),
+                  activeItem: Icon(
+                    CupertinoIcons.home,
+                    color: C.text,
+                  ),
+                ),
+                // FAVORITES
+                BottomBarItem(
+                  inActiveItem: Icon(
+                    CupertinoIcons.heart_fill,
+                    color: C.text,
+                  ),
+                  activeItem: Icon(
+                    CupertinoIcons.heart_fill,
+                    color: Colors.pink,
+                  ),
+                ),
+              ],
+              onTap: (index) {
+                _pageController.jumpToPage(index);
+              },
+              kIconSize: 24.0,
+            )
+          : null,
     );
   }
 }

@@ -73,7 +73,7 @@ class _MyPageViewState extends State<_MyPageView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
       child: AspectRatio(
         aspectRatio: 1.4,
         child: Container(
