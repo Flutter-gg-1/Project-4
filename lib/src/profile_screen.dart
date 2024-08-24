@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
                       BorderRadius.vertical(bottom: Radius.circular(30))),
               child: SizedBox(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height / 2,
+                height: MediaQuery.of(context).size.height / 2.5,
                 child: CircleAvatar(
                   child: Icon(
                       size: MediaQuery.of(context).size.height / 3,
@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             SizedBox(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height / 2 - 80,
+              height: MediaQuery.of(context).size.height /2.5,
               child: Column(
                 children: [
                   ListTile(

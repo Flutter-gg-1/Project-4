@@ -39,6 +39,7 @@ class _LandingScreenState extends State<LandingScreen> {
         color: Theme.of(context).colorScheme.surface,
         backgroundColor: Theme.of(context).colorScheme.secondary,
         key: _bottomNavigationKey,
+        index: selectedIndex,
         onTap: (int index) => setState(() {
           selectedIndex = index;
         }),

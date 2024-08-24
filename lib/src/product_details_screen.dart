@@ -33,21 +33,24 @@ class ProductDetailsScreen extends StatelessWidget {
                           BorderRadius.vertical(bottom: Radius.circular(30))),
                   child: SizedBox(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height / 2,
+                      height: MediaQuery.of(context).size.height / 2.5,
                       child: Image.asset(src)),
                 ),
                 SizedBox(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height / 2 - 80,
+                  height: MediaQuery.of(context).size.height / 2.5,
                   child: Column(
                     children: [
                       ListTile(
                         title: Center(child: Text(name)),
                         subtitle: Center(child: Text("$price")),
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(details),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(details),
+                        ),
                       ),
                       ElevatedButton(
                           onPressed: () {
@@ -56,6 +59,11 @@ class ProductDetailsScreen extends StatelessWidget {
                                 src: src,
                                 price: price,
                                 description: details));
+
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Add to was successfull!!')),
+                            );
                           },
                           child: const Text("Add to cart"))
                     ],
