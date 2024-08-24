@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously, duplicate_ignore
-
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +6,6 @@ import 'package:shopping_app/globals/data.dart';
 import 'package:shopping_app/globals/validators.dart';
 import 'package:shopping_app/models/user.dart';
 import 'package:shopping_app/screens/main_screen.dart';
-import 'package:shopping_app/screens/user_screen_navigator.dart';
 import 'package:shopping_app/widgets/alert_with_icon.dart';
 import 'package:shopping_app/widgets/main_logo.dart';
 import 'package:shopping_app/widgets/user_input.dart';
@@ -54,51 +51,63 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ElevatedButton(
                   style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor)),
                   onPressed: () async {
+                    // check validity of inputs
                     if (isValidName && isValidEmail && isPasswordMatch) {
-                      try {
-                        Position position =await Geolocator.getCurrentPosition();
-                        currentLatitude = position.latitude.toString();
-                        currentLongitude = position.longitude.toString();
+                      // if account exists
+                      if(users.map((user)=>user.email).toList().contains(currentEmail)) {
+                        await showDialog(context: context, builder: (context){
+                          return const AlertWithIcon(alert: "Email is already used", icon: Icons.error_outline_outlined, iconColor: Colors.red);
+                        });
+                        return;
                       }
-                      catch (err) {
-                        await showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              elevation: 10,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
-                              alignment: Alignment.center,
-                              title: Text("Access to current location", style: GoogleFonts.poppins(),),
-                              content: Text("Please provide your location for delivery purposes.", style: GoogleFonts.poppins(),),
-                              actions: [
-                                TextButton(
-                                  style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor)),
-                                  onPressed: () async {
-                                    await Geolocator.openLocationSettings();
-                                    Position position =await Geolocator.getCurrentPosition();
-                                    currentLatitude = position.latitude.toString();
-                                    currentLongitude = position.longitude.toString();
+                      // if no account with this valid data, get location
+                      else {
+                        try {
+                          Position position = await Geolocator.getCurrentPosition();
+                          currentLatitude = position.latitude.toString();
+                          currentLongitude = position.longitude.toString();
+                        }
+                        // if not allowed, ask the user for it
+                        catch (err) {
+                          await showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                elevation: 10,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+                                alignment: Alignment.center,
+                                title: Text("Access to current location", style: GoogleFonts.poppins(),),
+                                content: Text("Please provide your location for delivery purposes.", style: GoogleFonts.poppins(),),
+                                actions: [
+                                  TextButton(
+                                    style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor)),
+                                    // if user said yes
+                                    onPressed: () async {
+                                      await Geolocator.openLocationSettings();
+                                      Position position =await Geolocator.getCurrentPosition();
+                                      currentLatitude = position.latitude.toString();
+                                      currentLongitude = position.longitude.toString();
                                     },
-                                  child: Text("OK", style: GoogleFonts.poppins(
-                                    color: Colors.white
-                                  ),)
-                                ),
-                                TextButton(
-                                  onPressed: () {Navigator.pop(context);},
-                                  child: Text("NOT NOW", style: GoogleFonts.poppins(
-                                    color: mainColor
-                                  ),))
-                              ],
-                            );
-                          }
-                        );
+                                    child: Text("OK", style: GoogleFonts.poppins(color: Colors.white))
+                                  ),
+                                  // if user said no
+                                  TextButton(
+                                    onPressed: () {Navigator.pop(context);},
+                                    child: Text("NOT NOW", style: GoogleFonts.poppins(color: mainColor))
+                                  )
+                                ],
+                              );
+                            }
+                          );
+                        }
                       }
                       users.add(
                         User(name: currentName,
                         email: currentEmail,
                         password: currentPassword,
                         latitude: currentLatitude.isEmpty ? "0" : currentLatitude.toString(),
-                        longitude: currentLongitude.isEmpty? "0" : currentLongitude.toString(),)
+                        longitude: currentLongitude.isEmpty? "0" : currentLongitude.toString(),
+                        pic: 'assets/default_profile_pic.png')
                       );
                       nameController.clear();
                       emailController.clear();
@@ -114,10 +123,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           );
                         }
                       );
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                      return const MainScreen();
-                    }));
-                    }
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                        builder: (context){
+                          return const MainScreen();
+                        }), (Route<dynamic> route) => false);
+                      }
                     else {
                       showDialog(
                         context: context,

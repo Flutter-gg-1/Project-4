@@ -29,44 +29,44 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const MainLogo(),
                 const SizedBox(height: 30),
-                Text("Login to your account",
-                    style: GoogleFonts.poppins(
-                        color: mainColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500)),
+                Text(
+                  "Login to your account",
+                  style: GoogleFonts.poppins(
+                    color: mainColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500
+                  )
+                ),
                 const SizedBox(height: 15),
-                UserInput(
-                    label: 'Enter your email',
-                    type: 'email',
-                    controller: loginEmailController,
-                    maxLength: 20),
+                UserInput(label: 'Enter your email',type: 'email', controller: loginEmailController,maxLength: 20),
                 const SizedBox(height: 15),
-                UserInput(
-                    label: 'Enter your password',
-                    type: 'password',
-                    controller: loginPasswordController,
-                    maxLength: 40),
+                UserInput(label: 'Enter your password',type: 'password',controller: loginPasswordController,maxLength: 40),
                 const SizedBox(height: 15),
                 ElevatedButton(
                   style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor)),
                   onPressed: () {
-                  for(var user in users) {
-                    if((user.email == loginEmailController.text) && (user.password == loginPasswordController.text)) {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                        return UserScreenNavigator(currentUser: user);
-                      }));
+                    bool isExist = false;
+                    // check if user exists
+                    for(var user in users) {
+                      if((user.email == loginEmailController.text) && (user.password == loginPasswordController.text)) {
+                        isExist = true;
+                        Navigator.pushAndRemoveUntil(context,MaterialPageRoute(
+                          builder: (context) {return UserScreenNavigator(currentUser: user);}
+                          ),
+                          (Route<dynamic> route) => false
+                        );
+                      }
                     }
-                    else {
-                      showDialog(context: context, builder: (context){
-                        return const AlertWithIcon(
-                            alert: "Account Not Found",
-                            icon: Icons.error_outline_outlined,
-                            iconColor: Colors.red
-                          );
-                      });
-                    }
-                  }
-                }, child: Text("Login", style: GoogleFonts.poppins(color: Colors.white),))
+                    // if user with the provided info is not exist
+                    !isExist ? showDialog(context: context, builder: (context){
+                      return const AlertWithIcon(
+                        alert: "Account Not Found",
+                        icon: Icons.error_outline_outlined,
+                        iconColor: Colors.red
+                      );
+                    }) : null;
+                  },
+                child: Text("Login", style: GoogleFonts.poppins(color: Colors.white),))
               ],
             ),
           ),

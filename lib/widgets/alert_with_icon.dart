@@ -6,11 +6,7 @@ class AlertWithIcon extends StatelessWidget {
   final String alert;
   final IconData icon;
   final Color iconColor;
-  const AlertWithIcon(
-      {super.key,
-      required this.alert,
-      required this.icon,
-      required this.iconColor});
+  const AlertWithIcon({super.key,required this.alert,required this.icon,required this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -20,24 +16,17 @@ class AlertWithIcon extends StatelessWidget {
       alignment: Alignment.center,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
       content: Container(
-          alignment: Alignment.center,
-          width: 300,
-          height: 200,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                color: iconColor,
-                size: 85,
-              ),
-              Text(alert,
-                  style: GoogleFonts.poppins(
-                      color: mainColor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600)),
-            ],
-          )),
+        alignment: Alignment.center,
+        width: 300,
+        height: 200,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon,color: iconColor,size: 85),
+            Text(alert,style: GoogleFonts.poppins(color: mainColor,fontSize: 24,fontWeight: FontWeight.w600)),
+          ],
+        )
+      ),
     );
   }
 }
