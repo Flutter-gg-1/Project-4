@@ -1,4 +1,4 @@
-import 'package:coffeshop_app/src/home_screen.dart';
+import 'package:coffeshop_app/src/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
