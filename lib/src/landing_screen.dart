@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/src/cart_screen.dart';
 import 'package:shopping/src/home_screen.dart';
@@ -59,7 +60,20 @@ class _LandingScreenState extends State<LandingScreen> {
             constraints: const BoxConstraints(
               maxWidth: 512,
             ),
-            child: pages.elementAt(selectedIndex),
+            child: PageTransitionSwitcher(
+              transitionBuilder: (
+                Widget child,
+                Animation<double> primaryAnimation,
+                Animation<double> secondaryAnimation,
+              ) {
+                return FadeThroughTransition(
+                  animation: primaryAnimation,
+                  secondaryAnimation: secondaryAnimation,
+                  child: child,
+                );
+              },
+              child: pages.elementAt(selectedIndex),
+            ),
           ),
         ),
       ),
