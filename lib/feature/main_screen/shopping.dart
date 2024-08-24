@@ -62,20 +62,32 @@ class _HomeScreenState extends State<HomeScreen> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ));
+                },
                 icon: Icon(Icons.home, color: MyColors.colorWhite)),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PersonCart(),
+                  ));
+                },
                 icon: Icon(Icons.shopping_cart_outlined,
                     color: MyColors.colorWhite)),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PersonAccount(),
+                  ));
+                },
                 icon:
                     Icon(Icons.person_3_outlined, color: MyColors.colorWhite)),
             label: '',

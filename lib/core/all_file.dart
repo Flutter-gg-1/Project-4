@@ -1,7 +1,7 @@
 export 'comb/action.dart';
-export 'comn/common.dart';
+export 'common/common.dart';
 export '../core/images/logo.dart';
-export 'comn/app_color.dart';
+export 'common/app_color.dart';
 export '../feature/main_screen/shopping.dart';
 export '../feature/main_screen/shopping_1.dart';
 export '../feature/main_screen/shopping_2.dart';
@@ -11,3 +11,5 @@ export '../feature/pages/welcome_screen/views/intro_screen.dart';
 export '../feature/main_screen/my_drawer.dart';
 export '../feature/pages/devices/computers.dart';
 export '../feature/pages/devices/mobiles.dart';
+export '../feature/pages/bottom_page/account.dart';
+export '../feature/pages/bottom_page/cart.dart';
