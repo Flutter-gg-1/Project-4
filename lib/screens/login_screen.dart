@@ -81,10 +81,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         } else {
                           showDialog(
-                          context: context,
-                          builder: (context) {
-                            return const AlertMessage(section: 'login');
-                          });
+                              context: context,
+                              builder: (context) {
+                                return const AlertMessage(section: 'login');
+                              });
                         }
                       },
                       child: const Text(
