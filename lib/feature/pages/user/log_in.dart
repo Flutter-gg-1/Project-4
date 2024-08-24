@@ -13,7 +13,6 @@ class LogInView extends StatelessWidget {
           const SizedBox(height: 80),
           const Image(image: AssetImage('assets/images/intro/int1.png')),
           const SizedBox(height: 80),
-          // login tet fiel
           TextField(
             decoration: InputDecoration(
               prefixIcon: const Icon(Icons.person),
@@ -36,7 +35,30 @@ class LogInView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          // login button
+
+          MaterialButton(
+            color: Colors.black,
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text('Login Successful'),
+                      backgroundColor: Colors.white,
+                      content: const Text('You have successfully logged in'),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()));
+                            },
+                            child: const Text('OK'))
+                      ],
+                    );
+                  });
+            },
+            child: const Text('Log in', style: TextStyle(color: Colors.white)),
+          )
         ],
       ),
     );
