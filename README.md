@@ -61,6 +61,20 @@ Perfume Store App is a Flutter-based mobile application designed to provide user
 
 ![Bottom Sheet](https://github.com/user-attachments/assets/32403602-3b9a-44e9-bba9-f59ac68ebe7e)
 
+### 8. Animated bottom nav
+
+
+![ScreenRecording1446-02-20at10 35 21PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8b15b878-45b8-42de-b6de-1468ed93dae9)
+
+
+
+### 9. Working with Different screens
+
+
+![ScreenRecording1446-02-20at10 39 59PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/67eea2bc-ed81-497c-9561-1cfe968601b8)
+
+
+
 ## Dependencies
 
 The Perfume Store App utilizes several Flutter packages to enhance functionality and provide a better user experience:
