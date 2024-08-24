@@ -112,7 +112,7 @@ class LoginFormState extends State<LoginForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Don’t have an account?', style: TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0)),),
-              Text(' Singup', style: TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157)),)
+              Text('Signgup', style: TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157)),)
             ],
            ),
         ],
