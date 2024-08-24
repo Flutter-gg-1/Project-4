@@ -19,12 +19,12 @@ class ItemPage extends StatelessWidget {
         itemCount: proLis.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
     
-            // how many cloum in one row
+            
             crossAxisCount: 2,
             childAspectRatio: 1.3,
-            // the x
+            
             crossAxisSpacing: 10,
-            // the y
+            
             mainAxisSpacing: 40),
         itemBuilder: (context, index) {
           return StackProductItem(

@@ -23,7 +23,7 @@ class _SingupPageState extends State<SingupPage> {
   String email = "";
 
   
-  @override
+  
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
 
   @override

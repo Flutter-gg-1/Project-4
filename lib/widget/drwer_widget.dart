@@ -32,7 +32,7 @@ class DrwerWidget extends StatelessWidget {
     
             const Spacer(flex: 1,),
             
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ButtonWidget(
