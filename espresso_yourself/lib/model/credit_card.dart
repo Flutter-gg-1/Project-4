@@ -8,7 +8,7 @@ class CreditCard {
 
 class Validations {
   static String? fullName(String value) {
-    final regex = RegExp(r'^[a-zA-Z]+$');
+    final regex = RegExp(r'^[a-zA-Z\s]+$');
     if (regex.hasMatch(value) || value.isEmpty) {
       // Valid email address
       return null;
