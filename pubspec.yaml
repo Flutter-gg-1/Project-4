@@ -74,6 +74,7 @@ flutter:
     - assest/image/mocha2.jpg
     - assest/image/latte1.jpg
     - assest/image/latte2.jpg
+    - assest/image/info.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

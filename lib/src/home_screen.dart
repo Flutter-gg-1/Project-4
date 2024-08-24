@@ -1,3 +1,4 @@
+import 'package:coffeshop_app/src/coffe_info.dart';
 import 'package:coffeshop_app/src/profile.dart';
 import 'package:coffeshop_app/widget/home_content.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
@@ -15,7 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<Widget> tabItems = const [
     HomeContent(),
-    Profile()
+    Profile(),
+    CoffeInfo()
   ];
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,14 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 30,
             ),
             title: const Text('Profile'),
+          ),
+          FlashyTabBarItem(
+            icon: const Icon(
+              Iconsax.info_circle_bold,
+              color: Colors.blueGrey,
+              size: 30,
+            ),
+            title: const Text('about us'),
           ),
         ],
       ),
