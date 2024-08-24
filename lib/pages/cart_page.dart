@@ -84,10 +84,10 @@ class _CartPageState extends State<CartPage> {
                                     GestureDetector(
                                       onTap: () {
                                         QuickAlert.show(
-                                            context: context,
-                                            type: QuickAlertType.success,
-                                            text: 'Thank you choosing us ',
-                                            widget: const Text("data"));
+                                          context: context,
+                                          type: QuickAlertType.success,
+                                          text: 'Thank you choosing us ',
+                                        );
                                         user1.didPurchase = true;
                                         user1.cart = [];
                                         setState(() {});

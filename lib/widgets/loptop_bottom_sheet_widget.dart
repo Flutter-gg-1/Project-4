@@ -114,6 +114,7 @@ class _LoptopBottomSheetState extends State<LoptopBottomSheetWidget> {
                       }
                       setState(() {
                         user1.cart.add(cartItem);
+                        Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Added to cart successfully'),

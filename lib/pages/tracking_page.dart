@@ -132,7 +132,7 @@ class _ShippingTrackerState extends State<ShippingTracker> {
               child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 150,
                 ),
                 SizedBox(

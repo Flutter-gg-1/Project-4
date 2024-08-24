@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       appBar: const MyAppBarWidget(),
       drawer: const Drawer(),
       body: DefaultTabController(
-        length: 5, // Number of tabs
+        length: 5,
         child: Column(
           children: [
             const TabBar(
@@ -33,50 +33,40 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: TabBarView(
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: HomeContainersWidget(laptops: laptops),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: HomeContainersWidget(laptops: laptops),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: HomeContainersWidget(
+                      laptops: laptops
+                          .where((laptop) => laptop.brand == "Apple")
+                          .toList(),
                     ),
                   ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: HomeContainersWidget(
-                        laptops: laptops
-                            .where((laptop) => laptop.brand == "Apple")
-                            .toList(),
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: HomeContainersWidget(
+                      laptops: laptops
+                          .where((laptop) => laptop.brand == "Asus")
+                          .toList(),
                     ),
                   ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: HomeContainersWidget(
-                        laptops: laptops
-                            .where((laptop) => laptop.brand == "Asus")
-                            .toList(),
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: HomeContainersWidget(
+                      laptops: laptops
+                          .where((laptop) => laptop.brand == "Huawei")
+                          .toList(),
                     ),
                   ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: HomeContainersWidget(
-                        laptops: laptops
-                            .where((laptop) => laptop.brand == "Huawei")
-                            .toList(),
-                      ),
-                    ),
-                  ),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: HomeContainersWidget(
-                        laptops: laptops
-                            .where((laptop) => laptop.brand == "MSI")
-                            .toList(),
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: HomeContainersWidget(
+                      laptops: laptops
+                          .where((laptop) => laptop.brand == "MSI")
+                          .toList(),
                     ),
                   ),
                 ],
