@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/faveorite_screen.dart';
 import 'package:shop_app/home_screen.dart';
-import 'package:shop_app/notification_screen.dart';
+import 'package:shop_app/cart_screen.dart';
 import 'package:shop_app/profile_screen.dart';
 
 class CurrentPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _MyHomePageState extends State<CurrentPage> {
   List pages = [
     const HomeScreen(),
     const FaveoriteScreen(),
-    const NotificationScreen(),
+    const CartScreen(),
     const ProfileScreen()
   ];
   @override
@@ -32,7 +32,7 @@ class _MyHomePageState extends State<CurrentPage> {
             currentNavIndex = index;
           });
         },
-        type: BottomNavigationBarType.fixed, // Fixed
+        type: BottomNavigationBarType.fixed,
         iconSize: 30,
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -41,11 +41,12 @@ class _MyHomePageState extends State<CurrentPage> {
             icon: Icon(Icons.home_filled),
             label: "home",
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "target"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: "profile"),
+              icon: Icon(Icons.favorite), label: "favorite"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), label: "settings")
+              icon: Icon(Icons.shopping_bag_rounded), label: "cart"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle), label: "account")
         ],
       ),
     );
