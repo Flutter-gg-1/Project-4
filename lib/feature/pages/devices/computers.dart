@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/all_file.dart';
 
 class Computers extends StatelessWidget {
   const Computers({super.key});
@@ -9,15 +10,21 @@ class Computers extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Computers'),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text('Computers'),
-              ],
+            myContainer(
+                imagePath: 'assets/images/dev/hp15s.png',
+                width: 1.3,
+                height: 2.5,
+                fit: null),
+            SizedBox(
+              height: getScreenSize(context).height / 15,
             ),
+            myContainer(
+                imagePath: 'assets/images/dev/hp15s.png',
+                width: 2.2,
+                height: 3.5),
           ],
         ),
       ),
