@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({super.key});
+  final bool fromDrawer;
+  const Profile({super.key, required this.fromDrawer});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -18,6 +19,11 @@ class _ProfileState extends State<Profile> {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
+            widget.fromDrawer == true
+                ? IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: const Icon(Icons.arrow_back_ios_new_rounded))
+                : const Text(''),
             Container(
               margin: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.25,

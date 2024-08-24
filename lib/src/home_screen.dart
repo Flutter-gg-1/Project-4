@@ -1,5 +1,6 @@
 import 'package:coffeshop_app/src/coffe_info.dart';
 import 'package:coffeshop_app/src/profile.dart';
+import 'package:coffeshop_app/widget/customdrawer.dart';
 import 'package:coffeshop_app/widget/home/home_content.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +17,17 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<Widget> tabItems = const [
     HomeContent(),
-    Profile(),
-    CoffeInfo()
+    Profile(
+      fromDrawer: false,
+    ),
+    CoffeInfo(
+      fromDrawer: false,
+    )
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: const CustomDrawer(),
       backgroundColor: Colors.white,
       bottomNavigationBar: FlashyTabBar(
         selectedIndex: _selectedIndex,

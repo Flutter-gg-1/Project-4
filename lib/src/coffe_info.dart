@@ -3,16 +3,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class CoffeInfo extends StatelessWidget {
-  const CoffeInfo({super.key});
+  final bool fromDrawer;
+  const CoffeInfo({super.key, required this.fromDrawer});
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 247, 230, 197),
       body: SafeArea(
         child: Stack(
           clipBehavior: Clip.none,
           children: [
+            fromDrawer==true? IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios_new_rounded)):const Text(''),
             Positioned(
                 top: MediaQuery.of(context).size.height * 0.3,
                 left: MediaQuery.of(context).size.width / 3.6,
@@ -79,17 +82,20 @@ class CoffeInfo extends StatelessWidget {
                           width: 30,
                         ),
                         IconButton(
-                            onPressed: () {}, icon: const Icon(Bootstrap.snapchat)),
+                            onPressed: () {},
+                            icon: const Icon(Bootstrap.snapchat)),
                         const SizedBox(
                           width: 30,
                         ),
                         IconButton(
-                            onPressed: () {}, icon: const Icon(Bootstrap.google)),
+                            onPressed: () {},
+                            icon: const Icon(Bootstrap.google)),
                         const SizedBox(
                           width: 30,
                         ),
                         IconButton(
-                            onPressed: () {}, icon: const Icon(Bootstrap.tiktok)),
+                            onPressed: () {},
+                            icon: const Icon(Bootstrap.tiktok)),
                       ],
                     ),
                   ],
