@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/utils/data/items_data.dart';
+import 'package:shopping_app/utils/navigation_heper.dart';
 
 import '../utils/item.dart';
 
@@ -16,11 +18,10 @@ class ItemScreen extends StatefulWidget {
 class _ItemScreenState extends State<ItemScreen> {
   bool isFavorite = false;
   bool isOrigColor = true;
-  double screenWidth = 0;
 
   @override
   void initState() {
-    screenWidth = MediaQuery.of(context).size.width;
+    isFavorite = favorite.contains(widget.item);
     super.initState();
   }
 
@@ -29,7 +30,16 @@ class _ItemScreenState extends State<ItemScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow[50],
-        leading: const BackButton(),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+              return const NavigationHelper(
+                index: 2,
+              );
+            }));
+          },
+        ),
         title: Text(
           'Jeem',
           style: TextStyle(
@@ -41,25 +51,26 @@ class _ItemScreenState extends State<ItemScreen> {
             clipBehavior: Clip.none,
             children: [
               const Icon(Icons.shopping_cart),
-              Positioned(
-                left: 7,
-                top: -7,
-                child: Container(
-                  height: 12,
-                  width: 12,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Colors.red),
-                  child: const Center(
-                      child: Text(
-                    '2',
-                    style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  )),
-                ),
-              )
+              if (cartItems != 0)
+                Positioned(
+                  left: 7,
+                  top: -7,
+                  child: Container(
+                    height: 12,
+                    width: 12,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: Colors.red),
+                    child: Center(
+                        child: Text(
+                      '$cartItems',
+                      style: const TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )),
+                  ),
+                )
             ],
           ),
           const SizedBox(
@@ -67,10 +78,13 @@ class _ItemScreenState extends State<ItemScreen> {
           ),
           InkWell(
               onTap: () {
-                setState(() {
-                  isFavorite = !isFavorite;
-                  // add to favorites
-                });
+                isFavorite = !isFavorite;
+                if (isFavorite) {
+                  favorite.add(widget.item);
+                } else {
+                  favorite.remove(widget.item);
+                }
+                setState(() {});
               },
               child: isFavorite
                   ? const Icon(
@@ -93,7 +107,7 @@ class _ItemScreenState extends State<ItemScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset(
                   'assets/images/background-main.jpg',
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -174,16 +188,20 @@ class _ItemScreenState extends State<ItemScreen> {
                             ),
                             onPressed: () {
                               if (widget.item.secondImagePath.isNotEmpty) {
-                                setState(() {
-                                  isOrigColor = !isOrigColor;
-                                });
+                                isOrigColor = !isOrigColor;
+                                setState(() {});
                               } else {
                                 showDialog(
                                     context: context,
                                     builder: (context) {
                                       return const AlertDialog(
-                                        content:
-                                            Text('Only one Color available'),
+                                        content: Text(
+                                          'Only one Color available',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold),
+                                        ),
                                       );
                                     });
                               }
@@ -194,34 +212,72 @@ class _ItemScreenState extends State<ItemScreen> {
                             ))
                       ],
                     ),
+                    const SizedBox(
+                      height: 50,
+                    ),
                     Text(
-                      widget.item.description,
+                      'Description\n${widget.item.description}',
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text(
-            '\$ ${widget.item.price.toStringAsFixed(2)}',
-            style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-          ElevatedButton(
-              style:
-                  ElevatedButton.styleFrom(backgroundColor: Colors.orange[700]),
-              onPressed: () {},
-              child: const Text(
-                'Add to Cart',
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ))
-        ],
+      bottomSheet: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            shape: BoxShape.rectangle,
+            gradient: LinearGradient(colors: [
+              Colors.yellow.withOpacity(0.2),
+              Colors.blueAccent.withOpacity(0.4),
+              Colors.yellow.withOpacity(0.2)
+            ])),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              '\$ ${widget.item.price.toStringAsFixed(2)}',
+              style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange[700]),
+                onPressed: () {
+                  if (widget.item.stock != 0) {
+                    cartItems++;
+                  } else {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            content: const Text(
+                              'Item out of stock!!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            actions: [
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Back'))
+                            ],
+                          );
+                        });
+                  }
+                  setState(() {});
+                },
+                child: const Text(
+                  'Add to Cart',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ))
+          ],
+        ),
       ),
     );
   }

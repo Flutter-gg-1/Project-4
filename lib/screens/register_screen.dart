@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/screens/login_screen.dart';
+import 'package:shopping_app/utils/data/user_data.dart';
 import 'package:shopping_app/widgets/login_textfield.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -40,7 +42,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
           Positioned(
-            top: 200,
+            top: 10,
+            left: MediaQuery.of(context).size.width/5,
+            child: Text('Registration', style: TextStyle(fontSize: 36, color: Colors.green[700], fontWeight: FontWeight.bold),)),
+          Positioned(
+            top: 100,
             left: 50,
             child: Form(
               key: key,
@@ -63,16 +69,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       hint: 'Password Confirmation',
                       controller: confirmationController,
                       password: passwordController.text),
+
+                      SizedBox(height: 40,),
                   ElevatedButton(
+                     style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.black,
+                      elevation: 20,
+                      surfaceTintColor: Colors.green,
+                      fixedSize: Size(150, 50),
+                    backgroundColor: const Color.fromARGB(255, 236, 202, 169)),
                       onPressed: () {
                         if (key.currentState!.validate()) {
-                          setState(() {
-                            // save user info
-                            print('Success');
-                          });
+                          users['users']!.add([
+                            nameController.text,
+                            passwordController.text,
+                            emailController.text
+                          ]);
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
+                          setState(() {});
                         }
                       },
-                      child: Text('Register'))
+                      child: Text('Register',
+                      style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),))
                 ],
               ),
             ),
