@@ -11,21 +11,19 @@ class Computers extends StatelessWidget {
         title: const Text('Computers'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            myContainer(
-                imagePath: 'assets/images/dev/hp15s.png',
-                width: 1.3,
-                height: 2.5,
-                fit: null),
-            SizedBox(
-              height: getScreenSize(context).height / 15,
-            ),
-            myContainer(
-                imagePath: 'assets/images/dev/hp15s.png',
-                width: 2.2,
-                height: 3.5),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              myContainer(
+                  imagePath: 'assets/images/dev/hp15s.png',
+                  width: 1.3,
+                  height: 2.79,
+                  fit: null),
+              SizedBox(
+                height: getScreenSize(context).height / 5,
+              ),
+            ],
+          ),
         ),
       ),
     );
