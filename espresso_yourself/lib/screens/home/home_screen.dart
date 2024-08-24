@@ -1,6 +1,7 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:espresso_yourself/screens/home/subviews/category_tab_view.dart';
+import 'package:espresso_yourself/screens/home/subviews/home_drawer.dart';
 import 'package:flutter/material.dart';
 import '../../extensions/color_ext.dart';
 import '../../extensions/image_ext.dart';
@@ -28,6 +29,10 @@ class _MyHomePageState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        width: MediaQuery.of(context).size.width / 2,
+        child: HomeDrawer(),
+      ),
       backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Padding(
@@ -84,9 +89,12 @@ class ProfileCard extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: C.accent,
               radius: 30.0,
-              child: Image(
-                image: user.avatar,
-                fit: BoxFit.contain,
+              child: InkWell(
+                onTap: () => Scaffold.of(context).openDrawer(),
+                child: Image(
+                  image: user.avatar,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ),
