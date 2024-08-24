@@ -20,7 +20,7 @@ class Computers extends StatelessWidget {
                   height: 2.79,
                   fit: null),
               Padding(
-                padding: EdgeInsets.all(getScreenSize(context).height / 65),
+                padding: EdgeInsets.all(getScreenSize(context).height / 85),
                 child: Card(
                   child: Container(
                     width: getScreenSize(context).width / 1.3,
@@ -42,7 +42,7 @@ class Computers extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: getScreenSize(context).height / 5,
+                height: getScreenSize(context).height / 35,
               ),
               myContainer(
                   imagePath: 'assets/images/dev/hp15s.png',
