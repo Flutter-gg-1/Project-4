@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
-import '../custom_paint.dart/home_screen_background.dart';
+import '../custom_paint/home_screen_background.dart';
 import '../widgets/alert_dialog_widget.dart';
 import '../widgets/card_widget.dart';
 import '../widgets/drawer_widget.dart';
@@ -177,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width - 60,
                             child: const CardWidget(
-                              photPath: 'assets/Pink Watercolor Floral Simple Thank You Card.png',
+                              photPath: 'assets/graduation_images/graduation1.png',
                               price: '5SR',
                               text: 'Graduation card',
                             ),

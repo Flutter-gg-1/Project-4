@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'custom_paint.dart/background_custom_shape.dart';
-import 'custom_paint.dart/logo.dart';
+import 'custom_paint/background_custom_shape.dart';
+import 'custom_paint/logo.dart';
 import 'registration_screens/register.dart';
 
 class WelcomeScreen extends StatelessWidget {

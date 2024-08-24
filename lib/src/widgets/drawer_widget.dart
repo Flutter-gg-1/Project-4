@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../catogories_screens/graduation_screen.dart';
 import '../registration_screens/register.dart';
 import 'alert_dialog_widget.dart';
 
@@ -26,9 +27,9 @@ class DrawerWidget extends StatelessWidget {
               leading: const Icon(Icons.celebration_outlined),
               title: const Text("Graduation"),
               onTap: () {
-                showDialog(context: context, builder: (context){
-                            return const AlertDialogWidget();
-                          }); 
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return GraduationScreen();
+                })); 
               },
             ),
             ListTile(

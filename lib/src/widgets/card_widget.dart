@@ -29,23 +29,33 @@ class CardWidget extends StatelessWidget {
                              ListTile(
                               title: Text(
                                 text,
-                                style: TextStyle(fontSize: 20),
+                                style: const TextStyle(fontSize: 20),
                               ),
                               trailing: Text(
                                 price,
-                                style: TextStyle(fontSize: 20),
+                                style: const TextStyle(fontSize: 20),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 250),
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xff582277),
-                                    minimumSize:
-                                        Size(20, 20)),
-                                child: const Icon(Icons.shopping_cart_outlined, color: Colors.white,)
-                              ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff582277),
+                                      minimumSize:
+                                          const Size(20, 20)),
+                                  child: const Icon(Icons.shopping_cart_outlined, color: Colors.white,)
+                                ),
+                                ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff582277),
+                                      minimumSize:
+                                          const Size(20, 20)),
+                                  child: const Icon(Icons.favorite_border_rounded, color: Colors.white,)
+                                ),
+                              ],
                             )
                           ],
                         ),
