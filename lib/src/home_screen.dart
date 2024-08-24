@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping/global.dart';
 import 'package:shopping/widget/product_view.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
+import 'package:clay_containers/clay_containers.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,8 +53,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: isLoading
                         ? Shimmer(
                             child: const Center(
-                            child: Text("Loading"),
-                          ))
+                              child: ClayContainer(
+                                color: Color(0xFFF2F2F2),
+                                child: Padding(
+                                  padding: EdgeInsets.all(20),
+                                  child: ClayText("Loading",
+                                      emboss: true, size: 40),
+                                ),
+                              ),
+                            ),
+                          )
                         : TabBarView(
                             children: [
                               ProductView(products: cloths),

@@ -1,3 +1,4 @@
+import 'package:clay_containers/clay_containers.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/global.dart';
 
@@ -55,6 +56,14 @@ class _CartScreenState extends State<CartScreen> {
                   ))
             ],
           )
-        : const Center(child: Text("the Cart is empty"));
+        : const Center(
+            child: ClayContainer(
+              color: Color(0xFFF2F2F2),
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: ClayText("The cart is empty", emboss: true, size: 40),
+              ),
+            ),
+          );
   }
 }
