@@ -15,7 +15,7 @@ class HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 4, vsync: this);
+    tabController = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -47,6 +47,7 @@ class HomeScreenState extends State<HomeScreen>
               buildFloatingTab('Sofa', 1),
               buildFloatingTab('Candle', 2),
               buildFloatingTab('Table', 3),
+               buildFloatingTab('Lamp', 4),
             ],
           ),
         ),
@@ -77,7 +78,7 @@ class HomeScreenState extends State<HomeScreen>
                 );
               },
             ),
-            // Add more items here if needed
+          
           ],
         ),
       ),
@@ -90,6 +91,7 @@ class HomeScreenState extends State<HomeScreen>
             ProductGridView(category: 'Sofa'),
             ProductGridView(category: 'Candle'),
             ProductGridView(category: 'Table'),
+            ProductGridView(category: 'Lamp'),
           ],
         ),
       ),
