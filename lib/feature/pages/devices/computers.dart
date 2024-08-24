@@ -19,11 +19,27 @@ class Computers extends StatelessWidget {
                   width: 1.3,
                   height: 2.79,
                   fit: null),
-              SizedBox(height: getScreenSize(context).height / 45),
-              const Text(
-                'ComputersComputersComputersComputersComputersComputersComputersComputersComputersComputers',
-                style: TextStyle(fontSize: 20),
-                textAlign: TextAlign.center,
+              Padding(
+                padding: EdgeInsets.all(getScreenSize(context).height / 65),
+                child: Card(
+                  child: Container(
+                    width: getScreenSize(context).width / 1.3,
+                    height: getScreenSize(context).height / 9.5,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    child: ListTile(
+                      onTap: () {
+                        print('tapped');
+                      },
+                      title: const Text('hp laptop 15.6 inch'),
+                      subtitle: const Text('Price: 2000 RS'),
+                      leading: const Icon(Icons.computer),
+                      trailing: const Icon(Icons.add_shopping_cart),
+                    ),
+                  ),
+                ),
               ),
               SizedBox(
                 height: getScreenSize(context).height / 5,
