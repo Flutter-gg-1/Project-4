@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/globals/app_colors.dart';
 import 'package:shopping_app/models/user.dart';
+import 'package:shopping_app/screens/main_screen.dart';
 
 class AppDrawer extends StatefulWidget {
   final User user;
@@ -39,7 +40,11 @@ class _AppDrawerState extends State<AppDrawer> {
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: thirdColor),
             width: 150,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context){
+                  return MainScreen();
+                }), (predicate)=>false);
+              },
               child: Text("Sign Out",style: GoogleFonts.poppins(color: mainColor, fontSize: 16))
             ),
           ),

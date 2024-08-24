@@ -126,7 +126,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
                         builder: (context){
                           return const MainScreen();
-                        }), (Route<dynamic> route) => false);
+                        }), (predicate) => false);
                       }
                     else {
                       showDialog(

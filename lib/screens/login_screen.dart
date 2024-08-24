@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushAndRemoveUntil(context,MaterialPageRoute(
                           builder: (context) {return UserScreenNavigator(currentUser: user);}
                           ),
-                          (Route<dynamic> route) => false
+                          (predicate) => false
                         );
                       }
                     }

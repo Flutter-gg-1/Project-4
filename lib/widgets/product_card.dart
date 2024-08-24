@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text("${product.price}SR", style: GoogleFonts.poppins(
+              Text("${product.price} SR", style: GoogleFonts.poppins(
                 color: Colors.white,
                 fontSize: 20,
               ),),

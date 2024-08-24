@@ -26,8 +26,21 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         length: sections.length,
         child: Column(
           children: [
-            SizedBox(height: 30),
-            TabBar(tabs: [Text("Food"), Text("Drinks"), Text("T-Shirts"),Text("Electronics")]),
+            const SizedBox(height: 30),
+            TabBar(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              labelStyle: TextStyle(color: mainColor),
+              indicatorColor: mainColor,
+              labelPadding: EdgeInsets.symmetric(vertical: 10),
+              onTap: (value) => setState(() {currentSection=value;}),
+              tabs: List.generate(sections.length, (index){
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: currentSection==index ? thirdColor : Colors.transparent),
+                  child: Text(sections[index], style: GoogleFonts.poppins(fontWeight: FontWeight.w500))
+                );
+              }),
+            ),
             Expanded(
               child: TabBarView(
                 children: List.generate(sections.length, (index) {
@@ -39,7 +52,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               ),
             )
           ],
-          )
+        )
       ),
     );
   }
