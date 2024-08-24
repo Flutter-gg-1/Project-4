@@ -12,7 +12,7 @@ class AppHelper {
   static double getAllAmountItems() {
     double sum = 0;
     for (var element in myCart) {
-      sum += element.price;
+      sum += element.price * element.qnt;
     }
     return sum;
   }

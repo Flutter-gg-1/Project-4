@@ -59,14 +59,29 @@ class _ProductScreenState extends State<ProductScreen> {
                             color: Colors.white,
                           ),
                         )),
-                    const Positioned(
+                    Positioned(
                         top: 40,
                         right: 10,
                         child: LikeButton(
                           likeCount: 14,
+                          countBuilder: (likeCount, isLiked, text) {
+                            return Text(
+                              text,
+                              style: TextStyle(
+                                  color: isLiked ? Colors.white : Colors.grey),
+                            );
+                          },
+                          likeBuilder: (isLiked) {
+                            return Icon(
+                              isLiked
+                                  ? Icons.favorite
+                                  : Icons.favorite_border_outlined,
+                              color: isLiked ? Colors.redAccent : Colors.white,
+                            );
+                          },
                         )),
                     Positioned(
-                        top: 100,
+                        top: 105,
                         right: 90,
                         child: RotationTransition(
                           turns: const AlwaysStoppedAnimation(-30 / 360),
@@ -103,6 +118,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   widget.itemModel.details,
+                  maxLines: 6,
                   style: const TextStyle(color: Colors.black38),
                 ),
               ),

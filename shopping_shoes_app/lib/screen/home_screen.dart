@@ -178,83 +178,109 @@ class _HomeScreenState extends State<HomeScreen> {
                                       borderRadius: BorderRadius.circular(20),
                                       color: const Color(0xff4c77cf))),
                             )
-                          : Container(
-                              margin: const EdgeInsets.all(30),
-                              width: size.width * 0.4,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.white,
-                              ),
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    top: 60,
-                                    left: 30,
-                                    child: RotationTransition(
-                                      turns: const AlwaysStoppedAnimation(
-                                          -20 / 360),
-                                      child: Image.asset(
-                                        model.img,
-                                        width: 100,
+                          : GestureDetector(
+                              onTap: () {
+                                var route = MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        ProductScreen(
+                                          itemModel: model,
+                                        ));
+                                Navigator.of(context).push(route);
+
+                                setState(() {
+                                  bgProductDetailsView = model.modelColor;
+                                });
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.all(30),
+                                width: size.width * 0.4,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      top: 60,
+                                      left: 30,
+                                      child: RotationTransition(
+                                        turns: const AlwaysStoppedAnimation(
+                                            -20 / 360),
+                                        child: Image.asset(
+                                          model.img,
+                                          width: 100,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  const Positioned(
-                                    right: 10,
-                                    child: LikeButton(),
-                                  ),
-                                  Container(
-                                    width: 20,
-                                    height: 60,
-                                    decoration: const BoxDecoration(
-                                        color: Colors.red,
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(20))),
-                                    child: const RotatedBox(
-                                      quarterTurns: -1,
-                                      child: Text(
-                                        "New",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                        textAlign: TextAlign.center,
+                                    Positioned(
+                                      right: 4,
+                                      child: LikeButton(
+                                        likeBuilder: (isTapped) {
+                                          return Icon(
+                                            isTapped
+                                                ? Icons.favorite
+                                                : Icons
+                                                    .favorite_border_outlined,
+                                            color: isTapped
+                                                ? Colors.redAccent
+                                                : Colors.grey,
+                                          );
+                                        },
                                       ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    bottom: 35,
-                                    left: 25,
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          width: 120,
-                                          child: Text(
-                                            "${model.name} ${model.model}",
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                color: model.modelColor,
-                                                fontWeight: FontWeight.bold),
-                                            textAlign: TextAlign.center,
+                                    Container(
+                                      width: 20,
+                                      height: 60,
+                                      decoration: const BoxDecoration(
+                                          color: Colors.red,
+                                          borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(20))),
+                                      child: const RotatedBox(
+                                        quarterTurns: -1,
+                                        child: Text(
+                                          "New",
+                                          style: TextStyle(
+                                            color: Colors.white,
                                           ),
+                                          textAlign: TextAlign.center,
                                         ),
-                                        const SizedBox(
-                                          height: 5,
-                                        ),
-                                        SizedBox(
-                                          width: 120,
-                                          child: Text(
-                                            "${model.price} SAR",
-                                            style: TextStyle(
-                                                fontSize: 10,
-                                                color: model.modelColor,
-                                                fontWeight: FontWeight.bold),
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        ),
-                                      ],
+                                      ),
                                     ),
-                                  )
-                                ],
+                                    Positioned(
+                                      bottom: 35,
+                                      left: 25,
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            width: 120,
+                                            child: Text(
+                                              "${model.name} ${model.model}",
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: model.modelColor,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 5,
+                                          ),
+                                          SizedBox(
+                                            width: 120,
+                                            child: Text(
+                                              "${model.price} SAR",
+                                              style: TextStyle(
+                                                  fontSize: 10,
+                                                  color: model.modelColor,
+                                                  fontWeight: FontWeight.bold),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             );
                     }),
@@ -376,11 +402,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style: AppThemes.homeProductName,
                                 ),
                               ),
-                              const Positioned(
-                                right: 50,
-                                top: 8,
-                                child: LikeButton(),
-                              ),
                               Positioned(
                                 left: 10,
                                 top: 40,
@@ -417,10 +438,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Colors.white,
                                 ),
                               ),
-                              const Positioned(
+                              Positioned(
                                 right: 50,
                                 top: 8,
-                                child: LikeButton(),
+                                child: LikeButton(
+                                  likeBuilder: (isLiked) {
+                                    return Icon(
+                                      isLiked
+                                          ? Icons.favorite
+                                          : Icons.favorite_border_outlined,
+                                      color: isLiked
+                                          ? Colors.redAccent
+                                          : Colors.white,
+                                    );
+                                  },
+                                ),
                               ),
                             ],
                           ),

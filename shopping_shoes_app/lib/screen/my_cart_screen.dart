@@ -10,13 +10,7 @@ class MyCartScreen extends StatefulWidget {
 }
 
 class _MyCartScreenState extends State<MyCartScreen> {
-  int lblCount = 1;
-  @override
-  void initState() {
-    // TODO: implement initState
-    print(myCart);
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +107,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                                             myCart[index].qnt--,
                                                           }
                                                         : myCart[index].qnt = 1;
+
                                                     setState(() {});
                                                   },
                                                   child: Container(
@@ -161,13 +156,24 @@ class _MyCartScreenState extends State<MyCartScreen> {
                     : const Center(
                         child:
                             Text("You have not added anything to the cart"))),
-            Divider(),
+            const Divider(),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Total"),
-                Text("${AppHelper.getAllAmountItems()} SAR")
+                const Text(
+                  "Total",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                Text("${AppHelper.getAllAmountItems()} SAR",
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold))
               ],
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Container(
               width: size.width,
