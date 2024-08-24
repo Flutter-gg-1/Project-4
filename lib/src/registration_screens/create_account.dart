@@ -124,6 +124,7 @@ class CreateAccount extends StatelessWidget {
                   onPressed: () {
                     if(_formKey.currentState?.validate() ?? false){
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
+                      
                       return const BottomNavigationBarScreen();
                     }));}
                   },

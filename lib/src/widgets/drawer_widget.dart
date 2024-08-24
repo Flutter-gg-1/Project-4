@@ -11,11 +11,11 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(
-            child: Center(child: Text("Menu", style: TextStyle(fontSize: 22),))),
+             const DrawerHeader(
+            child: Center(child: Text("Categories", style: TextStyle(fontSize: 22),))),
             ListTile(
-              leading: const Icon(Icons.my_library_books_outlined),
-              title: const Text("My orders"),
+              leading: const Icon(Icons.event_outlined),
+              title: const Text("Events"),
               onTap: () {
                 showDialog(context: context, builder: (context){
                             return const AlertDialogWidget();
@@ -23,8 +23,8 @@ class DrawerWidget extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.my_library_books_outlined),
-              title: const Text("Billing details"),
+              leading: const Icon(Icons.celebration_outlined),
+              title: const Text("Graduation"),
               onTap: () {
                 showDialog(context: context, builder: (context){
                             return const AlertDialogWidget();
@@ -32,8 +32,8 @@ class DrawerWidget extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text("Settings"),
+              leading: const Icon(Icons.celebration_outlined),
+              title: const Text("Party"),
               onTap: () {
                 showDialog(context: context, builder: (context){
                             return const AlertDialogWidget();
@@ -41,8 +41,8 @@ class DrawerWidget extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.contact_support_outlined),
-              title: const Text("About us"),
+              leading: const Icon(Icons.celebration_outlined),
+              title: const Text("Wedding"),
               onTap: () {
                 showDialog(context: context, builder: (context){
                             return const AlertDialogWidget();
