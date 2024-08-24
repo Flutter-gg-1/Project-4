@@ -14,20 +14,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.colorWhite,
       appBar: AppBar(
         title: Row(
           children: [
             Text("Device Shop",
                 style: TextStyle(
                   fontSize: getScreenSize(context).height / 30,
-                  color: Colors.black,
+                  color: MyColors.colorBlack,
                 )),
             const SizedBox(width: 25),
-            const Icon(Icons.devices, color: Colors.black, size: 40),
+            Icon(Icons.devices, color: MyColors.colorBlack, size: 40),
           ],
         ),
         centerTitle: false,
-        backgroundColor: Colors.white,
+        backgroundColor: MyColors.colorWhite,
         actions: [
           IconButton(
               onPressed: () {
@@ -37,8 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 );
               },
-              icon: const Icon(Icons.support_agent,
-                  color: Colors.black, size: 40)),
+              icon: Icon(Icons.support_agent,
+                  color: MyColors.colorBlack, size: 40)),
         ],
       ),
       drawer: const MyDrawer(),
@@ -50,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        backgroundColor: Colors.black,
+        selectedItemColor: MyColors.colorWhite,
+        backgroundColor: MyColors.colorBlack,
         currentIndex: bottomIndex,
         onTap: (index) {
           setState(() {
@@ -61,27 +62,22 @@ class _HomeScreenState extends State<HomeScreen> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {
-                  print('home');
-                },
-                icon: const Icon(Icons.home, color: Colors.white)),
+                onPressed: () {},
+                icon: Icon(Icons.home, color: MyColors.colorWhite)),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {
-                  print('tapped');
-                },
-                icon: const Icon(Icons.shopping_cart_outlined,
-                    color: Colors.white)),
+                onPressed: () {},
+                icon: Icon(Icons.shopping_cart_outlined,
+                    color: MyColors.colorWhite)),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {
-                  print('tapped');
-                },
-                icon: const Icon(Icons.person_3_outlined, color: Colors.white)),
+                onPressed: () {},
+                icon:
+                    Icon(Icons.person_3_outlined, color: MyColors.colorWhite)),
             label: '',
           ),
         ],

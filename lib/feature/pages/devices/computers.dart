@@ -7,8 +7,11 @@ class Computers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.colorWhite,
       appBar: AppBar(
         title: const Text('Computers'),
+        centerTitle: true,
+        backgroundColor: MyColors.colorWhite,
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -27,16 +30,13 @@ class Computers extends StatelessWidget {
                     height: getScreenSize(context).height / 9.5,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
+                      color: MyColors.colorWhite,
                     ),
-                    child: ListTile(
-                      onTap: () {
-                        print('tapped');
-                      },
-                      title: const Text('hp laptop 15.6 inch'),
-                      subtitle: const Text('Price: 2000 RS'),
-                      leading: const Icon(Icons.computer),
-                      trailing: const Icon(Icons.add_shopping_cart),
+                    child: const ListTile(
+                      title: Text('hp laptop 15.6 inch'),
+                      subtitle: Text('Price: 2000 RS'),
+                      leading: Icon(Icons.computer),
+                      trailing: Icon(Icons.add_shopping_cart),
                     ),
                   ),
                 ),
