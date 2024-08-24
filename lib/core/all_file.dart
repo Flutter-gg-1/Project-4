@@ -1,4 +1,3 @@
-export 'comb/action.dart';
 export 'common/common.dart';
 export 'common/app_color.dart';
 export '../feature/main_screen/shopping.dart';

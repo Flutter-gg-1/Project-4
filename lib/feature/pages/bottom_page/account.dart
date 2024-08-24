@@ -8,23 +8,51 @@ class PersonAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.colorWhite,
-      body: Column(
-        children: [
-          const SizedBox(height: 100),
-          Image(
-            image: const AssetImage('assets/images/intro/int1.png'),
-            width: getScreenSize(context).width / 2 + 150,
-          ),
-          const SizedBox(height: 30),
-          Text(
-            'Device Shop Buying and selling electronic devices',
-            style: TextStyle(
-              fontSize: getScreenSize(context).width / 20,
+      body: Center(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                const CircleAvatar(
+                  radius: 100,
+                  backgroundColor: Colors.black,
+                ),
+                Positioned(
+                  top: getScreenSize(context).height / 2 - 400,
+                  left: getScreenSize(context).width / 2 - 175,
+                  child: const CircleAvatar(
+                    radius: 80,
+                    backgroundImage: NetworkImage(
+                        'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png'),
+                  ),
+                ),
+              ],
             ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 30),
-        ],
+            SizedBox(height: getScreenSize(context).height / 15),
+            Card(
+              child: Container(
+                width: getScreenSize(context).width / 0.88,
+                height: getScreenSize(context).height / 4,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: MyColors.colorBlack),
+                  color: MyColors.colorWhite,
+                ),
+                child: Flexible(
+                  child: ListTile(
+                    title: const Text('Name: Abdullah Mukhlef Al-Shammari'),
+                    subtitle: Row(
+                      children: [
+                        const Text('User: Abu_Mukhlef'),
+                        SizedBox(width: getScreenSize(context).width / 45),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
