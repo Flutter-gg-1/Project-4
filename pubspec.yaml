@@ -7,8 +7,10 @@ environment:
   sdk: ^3.5.1
 
 dependencies:
+  floating_bottom_navigation_bar: ^1.5.2
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +19,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+  - assets/
