@@ -160,7 +160,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (emailController.text == widget.data["email"] &&
                         passController.text == widget.data["password"]) {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const CustomBottomNavigationBar(),
+                        builder: (context) => CustomBottomNavigationBar(
+                        userData: widget.data,
+                      ),
                       ));
                     }
                     else {

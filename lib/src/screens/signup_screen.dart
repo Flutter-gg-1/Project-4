@@ -78,7 +78,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration(
-                              prefixIcon: Icon( FluentIcons.person_12_filled,
+                              prefixIcon: Icon(FluentIcons.person_12_filled,
                                   color: ColorsConstant.purple),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
@@ -117,10 +117,9 @@ class _SignupScreenState extends State<SignupScreen> {
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly,
                           ],
-                          validator: (value) =>
-                              value!.length != 10
-                                  ? "Please enter a valid phone number"
-                                  : null,
+                          validator: (value) => value!.length != 10
+                              ? "Please enter a valid phone number"
+                              : null,
                         ),
 
                         //Email TextFormField
@@ -142,7 +141,6 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               hintText: "Email",
                               hintStyle: GoogleFonts.abhayaLibre()),
-                              
                           validator: (value) =>
                               !value!.contains("@") || value.length < 5
                                   ? "Please enter a valid Email"

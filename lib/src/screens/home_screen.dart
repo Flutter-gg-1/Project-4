@@ -6,11 +6,11 @@ import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/widgets/drawer_bulid.dart';
 import 'package:shopping_app/item_card.dart';
 import 'package:shopping_app/src/widgets/new_collections_container.dart';
-import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:shopping_app/src/widgets/shimmer_container.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final Map<String, String> userData;
+  const HomeScreen({super.key,  required this.userData});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -168,3 +168,20 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+/* Text(
+              "Welcome, ${userData["name"]}!", // Display user name
+              style: GoogleFonts.abhayaLibre(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: ColorsConstant.darkPurple,
+              ),
+            ),
+            Text(
+              'Email: ${userData["email"]}', // Display user email
+              style: GoogleFonts.abhayaLibre(
+                fontSize: 20,
+                color: ColorsConstant.darkPurple,
+              ),
+            ), */
