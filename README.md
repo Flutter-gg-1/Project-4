@@ -1,7 +1,7 @@
 
 
 
-# Coffee shop app
+# Coffee shop app ☕️
 
 ## Overview
 
@@ -37,6 +37,7 @@ The purpose of this app is to enhance the customer experience at a coffee shop b
 ### External Packages
 - **flutter_flip_card**: A widget that does transition between two children in a flipping manner..
 - **flashy_tab_bar2**: Nice animated bottom tab bar.
+
 
 
 
