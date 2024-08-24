@@ -2,8 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/src/helper/colors.dart';
-import 'package:shopping_app/src/screens/home_screen.dart';
-import 'package:shopping_app/bottom_navigation_bar.dart';
+import 'package:shopping_app/src/bottom_navigation_bar.dart';
 
 class LoginScreen extends StatefulWidget {
   final Map<String, String> data;
@@ -138,17 +137,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               }
                               return null;
                             }),
-                           
-              Padding(
-                padding: const EdgeInsets.only(left: 170),
-                child: Text(
-                  "Forgot Password?",
-                  style: GoogleFonts.abhayaLibre(
-                      color: ColorsConstant.darkPurple,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-              ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(left: 170),
+                          child: Text(
+                            "Forgot Password?",
+                            style: GoogleFonts.abhayaLibre(
+                                color: ColorsConstant.darkPurple,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ),
                       ])),
             ),
             const SizedBox(
@@ -161,22 +160,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         passController.text == widget.data["password"]) {
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => CustomBottomNavigationBar(
-                        userData: widget.data,
-                      ),
-                      ));
-                    }
-                    else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                          'Invalid email or password',
-                          style: TextStyle(color: Colors.red),
+                          userData: widget.data,
                         ),
-                        duration: Duration(seconds: 3),
-                      ),
-                    );
+                      ));
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Invalid email or password',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          duration: Duration(seconds: 3),
+                        ),
+                      );
+                    }
                   }
-                  } 
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorsConstant.purple,
@@ -191,7 +189,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.bold,
                       color: ColorsConstant.darkPurple),
                 )),
-                
           ],
         ),
       ),

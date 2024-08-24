@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//custome colors
 class ColorsConstant {
   static Color darkPurple = const Color(0xff674188);
   static Color purple = const Color(0xffC8A1E0);

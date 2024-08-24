@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/helper/shape.dart';
-
+// this class is card for each flower it will be used in different screens
 class ItemCard extends StatefulWidget {
   final String image;
   final String title;
@@ -33,13 +33,12 @@ class _ItemCardState extends State<ItemCard> {
         Container(
           width: 220,
           decoration: BoxDecoration(
-              color: ColorsConstant.violate,
-              borderRadius: BorderRadius.circular(10),
-              ),
-              
+            color: ColorsConstant.violate,
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
 
-        //wishList heart 
+        //wishList heart
         Positioned(
           top: 10,
           left: 10,
@@ -58,7 +57,7 @@ class _ItemCardState extends State<ItemCard> {
             },
           ),
         ),
-        
+
         //shape
         Positioned(
             top: 120,
@@ -70,15 +69,15 @@ class _ItemCardState extends State<ItemCard> {
 
         //image
         Positioned(
-          top: 40,
+            top: 40,
             left: 30,
-          child: 
-        SizedBox( 
-          height: 160,
-          width: 160,
-          child: Image.asset(widget.image, fit: BoxFit.contain,))
-        ),
-
+            child: SizedBox(
+                height: 160,
+                width: 160,
+                child: Image.asset(
+                  widget.image,
+                  fit: BoxFit.contain,
+                ))),
 
         //Title
         Positioned(
@@ -121,10 +120,10 @@ class _ItemCardState extends State<ItemCard> {
           ),
         ),
 
-        //cart 
+        //cart
         Positioned(
           bottom: 0,
-          left: 160,
+          left: 150,
           child: IconButton(
             icon: Icon(
               isPressedCart

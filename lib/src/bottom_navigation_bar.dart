@@ -13,14 +13,13 @@ class CustomBottomNavigationBar extends StatefulWidget {
       _CustomBottomNavigationBarState();
 }
 
+//bottom navigation bar class with 2 icons
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int _currentIndex = 0;
   late final List<Widget> screens;
-
   @override
   void initState() {
     super.initState();
-    // Initialize screens here
     screens = [
       HomeScreen(userData: widget.userData),
       ProfileScreen(userData: widget.userData),

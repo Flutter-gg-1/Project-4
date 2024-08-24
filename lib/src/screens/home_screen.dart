@@ -1,16 +1,17 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shopping_app/src/helper/Lists.dart';
+import 'package:shopping_app/src/helper/lists.dart';
 import 'package:shopping_app/src/helper/colors.dart';
+import 'package:shopping_app/src/screens/all_products_screen.dart';
 import 'package:shopping_app/src/widgets/drawer_bulid.dart';
-import 'package:shopping_app/item_card.dart';
+import 'package:shopping_app/src/item_card.dart';
 import 'package:shopping_app/src/widgets/new_collections_container.dart';
 import 'package:shopping_app/src/widgets/shimmer_container.dart';
 
 class HomeScreen extends StatefulWidget {
   final Map<String, String> userData;
-  const HomeScreen({super.key,  required this.userData});
+  const HomeScreen({super.key, required this.userData});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -27,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -83,37 +83,36 @@ class _HomeScreenState extends State<HomeScreen> {
         scrollDirection: Axis.vertical,
         children: [
           //new colliction List view
-          isLoading?
-          SizedBox(
-            height: 420,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 30, horizontal: 20),
-                    child: shimmerCollectionsContainer(
-                    ),
-                  );
-                }),
-          ):
-          SizedBox(
-            height: 420,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 30, horizontal: 20),
-                    child: newCollectionsContainer(
-                      image: collectionItems[index]['image'],
-                      text: collectionItems[index]['text']!,
-                    ),
-                  );
-                }),
-          ),
+          isLoading
+              ? SizedBox(
+                  height: 420,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 20),
+                          child: shimmerCollectionsContainer(),
+                        );
+                      }),
+                )
+              : SizedBox(
+                  height: 420,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 30, horizontal: 20),
+                          child: newCollectionsContainer(
+                            image: collectionItems[index]['image'],
+                            text: collectionItems[index]['text']!,
+                          ),
+                        );
+                      }),
+                ),
 
           //Recommended
           Padding(
@@ -129,7 +128,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: ColorsConstant.darkPurple),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AllProductsScreen(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "See All",
                     style: GoogleFonts.abhayaLibre(
@@ -155,8 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 30, horizontal: 20),
                       child: ItemCard(
-                        image: item['image'] ??
-                            '', 
+                        image: item['image'] ?? '',
                         title: item['title'] ?? '',
                         subtitle: item['subtitle'] ?? '',
                         price: item['price'] ?? '',
@@ -168,20 +173,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-/* Text(
-              "Welcome, ${userData["name"]}!", // Display user name
-              style: GoogleFonts.abhayaLibre(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                color: ColorsConstant.darkPurple,
-              ),
-            ),
-            Text(
-              'Email: ${userData["email"]}', // Display user email
-              style: GoogleFonts.abhayaLibre(
-                fontSize: 20,
-                color: ColorsConstant.darkPurple,
-              ),
-            ), */
