@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/pages/home_page.dart';
 import 'package:shopping_app/shared.dart';
-
-// import 'package:my_text_field/pages/MyTextField.dart';
+import 'package:shopping_app/widgets/nav_bar_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,11 +24,20 @@ class _LoginPageState extends State<LoginPage> {
             key: _formKey,
             child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(
+                      width: 250,
+                      child: Image.asset("assets/general/logo.png")),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   const Text(
                     "Login",
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(
+                        fontSize: 30,
+                        color: Color(0xff5355ca),
+                        fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
                     height: 20,
@@ -88,13 +95,12 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 30,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       if (_formKey.currentState!.validate()) {
-                        bool userFound =
-                            false; // Flag to check if user is found
+                        bool userFound = false;
 
                         for (var user in users) {
                           if (email == user.email &&
@@ -103,15 +109,14 @@ class _LoginPageState extends State<LoginPage> {
                             loggedIn = user;
                             Navigator.of(context).push(
                               MaterialPageRoute(builder: (context) {
-                                return const HomePage();
+                                return const NavBarWidget();
                               }),
                             );
-                            break; // Exit the loop once the user is found
+                            break;
                           }
                         }
 
                         if (!userFound) {
-                          // Show SnackBar only if user is not found
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Incorrect email or password'),
@@ -121,7 +126,19 @@ class _LoginPageState extends State<LoginPage> {
                       }
                       setState(() {});
                     },
-                    child: const Text('Submit'),
+                    child: Container(
+                      height: 45,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff5355ca),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Center(
+                          child: Text(
+                        "Login",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                    ),
                   ),
                 ],
               ),

@@ -17,27 +17,27 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const MyAppBarWidget(),
-        body: user1.cart.isNotEmpty
+        body: loggedIn.cart.isNotEmpty
             ? Center(
                 child: Stack(
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: user1.cart.map((cartItem) {
+                      children: loggedIn.cart.map((cartItem) {
                         return Container(
                           margin: const EdgeInsets.symmetric(
                               vertical: 8.0, horizontal: 16.0),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius:
-                                BorderRadius.circular(12.0), // Rounded edges
+                                BorderRadius.circular(12.0), 
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.3),
                                 spreadRadius: 2,
                                 blurRadius: 5,
                                 offset: const Offset(
-                                    0, 3), // changes position of shadow
+                                    0, 3), 
                               ),
                             ],
                           ),
@@ -48,7 +48,7 @@ class _CartPageState extends State<CartPage> {
                                 "${cartItem.laptop.price.toString()} x ${cartItem.quantity}"),
                             trailing: IconButton(
                               onPressed: () {
-                                user1.cart.remove(cartItem);
+                                loggedIn.cart.remove(cartItem);
                                 setState(() {});
                               },
                               icon: const Icon(
@@ -88,8 +88,8 @@ class _CartPageState extends State<CartPage> {
                                           type: QuickAlertType.success,
                                           text: 'Thank you choosing us ',
                                         );
-                                        user1.didPurchase = true;
-                                        user1.cart = [];
+                                        loggedIn.didPurchase = true;
+                                        loggedIn.cart = [];
                                         setState(() {});
                                       },
                                       child: Container(
@@ -145,7 +145,7 @@ class _CartPageState extends State<CartPage> {
 
   int calculateTotal() {
     int total = 0;
-    for (var cartItem in user1.cart) {
+    for (var cartItem in loggedIn.cart) {
       total += cartItem.laptop.price * cartItem.quantity;
     }
     return total;

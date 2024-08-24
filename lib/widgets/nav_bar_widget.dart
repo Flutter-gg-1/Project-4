@@ -17,7 +17,6 @@ class _NavBarWidgetState extends State<NavBarWidget> with TickerProviderStateMix
     const ShippingTracker(),
   ];
   int pageIndex = 0;
-  var myColor = Colors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +25,7 @@ class _NavBarWidgetState extends State<NavBarWidget> with TickerProviderStateMix
         currentIndex: pageIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        selectedItemColor: const Color(0xff5355ca),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "  "),
           BottomNavigationBarItem(

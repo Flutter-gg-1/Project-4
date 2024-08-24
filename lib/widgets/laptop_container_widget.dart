@@ -50,7 +50,7 @@ class _LaptopContainerWidgetState extends State<LaptopContainerWidget> {
           ClipRRect(
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
-                topRight: Radius.circular(20)), // Same radius as the container
+                topRight: Radius.circular(20)),
             child: Center(
               child: SizedBox(
                 height: 150,

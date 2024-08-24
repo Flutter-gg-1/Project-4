@@ -24,10 +24,10 @@ class _ShippingTrackerState extends State<ShippingTracker> {
   ];
 
   final List<IconData> _icons = [
-    Icons.inventory_2, // In the storage
-    Icons.local_shipping, // Received by the shipping company
-    Icons.airport_shuttle, // On the way
-    Icons.home, // On the door
+    Icons.inventory_2,
+    Icons.local_shipping,
+    Icons.airport_shuttle,
+    Icons.home,
   ];
 
   @override
@@ -42,10 +42,10 @@ class _ShippingTrackerState extends State<ShippingTracker> {
         setState(() {
           _currentIndex++;
         });
-      } else if (user1.didPurchase) {
+      } else if (loggedIn.didPurchase) {
         _timer?.cancel();
         _showRatingDialog();
-        user1.didPurchase = false;
+        loggedIn.didPurchase = false;
         setState(() {});
       }
     });
@@ -107,7 +107,7 @@ class _ShippingTrackerState extends State<ShippingTracker> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBarWidget(),
-      body: user1.didPurchase
+      body: loggedIn.didPurchase
           ? Center(
               child: Timeline.tileBuilder(
                 builder: TimelineTileBuilder.connected(

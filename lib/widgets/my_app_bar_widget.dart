@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/pages/home_page.dart';
+import 'package:shopping_app/widgets/nav_bar_widget.dart';
 
 class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBarWidget({super.key});
@@ -11,21 +11,16 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            return const HomePage();
+            return const NavBarWidget();
           }));
         },
         child: SizedBox(
           height: 45,
           width: 150,
           child: Image.asset("assets/general/logo.png"),
-          //Color(0xff5355ca)
         ),
       ),
       centerTitle: true,
-      actions: const [
-
-
-      ],
     );
   }
 

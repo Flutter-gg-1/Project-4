@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/widgets/nav_bar_widget.dart';
+import 'package:shopping_app/pages/login_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: NavBarWidget()
+      home: LoginPage()
     );
   }
 }

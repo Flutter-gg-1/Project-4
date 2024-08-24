@@ -106,14 +106,14 @@ class _LoptopBottomSheetState extends State<LoptopBottomSheetWidget> {
                     CartItem cartItem = CartItem(
                         laptop: widget.laptop, quantity: int.parse(quantity));
                     setState(() {
-                      for (var item in user1.cart) {
+                      for (var item in loggedIn.cart) {
                         if (item.laptop == cartItem.laptop) {
                           item.quantity += cartItem.quantity;
                           return;
                         }
                       }
                       setState(() {
-                        user1.cart.add(cartItem);
+                        loggedIn.cart.add(cartItem);
                         Navigator.pop(context);
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(

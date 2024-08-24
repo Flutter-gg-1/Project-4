@@ -5,7 +5,7 @@ User user1 = User(name: "turki", password: "turki", email: "turki@gmail.com");
 User user2 = User(name: "fahad", password: "fahad", email: "fahad@gmail.com");
 User user3 = User(name: "ahmad", password: "ahmad", email: "ahmad@gmail.com");
 List<User> users = [user1, user2, user3];
-User? loggedIn;
+late User loggedIn;
 Laptop? selectedLaptop;
 Laptop laptop1 = Laptop(
     id: 1,
