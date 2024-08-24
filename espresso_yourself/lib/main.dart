@@ -1,4 +1,4 @@
-import 'package:espresso_yourself/onboarding/onboarding_screen.dart';
+import 'package:espresso_yourself/screens/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

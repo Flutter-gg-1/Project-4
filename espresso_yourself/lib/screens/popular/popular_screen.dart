@@ -1,3 +1,4 @@
+import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:flutter/material.dart';
 
 class PopularScreen extends StatelessWidget {
@@ -10,13 +11,11 @@ class PopularScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'This is the Popular Screen',
-            ),
+            Text('Page Under Construction').styled(size: 24),
           ],
         ),
       ),

@@ -1,12 +1,9 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:espresso_yourself/extensions/string_ext.dart';
-import 'package:espresso_yourself/home/subviews/category_tab_view.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
+import 'package:espresso_yourself/screens/home/subviews/category_tab_view.dart';
 import 'package:flutter/material.dart';
-
-import '../extensions/color_ext.dart';
-import '../extensions/image_ext.dart';
+import '../../extensions/color_ext.dart';
+import '../../extensions/image_ext.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

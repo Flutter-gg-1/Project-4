@@ -1,8 +1,7 @@
 import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:espresso_yourself/mock_data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../reusable_components/list_item_view.dart';
+import '../../reusable_components/list_item_view.dart';
 
 class FavoritesScreen extends StatelessWidget {
   FavoritesScreen({super.key});

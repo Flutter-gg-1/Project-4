@@ -2,9 +2,9 @@ import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
-import '../extensions/color_ext.dart';
-import '../extensions/image_ext.dart';
-import '../nav_container.dart';
+import '../../extensions/color_ext.dart';
+import '../../extensions/image_ext.dart';
+import '../../nav_container.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

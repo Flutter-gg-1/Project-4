@@ -1,9 +1,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:espresso_yourself/extensions/image_ext.dart';
-import 'package:espresso_yourself/favorites/favorites_screen.dart';
-import 'package:espresso_yourself/home/home_screen.dart';
-import 'package:espresso_yourself/popular/popular_screen.dart';
 import 'package:espresso_yourself/reusable_components/background_img_decoration.dart';
+import 'package:espresso_yourself/screens/favorites/favorites_screen.dart';
+import 'package:espresso_yourself/screens/home/home_screen.dart';
+import 'package:espresso_yourself/screens/popular/popular_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

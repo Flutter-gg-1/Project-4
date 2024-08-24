@@ -2,13 +2,13 @@ import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../extensions/color_ext.dart';
-import '../extensions/image_ext.dart';
 import '../model/menu_item.dart';
 
 class ListItemView extends StatelessWidget {
-  const ListItemView({super.key, required this.item});
+  const ListItemView({super.key, required this.item, this.quantity});
 
   final MenuItem item;
+  final int? quantity;
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +30,30 @@ class ListItemView extends StatelessWidget {
                 width: 60,
                 height: 60,
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Text(item.title).styled(),
-              Spacer(),
-              Row(
-                children: [
-                  Text(item.rating.toStringAsPrecision(2)).styled(size: 20),
-                  const SizedBox(width: 8),
-                  const Icon(
-                    CupertinoIcons.star,
-                    color: C.text,
-                  )
-                ],
-              )
+              const Spacer(),
+              // For Cart View
+              if (quantity != null)
+                Row(
+                  children: [
+                    Text(quantity.toString()).styled(size: 20),
+                    Text(' x ${item.price.toStringAsPrecision(2)}SAR')
+                        .styled(size: 20),
+                  ],
+                )
+              // For Favorites View
+              else
+                Row(
+                  children: [
+                    Text(item.rating.toStringAsPrecision(2)).styled(size: 20),
+                    const SizedBox(width: 8),
+                    const Icon(
+                      CupertinoIcons.star,
+                      color: C.text,
+                    )
+                  ],
+                )
             ],
           ),
         ),

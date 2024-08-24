@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../extensions/color_ext.dart';
-import 'circle_btn_container_view.dart';
+import 'buttons/circle_btn_container_view.dart';
 
 class CustomStepperView extends StatelessWidget {
   const CustomStepperView({
@@ -33,7 +33,7 @@ class CustomStepperView extends StatelessWidget {
             child: Icon(
               CupertinoIcons.minus,
               color: C.text,
-              size: smallBtnSize.toInt() / 3,
+              size: smallBtnSize.toInt() / 2,
             ),
           ),
         ),
@@ -43,7 +43,7 @@ class CustomStepperView extends StatelessWidget {
             child: Align(
               alignment: Alignment.topCenter,
               child: Text(value.toStringAsPrecision(1)).styled(
-                  size: smallBtnSize.toInt() / 2, weight: FontWeight.w700),
+                  size: smallBtnSize.toInt() / 1.6, weight: FontWeight.w700),
             ),
           ),
         ),
@@ -55,7 +55,7 @@ class CustomStepperView extends StatelessWidget {
             child: Icon(
               CupertinoIcons.plus,
               color: C.text,
-              size: smallBtnSize.toInt() / 3,
+              size: smallBtnSize.toInt() / 2,
             ),
           ),
         )

@@ -1,12 +1,12 @@
 import 'package:espresso_yourself/extensions/string_ext.dart';
-import 'package:espresso_yourself/home/coffee_details/coffee_details_screen.dart';
-import 'package:espresso_yourself/reusable_components/circle_btn_container_view.dart';
+import 'package:espresso_yourself/reusable_components/buttons/circle_btn_container_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../extensions/color_ext.dart';
-import '../../model/menu_category.dart';
-import '../../model/menu_item.dart';
-import '../../reusable_components/item_shape.dart';
+import '../../../extensions/color_ext.dart';
+import '../../../model/menu_category.dart';
+import '../../../model/menu_item.dart';
+import '../../../reusable_components/shapes/item_shape.dart';
+import '../../item_details/coffee_details_screen.dart';
 
 class CategoryTabView extends StatelessWidget {
   const CategoryTabView({super.key});

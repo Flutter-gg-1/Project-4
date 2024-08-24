@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../extensions/color_ext.dart';
 import '../../../model/menu_item.dart';
 import '../../../mock_data.dart';
-import '../../../reusable_components/circle_btn_container_view.dart';
+import '../../../reusable_components/buttons/circle_btn_container_view.dart';
 
 class DescriptionView extends StatefulWidget {
   const DescriptionView({super.key, required this.item});
