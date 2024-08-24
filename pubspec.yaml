@@ -13,6 +13,9 @@ dependencies:
   salomon_bottom_bar: ^3.3.2
   image_picker: ^1.1.2
   shimmer_animation: ^2.2.1
+  device_preview: ^1.2.0
+  material_dialogs: ^1.1.5
+  lottie: ^3.1.2
 
 dev_dependencies:
   flutter_test:

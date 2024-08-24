@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project4/src/catogories_screens/anouncment_screen.dart';
-import 'package:project4/src/catogories_screens/event_screen.dart';
+import 'package:project4/src/categories_screens/anouncment_screen.dart';
+import 'package:project4/src/categories_screens/event_screen.dart';
 
-import '../catogories_screens/graduation_screen.dart';
-import '../catogories_screens/wedding_screen.dart';
+import '../categories_screens/graduation_screen.dart';
+import '../categories_screens/wedding_screen.dart';
 import '../registration_screens/register.dart';
 import 'alert_dialog_widget.dart';
 

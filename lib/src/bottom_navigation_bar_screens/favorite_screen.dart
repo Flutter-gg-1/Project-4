@@ -17,8 +17,7 @@ class FavoriteScreen extends StatelessWidget {
                 painter: RPSCustomPainter2(),
               ),
                Column(
-                children: [
-                  
+                children: [   
                   const SizedBox(height: 30),
                   Expanded(
                     child: SingleChildScrollView(

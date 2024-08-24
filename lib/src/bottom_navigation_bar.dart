@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project4/src/bottom_navigation_bar_screens/cart_screen.dart';
 import 'package:project4/src/bottom_navigation_bar_screens/favorite_screen.dart';
 import 'package:project4/src/bottom_navigation_bar_screens/home_screen.dart';
 import 'package:project4/src/bottom_navigation_bar_screens/profile_screen.dart';
@@ -18,7 +17,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   List<Widget> tabItems = [
     const HomeScreen(),
     const FavoriteScreen(),
-    const CartScreen(),
     const ProfileScreen(),
   ];
 
@@ -26,7 +24,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     const Color(0xff582277),
     const Color(0xffffdbdf),
     const Color(0xffFEFBD8),
-    const Color(0xff6D2B92)
   ];
   
   @override
@@ -40,8 +37,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             items: [
             SalomonBottomBarItem(icon: const Icon(Icons.home), selectedColor: _iconColors[0], title: const Text("Home")),
             SalomonBottomBarItem(icon: const Icon(Icons.favorite_outline_rounded), selectedColor: _iconColors[1], title: const Text("Favorite")),
-            SalomonBottomBarItem(icon: const Icon(Icons.shopping_cart_outlined),selectedColor: _iconColors[2], title: const Text("Cart")),
-            SalomonBottomBarItem(icon: const Icon(Icons.account_circle_rounded), selectedColor: _iconColors[3], title: const Text("Profile"))
+            SalomonBottomBarItem(icon: const Icon(Icons.account_circle_rounded), selectedColor: _iconColors[2], title: const Text("Profile"))
           ], onTap: (index){
             _selectedIndex = index;
             setState(() {

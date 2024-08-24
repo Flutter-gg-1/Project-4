@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../credit_card_screen.dart';
+
 class CardWidget extends StatelessWidget {
   final String photPath;
   final String text;
@@ -40,12 +42,43 @@ class CardWidget extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showModalBottomSheet(context: context, backgroundColor: Colors.white.withOpacity(0.9),builder: (BuildContext context){
+                                      return SizedBox(
+                                        height: 600,
+                                        width: MediaQuery.of(context).size.width,
+                                        child: Column(
+                                          children: [
+                                            ClipRRect(
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                              ),
+                              child: Image.asset(
+                                photPath,
+                                height: 400,
+                                width: MediaQuery.of(context).size.width,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            ElevatedButton(onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                return CreditCardScreen();
+                              }));
+                            }, style: ElevatedButton.styleFrom(
+                                      backgroundColor: const Color(0xff582277),
+                                      minimumSize:
+                                          const Size(20, 30)),child: const Text("Buy", style: TextStyle(color: Colors.white),))
+                                          ],
+                                        ),
+                                      );
+                                    });
+                                  },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: const Color(0xff582277),
                                       minimumSize:
-                                          const Size(20, 20)),
-                                  child: const Icon(Icons.shopping_cart_outlined, color: Colors.white,)
+                                          const Size(20, 25)),
+                                  child: const Text("Preview", style: TextStyle(color: Colors.white),),
                                 ),
                                 ElevatedButton(
                                   onPressed: () {},

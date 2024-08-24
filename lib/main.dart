@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'src/welcome_screen.dart';
+import 'package:device_preview/device_preview.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() => runApp(
+  DevicePreview(
+    enabled: false,
+    builder: (context) => const MainApp(), 
+  ),
+);
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
