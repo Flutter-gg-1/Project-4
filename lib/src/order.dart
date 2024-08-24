@@ -24,7 +24,7 @@ class _OrderState extends State<Order> {
     return Scaffold(
       backgroundColor: const Color(0xFFFFF2D7),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(109, 255, 224, 181),
+        backgroundColor: const Color(0xFFFFF2D7),
         title: Text(
           'Order',
           style: GoogleFonts.sora(fontWeight: FontWeight.bold),
