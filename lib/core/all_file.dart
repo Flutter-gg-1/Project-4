@@ -12,3 +12,5 @@ export '../feature/pages/devices/mobiles.dart';
 export '../feature/pages/bottom_page/account.dart';
 export '../feature/pages/bottom_page/cart.dart';
 export '../feature/main_screen/home_view.dart';
+export '../feature/pages/user/log_in.dart';
+// export '../feature/pages/user/log_in.dart';

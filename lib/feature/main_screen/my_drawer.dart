@@ -31,7 +31,10 @@ class MyDrawer extends StatelessWidget {
           SizedBox(height: getScreenSize(context).height / 15),
           MaterialButton(
             color: Colors.black,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const LogInView()));
+            },
             child: const Text('Log in', style: TextStyle(color: Colors.white)),
           )
         ],
