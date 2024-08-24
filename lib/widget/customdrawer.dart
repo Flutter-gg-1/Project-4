@@ -1,5 +1,6 @@
-import 'package:coffeshop_app/src/coffe_info.dart';
-import 'package:coffeshop_app/src/profile.dart';
+import 'package:coffeshop_app/src/coffe_info_screen.dart';
+import 'package:coffeshop_app/src/login_screen.dart';
+import 'package:coffeshop_app/src/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -91,7 +92,13 @@ class CustomDrawer extends StatelessWidget {
                       ),
                       trailing: const Icon(Icons.arrow_forward_ios_rounded,
                           color: Colors.red),
-                      onTap: () {},
+                        onTap: () => Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginScreen(
+                                ),
+                              ),(route) => false,
+                            )
                     )),
               ],
             )

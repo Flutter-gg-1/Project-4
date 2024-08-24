@@ -1,5 +1,5 @@
-import 'package:coffeshop_app/src/coffe_info.dart';
-import 'package:coffeshop_app/src/profile.dart';
+import 'package:coffeshop_app/src/coffe_info_screen.dart';
+import 'package:coffeshop_app/src/profile_screen.dart';
 import 'package:coffeshop_app/widget/customdrawer.dart';
 import 'package:coffeshop_app/widget/home/home_content.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
