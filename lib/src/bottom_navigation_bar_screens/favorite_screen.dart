@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../custom_paint/home_screen_background.dart';
+import '../widgets/custom_paint/home_screen_background.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});

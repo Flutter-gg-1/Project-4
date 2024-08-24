@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
-import '../custom_paint/background_custom_shape.dart';
-import '../custom_paint/logo.dart';
+import '../widgets/custom_paint/background_custom_shape.dart';
+import '../widgets/custom_paint/logo.dart';
 import 'create_account.dart';
 import 'login.dart';
 

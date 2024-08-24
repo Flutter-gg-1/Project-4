@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project4/src/widgets/card_widget.dart';
-import '../custom_paint/home_screen_background.dart';
+import '../widgets/custom_paint/home_screen_background.dart';
 
 class GraduationScreen extends StatelessWidget {
   const GraduationScreen({super.key});

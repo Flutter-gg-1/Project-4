@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
-import '../custom_paint/home_screen_background.dart';
+import '../widgets/custom_paint/home_screen_background.dart';
 import '../widgets/alert_dialog_widget.dart';
 import '../widgets/card_widget.dart';
 import '../widgets/drawer_widget.dart';

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import '../custom_paint/home_screen_background.dart';
+import '../widgets/custom_paint/home_screen_background.dart';
 import '../widgets/alert_dialog_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
