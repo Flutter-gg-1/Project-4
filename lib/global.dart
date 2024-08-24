@@ -3,79 +3,58 @@ import 'package:shopping/model/user.dart';
 
 final List<Product> electronics = [
   Product(
-    name: 'Smartphone',
-    src: 'assets/images/smartphone.png',
+    name: 'phone',
+    src: 'assets/images/phone.jpg',
     price: 299.99,
     description: 'High-tech gadget',
   ),
   Product(
-    name: 'Laptop',
+    name: 'laptop',
     src: 'assets/images/laptop.jpg',
     price: 299.99,
     description: 'Powerful computing tool',
   ),
   Product(
-    name: 'Tablet',
-    src: 'assets/images/tablet.png',
+    name: 'tablet',
+    src: 'assets/images/tablet.jpg',
     price: 299.99,
     description: 'Portable digital device',
   ),
+];
+
+final List<Product> schools = [
   Product(
-    name: 'Headphones',
-    src: 'assets/images/headphones.png',
-    price: 299.99,
-    description: 'Quality audio equipment',
+    name: 'notebook',
+    src: 'assets/images/notebook.jpg',
+    price: 3.99,
+    description: '100 pages',
   ),
   Product(
-    name: 'Smartwatch',
-    src: 'assets/images/smartwatch.png',
-    price: 299.99,
-    description: 'Wearable smart device',
-  ),
-  Product(
-    name: 'Camera',
-    src: 'assets/images/camera.png',
-    price: 299.99,
-    description: 'Advanced photography tool',
-  ),
-  Product(
-    name: 'Drone',
-    src: 'assets/images/drone.png',
-    price: 299.99,
-    description: 'Aerial photography drone',
-  ),
-  Product(
-    name: 'Speaker',
-    src: 'assets/images/speaker.png',
-    price: 299.99,
-    description: 'Compact sound system',
-  ),
-  Product(
-    name: 'Printer',
-    src: 'assets/images/printer.png',
-    price: 299.99,
-    description: 'Efficient office printer',
-  ),
-  Product(
-    name: 'Monitor',
-    src: 'assets/images/monitor.png',
-    price: 299.99,
-    description: 'Large display monitor',
+    name: 'backpack',
+    src: 'assets/images/backpack.jpg',
+    price: 29.99,
+    description: 'big',
   ),
 ];
 
-final List<Product> electronic = [
+final List<Product> cloths = [
   Product(
-    name: 'Laptop',
-    src: 'assets/images/laptop.jpg',
-    price: 299.99,
-    description: 'Powerful computing tool',
+    name: 'jeans',
+    src: 'assets/images/jeans.jpg',
+    price: 19.99,
+    description: 'tide',
   ),
   Product(
-    name: 'super Laptop',
-    src: 'assets/images/laptop.jpg',
-    price: 22222.99,
-    description: 'super Powerful computing tool',
+    name: 'shirt',
+    src: 'assets/images/shirt.jpg',
+    price: 19.99,
+    description: 'big',
+  ),
+  Product(
+    name: 'shoes',
+    src: 'assets/images/shoes.jpg',
+    price: 19.99,
+    description: '',
   ),
 ];
 

@@ -32,9 +32,9 @@ class HomeScreen extends StatelessWidget {
                   Flexible(
                     child: TabBarView(
                       children: [
-                        ProductView(products: electronic),
-                        ProductView(products: electronic),
-                        ProductView(products: electronic),
+                        ProductView(products: cloths),
+                        ProductView(products: electronics),
+                        ProductView(products: schools),
                       ],
                     ),
                   ),
