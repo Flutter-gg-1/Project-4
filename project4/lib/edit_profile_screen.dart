@@ -6,19 +6,19 @@ import 'custom_widgets/appColors.dart';
 
 class EditProfilePage extends StatefulWidget {
   @override
-  _EditProfilePageState createState() => _EditProfilePageState();
+  EditProfilePageState createState() => EditProfilePageState();
 }
 
-class _EditProfilePageState extends State<EditProfilePage> {
-  File? _image;
+class EditProfilePageState extends State<EditProfilePage> {
+  File? image;
 
-  Future<void> _pickImage() async {
+  Future<void> pickImage() async {
     final pickedFile =
         await ImagePicker().pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       setState(() {
-        _image = File(pickedFile.path);
+        image = File(pickedFile.path);
       });
     }
   }
@@ -38,13 +38,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
           children: [
             Center(
               child: GestureDetector(
-                onTap: _pickImage,
+                onTap: pickImage,
                 child: CircleAvatar(
                   radius: 60,
-                  backgroundImage: _image != null
-                      ? FileImage(_image!)
+                  backgroundImage: image != null
+                      ? FileImage(image!)
                       : AssetImage('assets/images/logo.png') as ImageProvider,
-                  child: _image == null
+                  child: image == null
                       ? Icon(
                           Icons.camera_alt,
                           color: Colors.grey[700],

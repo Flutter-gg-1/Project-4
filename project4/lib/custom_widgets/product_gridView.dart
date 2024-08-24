@@ -8,7 +8,6 @@ class ProductGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Example product data
     final products = [
       {
         'name': 'Room Sofa',
@@ -113,10 +112,10 @@ class ProductGridView extends StatelessWidget {
         'image': 'assets/images/lamp/lamp4.png',
         'desc': 'A compact bedside lamp for a cozy evening light.'
       },
-      // Add more products as needed
+ 
     ];
 
-    // Filter products by category if not 'All'
+   
     final filteredProducts = category == 'All'
         ? products
         : products.where((product) {

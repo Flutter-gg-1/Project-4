@@ -17,31 +17,31 @@ class ProductDetailScreen extends StatefulWidget {
   });
 
   @override
-  _ProductDetailScreenState createState() => _ProductDetailScreenState();
+  ProductDetailScreenState createState() => ProductDetailScreenState();
 }
 
-class _ProductDetailScreenState extends State<ProductDetailScreen> {
-  int _quantity = 1;
+class ProductDetailScreenState extends State<ProductDetailScreen> {
+  int quantity = 1;
 
-  void _incrementQuantity() {
+  void incrementQuantity() {
     setState(() {
-      _quantity++;
+      quantity++;
     });
   }
 
-  void _decrementQuantity() {
+  void decrementQuantity() {
     setState(() {
-      if (_quantity > 1) {
-        _quantity--;
+      if (quantity > 1) {
+        quantity--;
       }
     });
   }
- void _addToCart() {
+ void addToCart() {
     final product = {
       'name': widget.productName,
       'price': widget.price,
       'image': widget.imageUrl,
-      'quantity': _quantity,
+      'quantity': quantity,
       'desc': widget.desc,
         'id': DateTime.now().millisecondsSinceEpoch,
     };
@@ -61,7 +61,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             child: Icon(Icons.favorite_border),
           )
         ],
-        // title: Text(widget.productName),
+     
         backgroundColor: AppColors.wafer,
         iconTheme: IconThemeData(color: AppColors.spicyMix),
       ),
@@ -77,7 +77,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   widget.imageUrl,
                   height: 300,
                   width: double.infinity,
-                  // fit: BoxFit.cover,
+              
                 ),
               ),
               SizedBox(height: 10,),
@@ -104,11 +104,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         children: [
                           IconButton(
                             icon: Icon(Icons.remove, color: Colors.grey[700]),
-                            onPressed: _decrementQuantity,
+                            onPressed: decrementQuantity,
                           ),
                           SizedBox(width: 5),
                           Text(
-                            '$_quantity',
+                            '$quantity',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -117,7 +117,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           SizedBox(width: 5),
                           IconButton(
                             icon: Icon(Icons.add, color: Colors.grey[700]),
-                            onPressed: _incrementQuantity,
+                            onPressed: incrementQuantity,
                           ),
                         ],
                       ),
@@ -144,14 +144,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '\$${widget.price * _quantity}',
+                      '\$${widget.price * quantity}',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.grey[600],
                       ),
                     ),
                     GestureDetector(
-                      onTap:                        _addToCart,
+                      onTap:  addToCart,
 
                       child: Container(
                         height: 33,
@@ -167,7 +167,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
               SizedBox(height: 16),
           
-              // Add more details or buttons here if needed
+            
             ],
           ),
         ),

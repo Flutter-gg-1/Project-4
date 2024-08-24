@@ -5,22 +5,22 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  late TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    tabController = TabController(length: 4, vsync: this);
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 
@@ -40,13 +40,13 @@ class _HomeScreenState extends State<HomeScreen>
           child: TabBar(
             dividerColor: Colors.transparent,
             unselectedLabelColor: Colors.black,
-            controller: _tabController,
-            indicator: BoxDecoration(), // Removes default indicator
+            controller: tabController,
+            indicator: BoxDecoration(),
             tabs: [
-              _buildFloatingTab('All', 0),
-              _buildFloatingTab('Sofa', 1),
-              _buildFloatingTab('Candle', 2),
-              _buildFloatingTab('Table', 3),
+              buildFloatingTab('All', 0),
+              buildFloatingTab('Sofa', 1),
+              buildFloatingTab('Candle', 2),
+              buildFloatingTab('Table', 3),
             ],
           ),
         ),
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen>
       body: Padding(
         padding: const EdgeInsets.only(top: 26.0),
         child: TabBarView(
-          controller: _tabController,
+          controller: tabController,
           children: [
             ProductGridView(category: 'All'),
             ProductGridView(category: 'Sofa'),
@@ -96,19 +96,17 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
-  Widget _buildFloatingTab(String text, int index) {
+  Widget buildFloatingTab(String text, int index) {
     return Tab(
       child: AnimatedBuilder(
-        animation: _tabController,
+        animation: tabController,
         builder: (context, child) {
-          final isSelected = _tabController.index == index;
+          final isSelected = tabController.index == index;
           return Container(
             width: 64,
             height: 50,
             decoration: BoxDecoration(
-              color: isSelected
-                  ? AppColors.spicyMix
-                  : AppColors.wafer, // Change color based on selection
+              color: isSelected ? AppColors.spicyMix : AppColors.wafer,
               borderRadius: BorderRadius.circular(4),
               boxShadow: [
                 BoxShadow(

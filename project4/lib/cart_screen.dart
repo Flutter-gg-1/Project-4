@@ -1,30 +1,30 @@
 import 'package:e_commerce_ui/custom_widgets/appColors.dart';
 import 'package:flutter/material.dart';
-import 'custom_widgets/cart.dart'; // Import the Cart management class
+import 'custom_widgets/cart.dart'; 
 
 class CartPage extends StatefulWidget {
   @override
-  _CartPageState createState() => _CartPageState();
+  CartPageState createState() => CartPageState();
 }
 
-class _CartPageState extends State<CartPage> {
-  late Cart _cart;
+class CartPageState extends State<CartPage> {
+  late Cart cart;
 
   @override
   void initState() {
     super.initState();
-    _cart = Cart();
+    cart = Cart();
   }
 
   @override
   Widget build(BuildContext context) {
-    final cartItems = _cart.items;
+    final cartItems = cart.items;
 
     return Scaffold(
       backgroundColor: AppColors.ecruWhite,
       appBar: AppBar(
         title: Text('Cart'),
-        backgroundColor: AppColors.ecruWhite,        automaticallyImplyLeading: false,
+        backgroundColor: AppColors.ecruWhite,automaticallyImplyLeading: false,
 
       ),
       body: cartItems.isEmpty
@@ -79,8 +79,7 @@ class _CartPageState extends State<CartPage> {
                         icon: Icon(Icons.delete, color: Colors.red),
                         onPressed: () {
                           setState(() {
-                            // Remove the item from the cart
-                            _cart.removeItem(item['id']);
+                            cart.removeItem(item['id']);
                           });
                         },
                       ),

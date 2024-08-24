@@ -17,31 +17,31 @@ class ProductCard extends StatefulWidget {
   });
 
   @override
-  _ProductCardState createState() => _ProductCardState();
+  ProductCardState createState() => ProductCardState();
 }
 
-class _ProductCardState extends State<ProductCard> {
-  bool _isLoading = true;
+class ProductCardState extends State<ProductCard> {
+  bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
-    _simulateLoading();
+    simulateLoading();
   }
 
-  Future<void> _simulateLoading() async {
+  Future<void> simulateLoading() async {
     await Future.delayed(Duration(seconds: 3));
     setState(() {
-      _isLoading = false;
+      isLoading = false;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return _isLoading ? _buildShimmerEffect() : _buildProductCard(context);
+    return isLoading ? buildShimmerEffect() : buildProductCard(context);
   }
 
-  Widget _buildShimmerEffect() {
+  Widget buildShimmerEffect() {
     return Shimmer.fromColors(
       baseColor: Colors.grey[300]!,
       highlightColor: Colors.grey[100]!,
@@ -87,17 +87,17 @@ class _ProductCardState extends State<ProductCard> {
     );
   }
 
-  Widget _buildProductCard(BuildContext context) {
-    return     GestureDetector(
+  Widget buildProductCard(BuildContext context) {
+    return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => ProductDetailScreen(
-              productName:widget. productName,
-              price:widget. price,
-              imageUrl:widget. imageUrl,
-              desc:widget.desc,
+              productName: widget.productName,
+              price: widget.price,
+              imageUrl: widget.imageUrl,
+              desc: widget.desc,
             ),
           ),
         );
@@ -105,8 +105,8 @@ class _ProductCardState extends State<ProductCard> {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(8.0, 50, 8, 8),
         child: Container(
-          width: 160, // Set a fixed width
-          height: 700, // Increased height to make the container taller
+          width: 160,
+          height: 700,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -122,8 +122,7 @@ class _ProductCardState extends State<ProductCard> {
             children: [
               Positioned.fill(
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 50, left: 10, right: 10), // Adjusted padding
+                  padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -132,7 +131,7 @@ class _ProductCardState extends State<ProductCard> {
                         children: [
                           Flexible(
                             child: Text(
-                             widget. productName,
+                              widget.productName,
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -147,8 +146,6 @@ class _ProductCardState extends State<ProductCard> {
                           ),
                         ],
                       ),
-                     
-                      // Spacer(), // Pushes the price and buttons to the bottom
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -174,13 +171,12 @@ class _ProductCardState extends State<ProductCard> {
                 ),
               ),
               Positioned(
-                top: -60, // Adjusted top position for the image
+                top: -60,
                 left: -20,
                 right: 0,
                 child: Image.asset(
                   widget.imageUrl,
-                  height: 120, // Adjusted height as needed
-                  // fit: BoxFit.cover,
+                  height: 120,
                 ),
               ),
             ],
@@ -190,6 +186,3 @@ class _ProductCardState extends State<ProductCard> {
     );
   }
 }
-
-
-

@@ -9,7 +9,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final String avatarUrl = 'assets/logo.png'; // Replace with your avatar image path
+  final String avatarUrl = 'assets/logo.png';
   final String userName = 'Nouf Alqhtani';
   final String userEmail = 'NoufAlqhtani@example.com';
   String? userCountry;
@@ -22,26 +22,22 @@ class _ProfilePageState extends State<ProfilePage> {
         title: Text('Profile'),
         automaticallyImplyLeading: false,
         backgroundColor: AppColors.ecruWhite,
-        elevation: 0, // Remove shadow for a flatter look
-        centerTitle: true, // Center the title
+        elevation: 0,
+        centerTitle: true,
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment:
-                MainAxisAlignment.center, // Center column vertically
-            crossAxisAlignment:
-                CrossAxisAlignment.center, // Center column horizontally
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // User Avatar
               CircleAvatar(
                 radius: 60,
                 backgroundImage: AssetImage(avatarUrl),
                 backgroundColor: Colors.grey[200],
               ),
               SizedBox(height: 20),
-              // User Name
               Text(
                 userName,
                 style: TextStyle(
@@ -50,7 +46,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               SizedBox(height: 10),
-              // User Email
               Text(
                 userEmail,
                 style: TextStyle(
@@ -59,7 +54,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               SizedBox(height: 10),
-              // User Country Picker
               userCountry != null
                   ? Text(
                       userCountry!,
@@ -91,16 +85,15 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
               SizedBox(height: 30),
-              // Edit Profile Button
               ElevatedButton(
                 onPressed: () {
-                  // Handle edit profile action
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => EditProfilePage()),
                   );
                 },
-                child: Text('Edit Profile', style: TextStyle(color: Colors.white)),
+                child:
+                    Text('Edit Profile', style: TextStyle(color: Colors.white)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.spicyMix,
                   shape: RoundedRectangleBorder(
@@ -110,7 +103,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               SizedBox(height: 20),
-              // Logout Button
               ElevatedButton(
                 onPressed: () {
                   _showLogoutConfirmationDialog(context);
@@ -134,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
   void _showLogoutConfirmationDialog(BuildContext context) {
     showDialog(
       context: context,
-      barrierDismissible: false, // Prevents dismissing the dialog by tapping outside of it
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: AppColors.ecruWhite,
@@ -143,15 +135,13 @@ class _ProfilePageState extends State<ProfilePage> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop();
               },
               child: Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
-                // Handle logout action here
-                Navigator.of(context).pop(); // Close the dialog
-                // Navigate to login screen or perform other logout operations
+                Navigator.of(context).pop();
               },
               child: Text('Logout'),
             ),

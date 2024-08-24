@@ -1,7 +1,6 @@
 import 'package:e_commerce_ui/custom_widgets/appColors.dart';
 import 'package:e_commerce_ui/cart_screen.dart';
 import 'package:e_commerce_ui/home_screen.dart';
-import 'package:e_commerce_ui/login_screen.dart';
 import 'package:e_commerce_ui/profile_screen.dart';
 import 'package:e_commerce_ui/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,21 +18,21 @@ void main() {
 
 class MainPage extends StatefulWidget {
   @override
-  _MainPageState createState() => _MainPageState();
+  MainPageState createState() => MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
-  int _selectedIndex = 0;
+class MainPageState extends State<MainPage> {
+  int selectedIndex = 0;
 
-  final List<Widget> _pages = [
+  final List<Widget> pages = [
     HomeScreen(),
     CartPage(),
     ProfilePage(),
   ];
 
-  void _onItemTapped(int index) {
+  void onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 
@@ -41,7 +40,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.wafer,
-      body: _pages[_selectedIndex],
+      body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -60,8 +59,8 @@ class _MainPageState extends State<MainPage> {
             label: 'Profile',
           ),
         ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
+        currentIndex: selectedIndex,
+        onTap: onItemTapped,
       ),
     );
   }

@@ -7,17 +7,17 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _SplashState createState() => _SplashState();
+  SplashState createState() => SplashState();
 }
 
-class _SplashState extends State<SplashScreen> {
+class SplashState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigatetohme();
+    navigatetohme();
   }
 
-  _navigatetohme() async {
+  navigatetohme() async {
     await Future.delayed(const Duration(milliseconds: 800), () {});
     Navigator.pushReplacement(
       context,

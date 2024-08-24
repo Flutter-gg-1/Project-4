@@ -1,9 +1,7 @@
 import 'package:e_commerce_ui/custom_widgets/appColors.dart';
-import 'package:e_commerce_ui/home_screen.dart';
 import 'package:e_commerce_ui/main.dart';
 import 'package:e_commerce_ui/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // For image asset handling
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -13,14 +11,14 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Login'),
         backgroundColor: AppColors.wafer,
-        elevation: 0, // Remove shadow under the AppBar
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             Image.asset(
-              'assets/logo.png', // Path to your login image
+              'assets/logo.png',
               height: 200,
             ),
             TextField(
