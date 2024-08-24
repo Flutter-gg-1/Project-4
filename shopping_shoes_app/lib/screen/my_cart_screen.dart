@@ -3,6 +3,8 @@ import 'package:shopping_shoes_app/data/app_helper.dart';
 import 'package:shopping_shoes_app/data/global_variabels.dart';
 import 'package:shopping_shoes_app/model/cart_model.dart';
 import 'package:shopping_shoes_app/screen/checkout_screen.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:shopping_shoes_app/theme/custom_app_theme.dart';
 
 class MyCartScreen extends StatefulWidget {
   const MyCartScreen({super.key});
@@ -23,9 +25,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(Icons.arrow_back),
             const SizedBox(
-              height: 20,
+              height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,7 +41,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
             const Divider(),
             Container(
                 width: size.width,
-                height: size.height / 1.8,
+                height: size.height / 1.7,
                 padding: const EdgeInsets.all(12),
                 child: myCart.isNotEmpty
                     ? ListView.builder(
@@ -107,6 +108,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                                             model.qnt--,
                                                           }
                                                         : model.qnt = 1;
+                                                    myCartCount = AppHelper
+                                                        .getAllLengthItems();
 
                                                     setState(() {});
                                                   },
@@ -130,6 +133,9 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                                 GestureDetector(
                                                   onTap: () {
                                                     model.qnt++;
+                                                    myCartCount = AppHelper
+                                                        .getAllLengthItems();
+
                                                     setState(() {});
                                                   },
                                                   child: Container(
@@ -145,6 +151,16 @@ class _MyCartScreenState extends State<MyCartScreen> {
                                               ],
                                             )
                                           ],
+                                        )),
+                                    Positioned(
+                                        bottom: 50,
+                                        right: 30,
+                                        child: IconButton(
+                                          icon: const Icon(Icons.delete,
+                                              color: Colors.redAccent),
+                                          onPressed: () {
+                                            _dialogBuilder(context, model);
+                                          },
                                         ))
                                   ],
                                 ),
@@ -201,18 +217,77 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 decoration: BoxDecoration(
                     color: const Color(0xffcb3759),
                     borderRadius: BorderRadius.circular(10)),
-                child: const Text(
-                  "CHECKOUT",
-                  style: TextStyle(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "CHECKOUT",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Icon(
+                      Icons.shopping_cart_checkout_outlined,
                       color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300),
+                    ),
+                  ].animate(delay: 3000.ms).shake(),
                 ),
               ),
             )
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> _dialogBuilder(BuildContext context, CartModel crtModel) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Delete ${crtModel.name} from Cart?',
+            style: AppThemes.txtStyleGoogleFont,
+          ),
+          content: Text(
+              'Model Name:${crtModel.name} ${crtModel.model}\nQuantity : ${crtModel.qnt}\n',
+              style: AppThemes.txtStyleGoogleFont),
+          actions: <Widget>[
+            TextButton(
+              style: TextButton.styleFrom(
+                textStyle: Theme.of(context).textTheme.labelLarge,
+              ),
+              child: const Text(
+                'No',
+                style: TextStyle(color: Colors.black),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.redAccent,
+                textStyle: AppThemes.txtStyleWhite,
+              ),
+              child: Text(
+                'Yes',
+                style: AppThemes.txtStyleWhite,
+              ),
+              onPressed: () {
+                myCart.remove(crtModel);
+                myCartCount = AppHelper.getAllLengthItems();
+                setState(() {});
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:like_button/like_button.dart';
-import 'package:shopping_shoes_app/custom_widget.dart';
+import 'package:shopping_shoes_app/widget/custom_widget.dart';
 import 'package:shopping_shoes_app/data/global_variabels.dart';
 import 'package:shopping_shoes_app/model/cart_model.dart';
 import 'package:shopping_shoes_app/model/shoes_model.dart';
+import 'package:shopping_shoes_app/theme/custom_app_theme.dart';
 
 class ProductScreen extends StatefulWidget {
   final ShoesModel itemModel;
@@ -44,8 +46,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         left: size.width / 2.23,
                         child: Text(
                           widget.itemModel.name,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 25),
+                          style: AppThemes.txtStyleItemName,
                         )),
                     Positioned(
                         top: 40,
@@ -101,15 +102,11 @@ class _ProductScreenState extends State<ProductScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      widget.itemModel.model,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
+                    Text(widget.itemModel.model,
+                        style: AppThemes.txtStyleTitlePage),
                     Text(
                       "${widget.itemModel.price.toString()} SAR",
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                      style: AppThemes.txtStyleTitlePage,
                     ),
                   ],
                 ),
@@ -143,10 +140,9 @@ class _ProductScreenState extends State<ProductScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                    Text(
                       "Size",
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      style: AppThemes.txtStyleTitlePage,
                     ),
                     Row(
                       children: [
@@ -210,25 +206,19 @@ class _ProductScreenState extends State<ProductScreen> {
               GestureDetector(
                 onTap: () {
                   if (isSelected == false) {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         backgroundColor: Colors.redAccent,
                         content: Center(
-                          child: Text(
-                            "Please Choose the Size!",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          child: Text("Please Choose the Size!",
+                              style: AppThemes.txtStyleWhiteBold),
                         )));
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         backgroundColor: Colors.lightGreen,
                         content: Center(
                           child: Text(
                             "Added to cart ",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: AppThemes.txtStyleWhiteBold,
                           ),
                         )));
                     myCartCount++;
@@ -251,14 +241,26 @@ class _ProductScreenState extends State<ProductScreen> {
                   margin: const EdgeInsets.all(16),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: const Color(0xffcb3759),
+                      color: widget.itemModel.modelColor,
                       borderRadius: BorderRadius.circular(10)),
-                  child: const Text(
-                    "ADD TO CART",
-                    style: TextStyle(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "ADD TO CART",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300),
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      const Icon(
+                        Icons.add_shopping_cart_outlined,
                         color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w300),
+                      )
+                    ].animate(delay: 3000.ms).shake(),
                   ),
                 ),
               )

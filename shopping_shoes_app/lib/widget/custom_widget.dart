@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'data/global_variabels.dart';
+import '../data/global_variabels.dart';
 
 class MyPainter extends CustomPainter {
   @override

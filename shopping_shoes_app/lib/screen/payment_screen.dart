@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:shopping_shoes_app/theme/custom_app_theme.dart';
 import '../validate/card_number_input.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -23,22 +24,38 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xffCBD0DC),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(12),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 320,
-              height: 300,
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
+            const SizedBox(
+              height: 20,
+            ),
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.arrow_back)),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Payment",
+              style: AppThemes.txtStyleTitlePage,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              width: size.width,
+              height: size.height / 3,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextFormField(
                     controller: txtCardNumber,
@@ -49,20 +66,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ],
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     keyboardType: const TextInputType.numberWithOptions(),
-                    decoration: InputDecoration(
-                      hintStyle:
-                          const TextStyle(fontSize: 15, color: Colors.black12),
+                    decoration: const InputDecoration(
+                      suffix: Icon(Icons.credit_card),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Colors.black12, width: 1.0),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 1.0),
+                      ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(5),
+                        borderSide:
+                            BorderSide(color: Colors.black12, width: 1.0),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                        borderSide: const BorderSide(
-                          color: Colors.blue,
-                        ),
-                      ),
-                      hintText: "Card Number",
+                      hintText: 'XXXX XXXX XXXX XXXX',
                     ),
                     onChanged: (value) => setState(() {
                       cardNumber = value;
@@ -74,11 +91,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       return null;
                     },
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: 120,
+                        width: size.width / 2.3,
                         child: TextFormField(
                           cursorWidth: 4,
                           controller: txtCardMExpire,
@@ -88,22 +108,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           ],
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           keyboardType: const TextInputType.numberWithOptions(),
-                          decoration: InputDecoration(
-                            hintStyle: const TextStyle(
-                                fontSize: 10, color: Colors.black12),
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 10.0),
+                          decoration: const InputDecoration(
+                            suffix: Icon(Icons.calendar_month),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black12, width: 1.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 1.0),
+                            ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.blue),
-                              borderRadius: BorderRadius.circular(5),
+                              borderSide:
+                                  BorderSide(color: Colors.black12, width: 1.0),
                             ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5),
-                              borderSide: const BorderSide(
-                                color: Colors.blue,
-                              ),
-                            ),
-                            hintText: "Expired date (MM)",
+                            hintText: 'MM',
                           ),
                           onChanged: (value) => setState(() {
                             cardMExpire = value;
@@ -112,14 +131,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             if (value!.isEmpty ||
                                 int.tryParse(value.toString())! > 12 ||
                                 int.tryParse(value.toString())! == 0) {
-                              return 'Enter 1-12';
+                              return 'Enter number 1-12';
                             }
                             return null;
                           },
                         ),
                       ),
                       SizedBox(
-                        width: 120,
+                        width: size.width / 2.3,
                         child: TextFormField(
                           controller: txtCardYExpire,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -128,22 +147,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(2),
                           ],
-                          decoration: InputDecoration(
-                            hintStyle: const TextStyle(
-                                fontSize: 10, color: Colors.black12),
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 10.0),
+                          decoration: const InputDecoration(
+                            suffix: Icon(Icons.calendar_month),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.black12, width: 1.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 1.0),
+                            ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.blue),
-                              borderRadius: BorderRadius.circular(5),
+                              borderSide:
+                                  BorderSide(color: Colors.black12, width: 1.0),
                             ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(5),
-                              borderSide: const BorderSide(
-                                color: Colors.blue,
-                              ),
-                            ),
-                            hintText: "Expired date (YY)",
+                            hintText: 'YY',
                           ),
                           onChanged: (value) => setState(() {
                             cardYExpire = value;
@@ -159,26 +177,29 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                     ],
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   TextFormField(
                     controller: txtCardHolder,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     inputFormatters: [
-                      FilteringTextInputFormatter.allow(RegExp("[a-zA-Z]")),
+                      FilteringTextInputFormatter.allow(RegExp("[a-zA-Z ]")),
                     ],
-                    decoration: InputDecoration(
-                      hintStyle:
-                          const TextStyle(fontSize: 15, color: Colors.black12),
+                    decoration: const InputDecoration(
+                      suffix: Icon(Icons.person),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Colors.black12, width: 1.0),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 1.0),
+                      ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(5),
+                        borderSide:
+                            BorderSide(color: Colors.black12, width: 1.0),
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                        borderSide: const BorderSide(
-                          color: Colors.blue,
-                        ),
-                      ),
-                      hintText: "Card Holder",
+                      hintText: 'Card holder',
                     ),
                     onChanged: (value) => setState(() {
                       cardHolder = value;
@@ -189,147 +210,97 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       }
                       return null;
                     },
-                  ),
-                ],
-              ),
-            ),
-            ShowCard(
-                cardName: cardHolder,
-                cardNumber: cardNumber,
-                cardExprireM: cardMExpire,
-                cardExprireY: cardYExpire)
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ShowCard extends StatelessWidget {
-  final String cardName;
-  final String cardNumber;
-  final String cardExprireM;
-  final String cardExprireY;
-
-  const ShowCard(
-      {super.key,
-      required this.cardName,
-      required this.cardNumber,
-      required this.cardExprireM,
-      required this.cardExprireY});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 270,
-      height: 53,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xff0B80F3),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25),
-          ),
-        ),
-        onPressed: () {
-          if (cardName.isEmpty ||
-              cardNumber.isEmpty ||
-              cardExprireM.isEmpty ||
-              cardExprireY.isEmpty) {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                backgroundColor: Colors.red,
-                content: Center(
-                  child: Text(
-                    "Please fill the fields",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                )));
-          }
-          if (int.parse(cardExprireM) > 12 ||
-              int.parse(cardExprireM) <= 0 ||
-              int.parse(cardExprireY) < 24 ||
-              int.parse(cardExprireY) <= 0 ||
-              cardNumber.length < 22) {
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                backgroundColor: Colors.red,
-                content: Center(
-                  child: Text(
-                    "Please make sure for entry fields",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                )));
-          } else {
-            showDialog<String>(
-              context: context,
-              builder: (BuildContext context) => AlertDialog(
-                backgroundColor: Colors.transparent,
-                actions: <Widget>[
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/card.png",
-                        alignment: Alignment.center,
-                        width: 330,
-                        fit: BoxFit.contain,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          const SizedBox(
-                            height: 50,
-                          ),
-                          Text(
-                            cardNumber,
-                            style: const TextStyle(
-                                color: Colors.white, fontSize: 20),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              const SizedBox(
-                                width: 30,
-                              ),
-                              Text(
-                                "  $cardName",
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                              const SizedBox(
-                                width: 70,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "VALID",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 10),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "$cardExprireM / $cardExprireY",
-                                    style: const TextStyle(
-                                        color: Colors.white, fontSize: 10),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
                   )
                 ],
               ),
-            );
-          }
-        },
-        child: const Text(
-          'Show Dialog',
-          style: TextStyle(color: Colors.white),
+            ),
+            GestureDetector(
+              onTap: () {
+                if (cardHolder.isEmpty ||
+                    cardNumber.isEmpty ||
+                    cardMExpire.isEmpty ||
+                    cardYExpire.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      backgroundColor: Colors.red,
+                      content: Center(
+                        child: Text(
+                          "Please fill the fields",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      )));
+                } else {
+                  showModalBottomSheet(
+                      backgroundColor: const Color.fromARGB(255, 160, 196, 129),
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const SizedBox(
+                          height: 400,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Icon(
+                                  Icons.check_circle_outline,
+                                  size: 100,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "Your order is complete :)",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                Divider(
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  "Order#1001",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                                Divider(
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "You will be receiving a confirmation email with order details. ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      });
+                }
+              },
+              child: Container(
+                width: size.width,
+                height: size.height / 16,
+                margin: const EdgeInsets.all(16),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    color: const Color(0xffcb3759),
+                    borderRadius: BorderRadius.circular(10)),
+                child: const Text(
+                  "Complete purchase",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300),
+                ).animate(delay: 3000.ms).shake(),
+              ),
+            )
+          ],
         ),
       ),
     );

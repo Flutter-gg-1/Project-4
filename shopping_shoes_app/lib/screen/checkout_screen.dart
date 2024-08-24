@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_shoes_app/data/app_helper.dart';
 import 'package:shopping_shoes_app/data/global_variabels.dart';
+import 'package:shopping_shoes_app/screen/payment_screen.dart';
+import 'package:shopping_shoes_app/theme/custom_app_theme.dart';
+
+import '../model/cart_model.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -28,16 +32,20 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const Icon(Icons.arrow_back),
+              IconButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  icon: const Icon(Icons.arrow_back)),
               const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     "Checkout",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: AppThemes.txtStyleTitlePage,
                   ),
                   Text("Total ${AppHelper.getAllLengthItems()} Items")
                 ],
@@ -51,6 +59,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ? ListView.builder(
                           itemCount: myCart.length,
                           itemBuilder: (context, index) {
+                            CartModel model = myCart[index];
                             return Stack(
                               children: [
                                 Container(
@@ -66,7 +75,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                           width: 70,
                                           height: 70,
                                           decoration: BoxDecoration(
-                                              color: myCart[index].modelColor,
+                                              color: model.modelColor,
                                               borderRadius:
                                                   BorderRadius.circular(20)),
                                         ),
@@ -79,8 +88,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 -30 / 360),
                                             child: SizedBox(
                                                 width: 80,
-                                                child: Image.asset(
-                                                    myCart[index].img)),
+                                                child: Image.asset(model.img)),
                                           )),
                                       Positioned(
                                           top: 20,
@@ -92,30 +100,25 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "${myCart[index].name} ${myCart[index].model}",
-                                                style: const TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                                "${model.name} ${model.model}",
+                                                style: AppThemes.txtStyle_12B,
                                               ),
                                               const SizedBox(
                                                 height: 5,
                                               ),
                                               Row(
                                                 children: [
-                                                  const Text(
+                                                  Text(
                                                     "QNT:",
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold),
+                                                    style:
+                                                        AppThemes.txtStyleBold,
                                                   ),
                                                   const SizedBox(
                                                     width: 10,
                                                   ),
-                                                  Text("${myCart[index].qnt}",
-                                                      style: const TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold)),
+                                                  Text("${model.qnt}",
+                                                      style: AppThemes
+                                                          .txtStyleBold),
                                                   const SizedBox(
                                                     width: 10,
                                                   ),
@@ -123,18 +126,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                               ),
                                               Row(
                                                 children: [
-                                                  const Text("Size:",
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold)),
+                                                  Text("Size:",
+                                                      style: AppThemes
+                                                          .txtStyleBold),
                                                   const SizedBox(
                                                     width: 10,
                                                   ),
                                                   Text(
-                                                      "${myCart[index].selectedSize} UK",
-                                                      style: const TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold)),
+                                                      "${model.selectedSize} UK",
+                                                      style: AppThemes
+                                                          .txtStyleBold),
                                                   const SizedBox(
                                                     width: 10,
                                                   ),
@@ -161,7 +162,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 height: size.height / 2.3,
                 margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                    border: Border.all(),
+                    border: Border.all(color: Colors.black12),
                     borderRadius: BorderRadius.circular(20)),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -170,8 +171,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Subtotal"),
-                          Text("${AppHelper.getAllAmountItems()} SAR")
+                          Text(
+                            "Subtotal",
+                            style: AppThemes.txtStyleGoogleFont,
+                          ),
+                          Text(
+                            "${AppHelper.getAllAmountItems()} SAR",
+                            style: AppThemes.txtStyleGoogleFont,
+                          )
                         ],
                       ),
                       const SizedBox(
@@ -180,8 +187,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Shipping fee"),
-                          Text("$shoppingFee SAR")
+                          Text(
+                            "Shipping fee",
+                            style: AppThemes.txtStyleGoogleFont,
+                          ),
+                          Text(
+                            "$shoppingFee SAR",
+                            style: AppThemes.txtStyleGoogleFont,
+                          )
                         ],
                       ),
                       const SizedBox(
@@ -190,8 +203,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Tax fee 5%"),
-                          Text("$taxFee SAR")
+                          Text(
+                            "Tax fee 5%",
+                            style: AppThemes.txtStyleGoogleFont,
+                          ),
+                          Text(
+                            "$taxFee SAR",
+                            style: AppThemes.txtStyleGoogleFont,
+                          )
                         ],
                       ),
                       const SizedBox(
@@ -200,10 +219,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Order total",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          Text("$sum SAR",
-                              style: TextStyle(fontWeight: FontWeight.bold))
+                          Text("Order total", style: AppThemes.txtStyleBold),
+                          Text("$sum SAR", style: AppThemes.txtStyleBold)
                         ],
                       ),
                       const SizedBox(
@@ -213,30 +230,30 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
+                          Text(
                             "Payment Method",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                            style: AppThemes.txtStyleTitlePage,
                           ),
                           TextButton(
                               onPressed: () {},
-                              child: const Text(
+                              child: Text(
                                 "Change",
-                                style: TextStyle(color: Colors.blue),
+                                style: AppThemes.txtStyleBlue,
                               ))
                         ],
                       ),
                       Row(
                         children: [
-                          Container(
-                            width: 250,
+                          SizedBox(
+                            width: 200,
                             height: 50,
                             child: ListTile(
                               leading: Image.asset(
-                                "assets/img/applePay.png",
-                                width: 70,
+                                "assets/img/visa-icon.png",
+                                width: 25,
                               ),
-                              title: Text("Apple Pay"),
+                              title: Text("Visa",
+                                  style: AppThemes.txtStyleGoogleFont),
                             ),
                           )
                         ],
@@ -244,41 +261,46 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
+                          Text(
                             "Shipping Address",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                            style: AppThemes.txtStyleTitlePage,
                           ),
                           TextButton(
                               onPressed: () {},
-                              child: const Text(
+                              child: Text(
                                 "Change",
-                                style: TextStyle(color: Colors.blue),
+                                style: AppThemes.txtStyleBlue,
                               ))
                         ],
                       ),
                       Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                              "Saudi Arabia - Qatif - TarutIsland\n Phone +966 597 331 447"))
+                            "Saudi Arabia - Qatif - TarutIsland\n Phone +966 597 331 447",
+                            style: AppThemes.txtStyleGoogleFont,
+                          ))
                     ],
                   ),
                 ),
               ),
-              Container(
-                width: size.width,
-                height: size.height / 16,
-                margin: const EdgeInsets.all(16),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: const Color(0xffcb3759),
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Text(
-                  "Continue to pay",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300),
+              GestureDetector(
+                onTap: () {
+                  var route = MaterialPageRoute(
+                      builder: (BuildContext context) => const PaymentScreen());
+                  Navigator.of(context).push(route);
+                },
+                child: Container(
+                  width: size.width,
+                  height: size.height / 16,
+                  margin: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: const Color(0xffcb3759),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Text(
+                    "Continue to pay",
+                    style: AppThemes.txtStyleBtn,
+                  ),
                 ),
               )
             ],

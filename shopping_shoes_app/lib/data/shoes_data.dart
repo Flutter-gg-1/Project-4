@@ -8,7 +8,7 @@ List<ShoesModel> allNikeShoes = [
     price: 575,
     img: "assets/img/shoes-nike.png",
     modelColor: const Color(0xff4c77cf),
-    model: "something",
+    model: "Air Max 331",
     sizes: ['7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11'],
     details:
         "Smooth. Sleek. Solid. The AJ1 Low brings you a clean, classic look that's familiar and always fresh. Nike Air cushioning keeps every step comfortable. Full-grain leather lends a premium feel to ensure your 'fit is always on point.",

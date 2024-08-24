@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:like_button/like_button.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:shopping_shoes_app/data/app_bar.dart';
 import 'package:shopping_shoes_app/data/global_variabels.dart';
 import 'package:shopping_shoes_app/data/shoes_data.dart';
 import 'package:shopping_shoes_app/model/shoes_model.dart';
+import 'package:shopping_shoes_app/screen/my_cart_screen.dart';
 import 'package:shopping_shoes_app/screen/product_screen.dart';
 import 'package:shopping_shoes_app/theme/custom_app_theme.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -84,28 +87,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            const ListTile(
-              title: Text(
-                "Home",
-                style: TextStyle(
-                    color: Color(0xffcb3759),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500),
-              ),
-              leading: Icon(
-                Icons.home,
-                color: Color(0xffcb3759),
-              ),
-            ),
-            const ListTile(
-              title: Text(
+            ListTile(
+              onTap: () {
+                var route = MaterialPageRoute(
+                    builder: (BuildContext context) => const MyCartScreen());
+                Navigator.of(context).push(route);
+              },
+              title: const Text(
                 "My cart",
                 style: TextStyle(
                     color: Color(0xffcb3759),
                     fontSize: 18,
                     fontWeight: FontWeight.w500),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.shopping_cart_outlined,
                 color: Color(0xffcb3759),
               ),
@@ -210,7 +205,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                           model.img,
                                           width: 100,
                                         ),
-                                      ),
+                                      )
+                                          .animate()
+                                          .fadeIn(duration: 720.ms)
+                                          .slide(),
                                     ),
                                     Positioned(
                                       right: 4,
@@ -235,13 +233,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: Colors.red,
                                           borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(20))),
-                                      child: const RotatedBox(
+                                      child: RotatedBox(
                                         quarterTurns: -1,
                                         child: Text(
                                           "New",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
+                                          style: AppThemes.txtStyleWhite,
                                           textAlign: TextAlign.center,
                                         ),
                                       ),
@@ -260,7 +256,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   color: model.modelColor,
                                                   fontWeight: FontWeight.bold),
                                               textAlign: TextAlign.center,
-                                            ),
+                                            )
+                                                .animate()
+                                                .fadeIn(duration: 720.ms)
+                                                .slide(),
                                           ),
                                           const SizedBox(
                                             height: 5,
@@ -274,7 +273,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   color: model.modelColor,
                                                   fontWeight: FontWeight.bold),
                                               textAlign: TextAlign.center,
-                                            ),
+                                            )
+                                                .animate()
+                                                .fadeIn(duration: 730.ms)
+                                                .slide(),
                                           ),
                                         ],
                                       ),
@@ -296,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       children: [
         Container(
-          width: size.width / 16,
+          width: size.width / 12,
           height: size.height / 2.6,
           margin: EdgeInsets.symmetric(horizontal: size.width * 0.05),
           child: RotatedBox(
@@ -316,21 +318,23 @@ class _HomeScreenState extends State<HomeScreen> {
                           EdgeInsets.symmetric(horizontal: size.width * 0.05),
                       child: Text(
                         special[index],
-                        style: TextStyle(
-                            fontSize: selectedIndex == index ? 22 : 18,
-                            color: selectedIndex == index
-                                ? Colors.black
-                                : Colors.black12),
+                        style: GoogleFonts.ubuntu(
+                            textStyle: TextStyle(
+                          fontSize: selectedIndex == index ? 22 : 18,
+                          color: selectedIndex == index
+                              ? Colors.redAccent.shade400
+                              : Colors.black12,
+                        )),
                       ),
                     ),
                   );
-                }),
+                }).animate().fadeIn(delay: 4600.ms),
           ),
         ),
         isLoading == true
             ? Shimmer(
                 child: Container(
-                  width: size.width * 0.835,
+                  width: size.width * 0.81,
                   height: size.height * 0.4,
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(20)),
@@ -356,7 +360,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               )
             : Container(
-                width: size.width * 0.835,
+                width: size.width * 0.81,
                 height: size.height * 0.4,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(20)),
@@ -400,7 +404,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Text(
                                   model.name,
                                   style: AppThemes.homeProductName,
-                                ),
+                                ).animate().fadeIn(duration: 600.ms).slide(),
                               ),
                               Positioned(
                                 left: 10,
@@ -408,7 +412,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Text(
                                   model.model,
                                   style: AppThemes.homeProductModel,
-                                ),
+                                ).animate().fadeIn(duration: 640.ms).slide(),
                               ),
                               Positioned(
                                 left: 10,
@@ -416,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Text(
                                   "${model.price.toString()} SAR",
                                   style: AppThemes.homeProductPrice,
-                                ),
+                                ).animate().fadeIn(duration: 680.ms).slide(),
                               ),
                               Positioned(
                                   right: 0,
@@ -429,7 +433,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 250,
                                       child: Image.asset(model.img),
                                     ),
-                                  )),
+                                  )).animate().fadeIn(duration: 700.ms).slide(),
                               const Positioned(
                                 bottom: 10,
                                 right: 55,
@@ -437,7 +441,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Icons.arrow_forward_rounded,
                                   color: Colors.white,
                                 ),
-                              ),
+                              ).animate(delay: 1000.ms).shake(),
                               Positioned(
                                 right: 50,
                                 top: 8,
@@ -482,15 +486,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
                 child: Text(
                   categories[index],
-                  style: TextStyle(
-                      fontSize: selectedIndexCat == index ? 22 : 18,
-                      color: selectedIndexCat == index
-                          ? Colors.black
-                          : Colors.black12),
+                  style: GoogleFonts.ubuntu(
+                      textStyle: TextStyle(
+                    fontSize: selectedIndexCat == index ? 22 : 18,
+                    color: selectedIndexCat == index
+                        ? Colors.redAccent.shade400
+                        : Colors.black12,
+                  )),
                 ),
               ),
             );
-          }),
+          }).animate().fadeIn(delay: 4600.ms),
     );
   }
 }

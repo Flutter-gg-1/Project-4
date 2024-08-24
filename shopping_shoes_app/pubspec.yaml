@@ -7,8 +7,10 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  convex_bottom_bar: ^3.2.0
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.0
   google_fonts: ^6.2.1
   like_button: ^2.0.5
   shimmer_animation: ^2.2.1

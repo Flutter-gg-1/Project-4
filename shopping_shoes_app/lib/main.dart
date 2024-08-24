@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_shoes_app/buttom_nav_widget.dart';
+import 'package:shopping_shoes_app/widget/buttom_nav_widget.dart';
 
 void main() {
   runApp(const MainApp());
