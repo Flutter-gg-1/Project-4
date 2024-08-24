@@ -73,7 +73,7 @@ The purpose of this app is to enhance the customer experience at a coffee shop b
 
 ### Demo Video
 
-![alt text](assest/readme/demo.mp4)
+![assest/readme/demo.mp4](assest/readme/demo.mp4)
 
 ## License
 
