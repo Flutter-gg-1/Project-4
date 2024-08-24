@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   bottom_navy_bar: ^6.1.0
   chat_bubbles: ^1.6.0
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:

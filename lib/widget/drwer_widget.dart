@@ -41,6 +41,9 @@ class DrwerWidget extends StatelessWidget {
             ButtonWidget(
               tex: "Logout",
               fun: () {
+
+                nameG = "";
+                passwordG = "";
     
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) {
