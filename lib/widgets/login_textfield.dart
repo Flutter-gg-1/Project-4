@@ -4,12 +4,11 @@ import 'package:email_validator/email_validator.dart';
 class LoginTextfield extends StatelessWidget {
   final String hint;
   final TextEditingController controller;
-  final bool isMatched;
-  const LoginTextfield(
-      {super.key,
-      required this.hint,
-      required this.controller,
-      this.isMatched = false});
+  const LoginTextfield({
+    super.key,
+    required this.hint,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +36,10 @@ class LoginTextfield extends StatelessWidget {
             return '$hint cannot be empty';
           } else if (value.contains(' ') && hint == 'Username') {
             return 'Username cannot contain space';
-          } else if (hint == 'Email') {
-            if (EmailValidator.validate(controller.text)) {
-              return 'Wrong Email Format';
+          } else if (hint == 'email') {
+            if (!EmailValidator.validate(controller.text, true)) {
+              return 'Wrong Email Syntax';
             }
-          } else if (hint == 'Password Confirmation' && !isMatched) {
-            return 'Passwords do not match';
           }
           return null;
         },

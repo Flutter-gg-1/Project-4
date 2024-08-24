@@ -16,7 +16,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmationController = TextEditingController();
   final key = GlobalKey<FormState>();
 
   @override
@@ -70,14 +69,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   LoginTextfield(
                       hint: 'Password', controller: passwordController),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  LoginTextfield(
-                      hint: 'Password Confirmation',
-                      controller: confirmationController,
-                      isMatched: confirmationController.text ==
-                          passwordController.text),
                   const SizedBox(
                     height: 40,
                   ),
