@@ -8,9 +8,11 @@ environment:
 
 dependencies:
   animated_rating_stars: ^1.0.1
+  counter_button: ^1.0.1
   flutter:
     sdk: flutter
   flutter_animate: ^4.5.0
+  geolocator: ^13.0.1
   image_picker: ^1.1.2
   introduction_screen: ^3.1.14
   

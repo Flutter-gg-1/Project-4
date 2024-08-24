@@ -1,16 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:shop_app/category_style.dart';
+import 'package:shop_app/helper/location_permission.dart';
+import 'package:shop_app/product_screen.dart';
 import 'package:shop_app/order_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  String location = "Your location";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color(0xff9baa99),
+        actions: [
+          Text(location),
+          IconButton(
+              onPressed: () async {
+                determinePosition();
+                const LocationSettings locationSettings = LocationSettings(
+                  accuracy: LocationAccuracy.high,
+                  distanceFilter: 100,
+                );
+
+                Position position = await Geolocator.getCurrentPosition(
+                    locationSettings: locationSettings);
+                location = ("${position.latitude},${position.altitude}");
+                setState(() {});
+              },
+              icon: const Icon(Icons.location_on))
+        ],
       ),
       drawer: const Drawer(
         child: Column(
@@ -106,10 +132,18 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const OrderWidget(
-                  name: "Nike green",
-                  price: "760 SAR",
-                  imgUrl: "assets/shoes1.png"),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return const ProductScreen();
+                  }));
+                },
+                child: const OrderWidget(
+                    name: "Nike green",
+                    price: "760 SAR",
+                    imgUrl: "assets/shoes1.png"),
+              ),
               const SizedBox(height: 20),
               const OrderWidget(
                   name: "Nike purple",
