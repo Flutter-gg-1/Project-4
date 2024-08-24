@@ -4,11 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TexfiledWidget extends StatelessWidget {
-  const TexfiledWidget({
-    super.key, required this.texHint,
+   TexfiledWidget({
+    super.key, required this.texHint, required this.valG, this.validatorFun, this.onChangeFun
   });
 
   final String texHint;
+
+  String valG;
+
+  final String? Function(String?)? validatorFun;
+
+  final Function(String)? onChangeFun;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,11 @@ class TexfiledWidget extends StatelessWidget {
       child: Material(
         elevation: 4,
         borderRadius: BorderRadius.circular(16),
-        child: TextField(
+        child: TextFormField(
+
+          validator: validatorFun ,
+
+          onChanged: onChangeFun,
           
           
           decoration: InputDecoration(

@@ -1,86 +1,126 @@
-
-
-
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:pro4/global.dart';
 import 'package:pro4/page/store_page.dart';
+import 'package:pro4/widget/button_widget.dart';
 import 'package:pro4/widget/texfiled_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return  SafeArea(
-      child: Scaffold(
-      
-      
-      
-      
-        body: Column(
-      
-          // mainAxisAlignment: MainAxisAlignment.center,
-      
-      
-          children: [
+  State<HomePage> createState() => _HomePageState();
+}
 
-            SizedBox(height: 45,),
-      
-             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+class _HomePageState extends State<HomePage> {
+
+   GlobalKey<FormState> globalKey =  GlobalKey<FormState>();
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key:globalKey ,
+      child: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+
+            
+            child: Column(
+              
+                
               children: [
-      
-                const Icon(FontAwesome.store_solid , color:Colors.green ,),
-                const SizedBox(width: 10,),
-                Text("MyStore", style: GoogleFonts.lato(fontWeight: FontWeight.bold,fontSize: 24),)
-      
+                const SizedBox(
+                  height: 45,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      FontAwesome.store_solid,
+                      color: Colors.green,
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "MyStore",
+                      style: GoogleFonts.lato(
+                          fontWeight: FontWeight.bold, fontSize: 24),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 100,
+                ),
+                 TexfiledWidget(
+
+                  onChangeFun: (p0) {
+                     
+                     nameG = p0;
+                  },
+                  validatorFun: (p0) {
+                  
+                    if(p0 == null || nameG.isEmpty){
+                      return"give tex";
+                  
+                    }else{
+                  
+                      return null;
+                    }
+                  },
+                  valG: nameG,
+                  texHint: "name",
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                 TexfiledWidget(
+                  onChangeFun: (p0) {
+                    passwordG = p0;
+                  },
+                  validatorFun: (p0) {
+                    
+                    if(p0 == null || passwordG.isEmpty){
+                      return"give tex";
+                  
+                    }else{
+                  
+                      return null;
+                    }
+                  },
+                  valG: passwordG,
+                  texHint: "password",
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                ButtonWidget(
+                  tex: "Login",
+                  fun: () {
+
+                    log(nameG);
+                    log(passwordG);
+                  
+                    if(globalKey.currentState!.validate()){
+                  
+                    
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) {
+                        return const StorePage();
+                      },
+                    ));
+                    }
+                  },
+                ),
+                // const Spacer(
+                //   flex: 2,
+                // ),
               ],
             ),
-
-           const Spacer(flex: 1,),
-      
-           const  TexfiledWidget(texHint: "name",),
-           const SizedBox(height: 25,),
-            const TexfiledWidget(texHint: "password",),
-                     const SizedBox(height: 50,),
-      
-      
-      
-            GestureDetector(
-              onTap: () {
-                
-
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
-
-                  return    const StorePage();
-                  
-                },));
-              },
-              child: Container(
-                    
-                width: 250,
-                height: 60,
-                    
-                decoration: BoxDecoration(
-                    
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(16)
-                ),
-                    
-                child: Center(child: Text("Login" , style: GoogleFonts.lato(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold) ,)),
-              ),
-            ),
-
-            const Spacer(flex: 2,),
-
-
-      
-      
-            
-      
-          ],
+          ),
         ),
       ),
     );
