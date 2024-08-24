@@ -1,6 +1,6 @@
 import 'package:coffeshop_app/src/coffe_info.dart';
 import 'package:coffeshop_app/src/profile.dart';
-import 'package:coffeshop_app/widget/home_content.dart';
+import 'package:coffeshop_app/widget/home/home_content.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';

@@ -1,4 +1,4 @@
-import 'package:coffeshop_app/widget/profile_details.dart';
+import 'package:coffeshop_app/widget/profile/profile_details.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

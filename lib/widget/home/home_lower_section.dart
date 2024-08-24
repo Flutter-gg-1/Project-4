@@ -1,6 +1,6 @@
 
 import 'package:buttons_tabbar/buttons_tabbar.dart';
-import 'package:coffeshop_app/widget/coffe_option.dart';
+import 'package:coffeshop_app/widget/home/coffe_option.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

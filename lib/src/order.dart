@@ -1,5 +1,5 @@
-import 'package:coffeshop_app/widget/custom_bottom_sheet.dart';
-import 'package:coffeshop_app/widget/order_details.dart';
+import 'package:coffeshop_app/widget/order/custom_bottom_sheet.dart';
+import 'package:coffeshop_app/widget/order/order_details.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
