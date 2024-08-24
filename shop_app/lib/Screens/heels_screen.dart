@@ -11,7 +11,7 @@ class HeelsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 231, 231, 231),
         centerTitle: true,
-        title: const Text("Sneakrs",
+        title: const Text("High Heels",
             style: TextStyle(
               color: Color(0xff5d665b),
               fontSize: 20,

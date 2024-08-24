@@ -111,6 +111,10 @@ class SigninScreen extends StatelessWidget {
                           },
                         ),
                       ),
+                      const Text(
+                        "Forget password?",
+                        style: TextStyle(color: Color(0xff4e574e)),
+                      ),
                       const SizedBox(height: 50),
                       ElevatedButton(
                         style: ButtonStyle(

@@ -5,12 +5,22 @@ void showAlert(BuildContext context) {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text("Spring Sales"),
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Spring Sales"),
+              Icon(
+                Icons.flare_rounded,
+                size: 30,
+                color: Color.fromARGB(255, 247, 200, 216),
+              )
+            ],
+          ),
           titleTextStyle:
               const TextStyle(color: Color(0xff484646), fontSize: 26.04),
           actionsAlignment: MainAxisAlignment.center,
-          contentTextStyle:
-              const TextStyle(color: Color(0xff5d665b), fontSize: 20),
+          contentTextStyle: const TextStyle(
+              color: Color.fromARGB(255, 207, 157, 174), fontSize: 20),
           content: Container(
             alignment: Alignment.center,
             height: 90,
@@ -24,7 +34,7 @@ void showAlert(BuildContext context) {
                   Navigator.of(context).pop();
                 },
                 child: const Text("Close",
-                    style: TextStyle(color: Colors.black, fontSize: 18))),
+                    style: TextStyle(color: Colors.black38, fontSize: 18))),
             const SizedBox(height: 80)
           ],
         );
