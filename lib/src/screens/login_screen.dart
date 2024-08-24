@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,10 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController passController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool passwordVisible = false;
+
+  bool validateEmail(String email) {
+    return EmailValidator.validate(email.trim());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,9 +93,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               hintText: "Email",
                               hintStyle: GoogleFonts.abhayaLibre()),
-                          validator: (value) => !value!.contains("@")
-                              ? "Please enter a valid Email"
-                              : null,
+                          validator: (value) {
+                            if (value == null || !validateEmail(value)) {
+                              return "Please enter a valid Email";
+                            }
+                            return null;
+                          },
                         ),
 
                         //Password TextFormField

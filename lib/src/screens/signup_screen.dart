@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/screens/login_screen.dart';
+import 'package:email_validator/email_validator.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -23,6 +24,10 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Map<String, String> data = {};
   bool passwordVisible = false;
+
+  bool validateEmail(String email) {
+    return EmailValidator.validate(email.trim());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -141,10 +146,12 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               hintText: "Email",
                               hintStyle: GoogleFonts.abhayaLibre()),
-                          validator: (value) =>
-                              !value!.contains("@") || value.length < 5
-                                  ? "Please enter a valid Email"
-                                  : null,
+                          validator: (value) {
+                            if (value == null || !validateEmail(value)) {
+                              return "Please enter a valid Email";
+                            }
+                            return null;
+                          },
                         ),
 
                         //Password TextFormField
