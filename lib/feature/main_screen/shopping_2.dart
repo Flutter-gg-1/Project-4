@@ -17,16 +17,20 @@ Widget myPageViewShopping_2() {
                       style: TextStyle(
                           fontSize: getScreenSize(context).height / 25,
                           color: Colors.black)),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(10)),
-                      border: Border.all(color: Colors.black),
-                    ),
-                    width: getScreenSize(context).width / 2.2,
-                    height: getScreenSize(context).height / 4,
-                    child: const Image(
-                      image: AssetImage('assets/images/dev/i15.png'),
-                      fit: BoxFit.cover,
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        border: Border.all(color: Colors.black),
+                      ),
+                      width: getScreenSize(context).width / 2.2,
+                      height: getScreenSize(context).height / 4,
+                      child: const Image(
+                        image: AssetImage('assets/images/dev/i15.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ],
@@ -37,16 +41,20 @@ Widget myPageViewShopping_2() {
                       style: TextStyle(
                           fontSize: getScreenSize(context).height / 25,
                           color: Colors.black)),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(10)),
-                      border: Border.all(color: Colors.black),
-                    ),
-                    width: getScreenSize(context).width / 2.2,
-                    height: getScreenSize(context).height / 4,
-                    child: const Image(
-                      image: AssetImage('assets/images/dev/hp15.6.png'),
-                      fit: BoxFit.cover,
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        border: Border.all(color: Colors.black),
+                      ),
+                      width: getScreenSize(context).width / 2.2,
+                      height: getScreenSize(context).height / 4,
+                      child: const Image(
+                        image: AssetImage('assets/images/dev/hp15.6.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ],

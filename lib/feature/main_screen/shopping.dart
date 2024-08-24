@@ -51,7 +51,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white,
         backgroundColor: Colors.black,
         currentIndex: bottomIndex,
         onTap: (index) {
@@ -62,20 +61,26 @@ class _HomeScreenState extends State<HomeScreen> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  print('home');
+                },
                 icon: const Icon(Icons.home, color: Colors.white)),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  print('tapped');
+                },
                 icon: const Icon(Icons.shopping_cart_outlined,
                     color: Colors.white)),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  print('tapped');
+                },
                 icon: const Icon(Icons.person_3_outlined, color: Colors.white)),
             label: '',
           ),
