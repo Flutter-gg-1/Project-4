@@ -1,7 +1,7 @@
 import 'package:animated_rating_stars/animated_rating_stars.dart';
 import 'package:counter_button/counter_button.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_app/customWidgets/custom_background.dart';
+import 'package:shop_app/Src/customWidgets/custom_background.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/customWidgets/order_widget.dart';
+import 'package:shop_app/Src/customWidgets/order_widget.dart';
 
 class FaveoriteScreen extends StatelessWidget {
   const FaveoriteScreen({super.key});

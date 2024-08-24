@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/alert_show.dart';
-import 'package:shop_app/customWidgets/category_style.dart';
-import 'package:shop_app/Screens/heels_screen.dart';
-import 'package:shop_app/helper/location_permission.dart';
-import 'package:shop_app/Screens/product_screen.dart';
-import 'package:shop_app/customWidgets/order_widget.dart';
-import 'package:shop_app/Screens/sneakrs_screen.dart';
+import 'package:shop_app/Src/alert_show.dart';
+import 'package:shop_app/Src/customWidgets/category_style.dart';
+import 'package:shop_app/Src/Screens/heels_screen.dart';
+import 'package:shop_app/Src/helper/location_permission.dart';
+import 'package:shop_app/Src/Screens/product_screen.dart';
+import 'package:shop_app/Src/customWidgets/order_widget.dart';
+import 'package:shop_app/Src/Screens/sneakrs_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

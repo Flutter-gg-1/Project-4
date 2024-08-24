@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:shop_app/Screens/signin_screen.dart';
+import 'package:shop_app/Src/Screens/signin_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shop_app/customWidgets/setting_style.dart';
+import 'package:shop_app/Src/customWidgets/setting_style.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

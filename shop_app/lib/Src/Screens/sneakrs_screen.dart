@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/customWidgets/order_widget.dart';
-import 'package:shop_app/Screens/product_screen.dart';
+import 'package:shop_app/Src/customWidgets/order_widget.dart';
+import 'package:shop_app/Src/Screens/product_screen.dart';
 
 class SneakrsScreen extends StatelessWidget {
   const SneakrsScreen({super.key});

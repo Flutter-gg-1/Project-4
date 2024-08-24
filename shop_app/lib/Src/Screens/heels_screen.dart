@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/customWidgets/order_widget.dart';
+import 'package:shop_app/Src/customWidgets/order_widget.dart';
 
 class HeelsScreen extends StatelessWidget {
   const HeelsScreen({super.key});
@@ -21,7 +21,7 @@ class HeelsScreen extends StatelessWidget {
       body: const Column(
         children: [
           SizedBox(height: 20),
-          const OrderWidget(
+          OrderWidget(
               name: "Black heels",
               price: "800",
               imgUrl: "assets/highHeel1.png"),
