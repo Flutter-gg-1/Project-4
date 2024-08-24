@@ -3,6 +3,8 @@ import 'package:shopping_app/utils/navigation_helper.dart';
 import 'package:shopping_app/utils/data/user_data.dart';
 import 'package:shopping_app/widgets/login_textfield.dart';
 
+import '../widgets/alert_message.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -77,6 +79,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                           )));
                             }
                           }
+                        } else {
+                          showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const AlertMessage(section: 'login');
+                          });
                         }
                       },
                       child: const Text(

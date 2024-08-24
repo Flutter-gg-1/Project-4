@@ -16,6 +16,7 @@ class LoginTextfield extends StatelessWidget {
       height: 50,
       width: MediaQuery.of(context).size.width * 0.7,
       child: TextFormField(
+        obscureText: hint == 'Password' ? true : false,
         controller: controller,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(

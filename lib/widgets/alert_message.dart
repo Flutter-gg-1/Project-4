@@ -6,7 +6,9 @@ class AlertMessage extends StatelessWidget {
     'about':
         'Welcome to Jeem, your ultimate destination for high-quality clothing and electronics!\n\nAt Jeem, we’re dedicated to providing a seamless shopping experience with a diverse range of products. Whether you’re looking for trendy apparel or cutting-edge electronics, we have something for everyone.',
     'contact':
-        'We’re here to help! Whether you have questions, need support, or want to provide feedback, feel free to reach out to us.\n\nGet in Touch\nCustomer Support:\nEmail: jeem@gmail.com\nPhone: 01 6753839'
+        'We’re here to help! Whether you have questions, need support, or want to provide feedback, feel free to reach out to us.\n\nGet in Touch\nCustomer Support:\nEmail: jeem@gmail.com\nPhone: 01 6753839',
+        'login': 'Failed to Login',
+        'register': 'Failed to Register'
   };
   final String section;
   const AlertMessage({super.key, required this.section});

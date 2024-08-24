@@ -4,6 +4,7 @@ import 'package:shopping_app/utils/data/user_data.dart';
 import 'package:shopping_app/widgets/login_textfield.dart';
 
 import '../models/user.dart';
+import '../widgets/alert_message.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -92,6 +93,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               MaterialPageRoute(
                                   builder: (context) => const LoginScreen()));
                           setState(() {});
+                        } else {
+                           showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const AlertMessage(section: 'register');
+                          });
                         }
                       },
                       child: const Text(
