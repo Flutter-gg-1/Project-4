@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:shop_app/signin_screen.dart';
+import 'package:shop_app/Screens/signin_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -40,12 +40,11 @@ class OnBoardingPageState extends State<OnBoardingPage> {
 
     return IntroductionScreen(
       key: introKey,
-      globalBackgroundColor: const Color(0xff9baa99),
+      globalBackgroundColor: Colors.white,
       allowImplicitScrolling: true,
       autoScrollDuration: 3000,
       infiniteAutoScroll: true,
-      safeAreaList: const [true, true, true, true],
-
+      safeAreaList: const [false, false, true, true],
       pages: [
         PageViewModel(
             title: "Welcome to Classy Step",
@@ -60,7 +59,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                   FadeEffect(duration: Duration(seconds: 1)),
                 ],
                 child: Image.asset(
-                  "assets/onBordingImg1.png",
+                  "assets/logo.png",
                 ),
               ),
             )),
@@ -78,7 +77,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
             )),
         PageViewModel(
             title: "Get started now!",
-            body: "Get your account and start shoping in one step",
+            body: "Get your account and start shoping in few steps",
             decoration: const PageDecoration(
               fullScreen: true,
               bodyFlex: 2,
@@ -86,33 +85,38 @@ class OnBoardingPageState extends State<OnBoardingPage> {
                   fontSize: 30,
                   fontFamily: "DMSherifText",
                   fontWeight: FontWeight.w700,
-                  color: Colors.white),
-              bodyTextStyle: bodyStyle,
+                  color: Color(0xff9baa99)),
+              bodyTextStyle: TextStyle(
+                  fontSize: 19,
+                  fontFamily: "DMSherifText",
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xff9baa99)),
               bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
             ))
       ],
       onDone: () => _onIntroEnd(context),
-      onSkip: () => _onIntroEnd(context), // You can override onSkip callback
+      onSkip: () => _onIntroEnd(context),
       showSkipButton: true,
       skipOrBackFlex: 0,
       nextFlex: 0,
       showBackButton: false,
-
       skip: const Text('Skip',
-          style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white)),
+          style:
+              TextStyle(fontWeight: FontWeight.w600, color: Color(0xff9baa99))),
       next: const Icon(
         Icons.arrow_forward,
-        color: Colors.white,
+        color: Color(0xff9baa99),
       ),
       done: const Text('Done',
-          style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white)),
+          style:
+              TextStyle(fontWeight: FontWeight.w600, color: Color(0xff9baa99))),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
           ? const EdgeInsets.all(12.0)
           : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: const DotsDecorator(
-        activeColor: Colors.white,
+        activeColor: Color(0xff9baa99),
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),
         activeSize: Size(22.0, 10.0),

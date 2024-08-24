@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:shop_app/category_style.dart';
+import 'package:shop_app/alert_show.dart';
+import 'package:shop_app/customWidgets/category_style.dart';
+import 'package:shop_app/Screens/heels_screen.dart';
 import 'package:shop_app/helper/location_permission.dart';
-import 'package:shop_app/product_screen.dart';
-import 'package:shop_app/order_widget.dart';
+import 'package:shop_app/Screens/product_screen.dart';
+import 'package:shop_app/customWidgets/order_widget.dart';
+import 'package:shop_app/Screens/sneakrs_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +15,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String location = "Your location";
+  String location = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,37 +28,47 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
               onPressed: () async {
                 determinePosition();
-                const LocationSettings locationSettings = LocationSettings(
-                  accuracy: LocationAccuracy.high,
-                  distanceFilter: 100,
-                );
 
-                Position position = await Geolocator.getCurrentPosition(
-                    locationSettings: locationSettings);
-                location = ("${position.latitude},${position.altitude}");
+                location = ("Saudi Arbia, Riyadh");
                 setState(() {});
               },
               icon: const Icon(Icons.location_on))
         ],
       ),
-      drawer: const Drawer(
+      drawer: Drawer(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Categories",
               style: TextStyle(
                 fontSize: 20,
                 fontFamily: "DMSherifText",
               ),
             ),
-            SizedBox(height: 50),
-            CategoryStyle(title: "Sneakers"),
-            SizedBox(height: 20),
-            CategoryStyle(title: "High Hills"),
-            SizedBox(height: 20),
+            const SizedBox(height: 50),
+            CategoryStyle(
+              title: "Sneakers",
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const SneakrsScreen();
+                }));
+              },
+            ),
+            const SizedBox(height: 20),
+            CategoryStyle(
+              title: "High Hills",
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const HeelsScreen();
+                }));
+              },
+            ),
+            const SizedBox(height: 20),
             CategoryStyle(title: "Sandals"),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             CategoryStyle(title: "Flat shoes")
           ],
         ),
@@ -75,21 +88,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           bottomRight: Radius.circular(60))),
                   child: Row(
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, top: 50),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20, top: 50),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Spring Sales",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontFamily: "DMSherifText",
-                              ),
-                            ),
-                            SizedBox(height: 10),
-                            Text(
+                            TextButton(
+                                onPressed: () {
+                                  return showAlert(context);
+                                },
+                                child: const Text(
+                                  "Spring Sales",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 30,
+                                    fontFamily: "DMSherifText",
+                                  ),
+                                )),
+                            const SizedBox(height: 10),
+                            const Text(
                               "Save up to \$20\non sale sneakers.",
                               style: TextStyle(
                                   color: Colors.white,
@@ -98,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      Image.asset("assets/onBordingImg1.png")
+                      Expanded(child: Image.asset("assets/onBordingImg1.png"))
                     ],
                   ),
                 ),
@@ -149,6 +166,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   name: "Nike purple",
                   price: "450 SAR",
                   imgUrl: "assets/shoes2.png"),
+              const SizedBox(height: 20),
+              const OrderWidget(
+                  name: "Black heels",
+                  price: "800",
+                  imgUrl: "assets/highHeel1.png"),
               const SizedBox(height: 20),
               const OrderWidget(
                   name: "Nike red",

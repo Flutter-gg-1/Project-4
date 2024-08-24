@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/order_widget.dart';
+import 'package:shop_app/customWidgets/order_widget.dart';
 
 class FaveoriteScreen extends StatelessWidget {
   const FaveoriteScreen({super.key});
@@ -27,7 +27,7 @@ class FaveoriteScreen extends StatelessWidget {
                 unselectedLabelColor: Colors.grey,
                 labelStyle:
                     TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                tabs: [Text("Item"), Text("Brand")]),
+                tabs: [Text("Product"), Text("Brand")]),
           ),
           body: TabBarView(clipBehavior: Clip.none, children: [
             const Column(

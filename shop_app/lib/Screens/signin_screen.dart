@@ -17,10 +17,10 @@ class SigninScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 110),
+              const SizedBox(height: 100),
               Image.asset("assets/logo.png", scale: 2),
               Container(
-                height: 500,
+                height: 600,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                     color: Color(0xff9baa99),

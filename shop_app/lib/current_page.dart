@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/faveorite_screen.dart';
-import 'package:shop_app/home_screen.dart';
-import 'package:shop_app/cart_screen.dart';
-import 'package:shop_app/profile_screen.dart';
+import 'package:shop_app/Screens/faveorite_screen.dart';
+import 'package:shop_app/Screens/home_screen.dart';
+import 'package:shop_app/Screens/cart_screen.dart';
+import 'package:shop_app/Screens/profile_screen.dart';
 
 class CurrentPage extends StatefulWidget {
   const CurrentPage({super.key});
