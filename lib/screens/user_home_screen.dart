@@ -4,6 +4,7 @@ import 'package:shopping_app/globals/app_colors.dart';
 import 'package:shopping_app/globals/data.dart';
 import 'package:shopping_app/models/user.dart';
 import 'package:shopping_app/widgets/product_card.dart';
+import 'package:shopping_app/widgets/products_view.dart';
 import 'package:shopping_app/widgets/section_title.dart';
 
 class UserHomeScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
   Widget build(BuildContext context) {
     return Container(
       color: bgColor,
-      child: ListView(
+      child: Column(
         children: [
           Container(
             margin: const EdgeInsets.only(left: 10, top: 10),
@@ -27,18 +28,8 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
             child: Text("Welcome back, ${widget.user.name}",style: GoogleFonts.poppins(color: mainColor, fontSize: 20)),
           ),
           Divider(thickness: 0,color: mainColor),
-          const SizedBox(height: 20),
-          const SectionTitle(title: 'Top Products'),
-          Column(
-            children: List.generate(products.length ~/ 2, (colIndex) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(products.length ~/ 2, (rowIndex) {
-                  rowIndex = rowIndex == 0 ? colIndex * 2 : (colIndex * 2) + 1;
-                  return ProductCard(product: products[rowIndex]);
-                }),
-              );
-            }),
+          Flexible(
+            child: ProductsView(section: "Top Products", sectionProducts: products, user: widget.user,),
           ),
           const SizedBox(height: 50),
         ],

@@ -10,7 +10,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
-      padding: const EdgeInsets.only(left: 10.0),
+      padding: const EdgeInsets.only(left: 40.0),
       child: Text(title,style: GoogleFonts.poppins(color: mainColor, fontSize: 26),
       ),
     );

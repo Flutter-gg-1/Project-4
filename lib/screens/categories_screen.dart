@@ -45,6 +45,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               child: TabBarView(
                 children: List.generate(sections.length, (index) {
                   return ProductsView(
+                    user: widget.user,
                     section: sections[index],
                     sectionProducts: products.where((product) => product.section == sections[index]).toList()
                   );

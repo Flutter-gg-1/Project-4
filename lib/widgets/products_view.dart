@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/product.dart';
+import 'package:shopping_app/models/user.dart';
 import 'package:shopping_app/widgets/product_card.dart';
 import 'package:shopping_app/widgets/section_title.dart';
 
 class ProductsView extends StatefulWidget {
   final List<Product> sectionProducts;
   final String section;
-  const ProductsView({super.key, required this.sectionProducts, required this.section});
+  final User user;
+  const ProductsView({super.key, required this.sectionProducts, required this.section, required this.user});
 
   @override
   State<ProductsView> createState() => _ProductsViewState();
@@ -17,8 +19,8 @@ class _ProductsViewState extends State<ProductsView> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const SizedBox(height: 50,),
-        Center(child: SectionTitle(title: widget.section)),
+        SizedBox(height: 20,),
+        SectionTitle(title: widget.section),
         // start with a column of rows that represents how products will be viewed
         Column(
           // from 0 until half the products number
@@ -34,7 +36,7 @@ class _ProductsViewState extends State<ProductsView> {
                 // column 2 will have rows 4,5 .. etc
                 // we notice if column is x the rows will be 2x and 2x+1
                 rowIndex = rowIndex == 0 ? 2*colIndex : (2*colIndex)+1;
-                return ProductCard(product: widget.sectionProducts[rowIndex]);
+                return ProductCard(product: widget.sectionProducts[rowIndex], user: widget.user);
               }),
             );
           }),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/globals/app_colors.dart';
 import 'package:shopping_app/globals/data.dart';
@@ -18,9 +17,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  String currentLatitude = "";
-  String currentLongitude = "";
-
+  
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -60,74 +57,35 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         });
                         return;
                       }
-                      // if no account with this valid data, get location
+                      // otherwise, create account
                       else {
-                        try {
-                          Position position = await Geolocator.getCurrentPosition();
-                          currentLatitude = position.latitude.toString();
-                          currentLongitude = position.longitude.toString();
-                        }
-                        // if not allowed, ask the user for it
-                        catch (err) {
-                          await showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                elevation: 10,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
-                                alignment: Alignment.center,
-                                title: Text("Access to current location", style: GoogleFonts.poppins(),),
-                                content: Text("Please provide your location for delivery purposes.", style: GoogleFonts.poppins(),),
-                                actions: [
-                                  TextButton(
-                                    style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor)),
-                                    // if user said yes
-                                    onPressed: () async {
-                                      await Geolocator.openLocationSettings();
-                                      Position position =await Geolocator.getCurrentPosition();
-                                      currentLatitude = position.latitude.toString();
-                                      currentLongitude = position.longitude.toString();
-                                    },
-                                    child: Text("OK", style: GoogleFonts.poppins(color: Colors.white))
-                                  ),
-                                  // if user said no
-                                  TextButton(
-                                    onPressed: () {Navigator.pop(context);},
-                                    child: Text("NOT NOW", style: GoogleFonts.poppins(color: mainColor))
-                                  )
-                                ],
-                              );
-                            }
-                          );
-                        }
+                        users.add(
+                          User(name: currentName,
+                          email: currentEmail,
+                          password: currentPassword,
+                          pic: 'assets/default_profile_pic.png')
+                        );
+                        nameController.clear();
+                        emailController.clear();
+                        passwordController.clear();
+                        repassowordController.clear();
+                        await showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const AlertWithIcon(
+                              alert: "Account Created",
+                              icon: Icons.check_circle_outline_outlined,
+                              iconColor: Colors.green
+                            );
+                          }
+                        );
                       }
-                      users.add(
-                        User(name: currentName,
-                        email: currentEmail,
-                        password: currentPassword,
-                        latitude: currentLatitude.isEmpty ? "0" : currentLatitude.toString(),
-                        longitude: currentLongitude.isEmpty? "0" : currentLongitude.toString(),
-                        pic: 'assets/default_profile_pic.png')
-                      );
-                      nameController.clear();
-                      emailController.clear();
-                      passwordController.clear();
-                      repassowordController.clear();
-                      await showDialog(
-                        context: context,
-                        builder: (context) {
-                          return const AlertWithIcon(
-                            alert: "Account Created",
-                            icon: Icons.check_circle_outline_outlined,
-                            iconColor: Colors.green
-                          );
-                        }
-                      );
                       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
                         builder: (context){
                           return const MainScreen();
                         }), (predicate) => false);
                       }
+                    // if input not valid
                     else {
                       showDialog(
                         context: context,
@@ -141,11 +99,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       );
                     }
                   },
-                  child: Text("Create Account", style: GoogleFonts.poppins(color: Colors.white)))
-                ],
-              ),
+                  child: Text("Create Account", style: GoogleFonts.poppins(color: Colors.white))
+                )
+              ],
             ),
           ),
-        ));
+        ),
+      )
+    );
   }
 }
