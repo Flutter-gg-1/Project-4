@@ -1,44 +1,74 @@
-# Shopping App Design & Implementation
 
-## Overview
-In this individual project, you will design and implement a shopping app of your choice using Flutter. This project is an opportunity for you to showcase your creativity and apply various Flutter concepts and widgets to create a unique and engaging user experience. You are required to implement at least **five different UIs** and use the following mandatory concepts:
+![2](https://github.com/user-attachments/assets/0bc75a25-85ea-4278-ad29-ea9e90704c5c)
+# Home Class App
 
-## Mandatory Requirements
-1. **Drawer Widget**: Create a navigational drawer to manage different sections of your app.
-2. **AlertDialog**: Implement alert dialogs to handle user confirmations or important messages.
-3. **TextFields**: Use TextFields for user input, such as search bars, forms, or login screens.
-4. **Navigation Between Views**: Implement smooth navigation across different views in your app.
-5. **BottomNavigationBar**: Use a BottomNavigationBar to allow users to switch between major sections of your app.
-6. **External Packages**: Utilize at least five external packages to enhance your app's UI.
+## Objective
 
-## Bonus Points
-- **Bottom Sheet**: Implement a bottom sheet to display additional options or information.
-- **TabBarView and TabBar**: Add tabs for organizing content in your app.
-- **PageView**: Create a scrollable view for navigating between pages.
+The **Home Class App** is designed to offer a seamless shopping experience for users looking to purchase a variety of home furnishings, including chairs, lamps, and other decor items. Our objective is to provide an elegant, user-friendly platform that showcases a diverse range of high-quality furniture and home accessories. By combining stylish design with practical features, the app aims to make it easy for users to find and buy the perfect pieces to enhance their living spaces.
 
-## Guidelines
-- This is an **individual project**; each student is expected to work independently.
-- You are encouraged to explore and demonstrate your creativity. Your design and implementation should reflect your unique vision and skills.
+## Key Features
 
-## Submission Requirements
-- **Screenshots/Videos**: Include clear screenshots or a short video of your project demonstrating its key features and UI.
-- **Documented README File**: Your project should include a README file that clearly describes:
-  - The purpose and features of your app.
-  - The widgets and external packages used.
-  - Instructions for running the app.
-  - Any additional notes or explanations about your design choices.
+ 📝 **Account Creation**: Users can effortlessly create a new account by providing their email and password, ensuring a smooth onboarding experience.
+ 
+  
+  🔐 **Login Page**: A secure login page enables returning users to access their accounts by entering their email and password. It also supports password recovery to handle forgotten credentials.
+
+  🛒 **Main Product Page**: The homepage features a comprehensive catalog of available products. Users can browse through various categories and view detailed product descriptions.
 
 
-## Resources
-- **Widgets Documentation & Examples**: [Material Design Components](https://m3.material.io/components/badges/overview)
-- **External UI Packages**: [Flutter Gems](https://fluttergems.dev/)
-- **Color Palettes**: [Color Hunt](https://colorhunt.co/)
-- **Design Inspiration**: Figma Community, Pinterest, Dribbble, Mobbin
+ 👤 **Profile Page**: Users can view and update their profile information, including their email address, name, and profile picture. This page allows users to manage their personal details and preferences efficiently.
+ 
 
-## Deadline
-- **Submission Deadline**: 25 August, 9:59 AM
+  🛍️ **Shopping Cart Page**: Users can review the items they have added to their cart, adjust quantities, and proceed to checkout. The page provides a clear summary of selected products and the total cost, streamlining the purchase process.
 
-## Submission
-Ensure that your project meets all the mandatory requirements. Submit your project files along with a brief documentation describing the features and functionalities you've implemented.
 
-Good luck, and have fun creating your shopping app! 🎨📱
+## Widgets Used
+
+  📂 **Drawer Widget**: The app includes a navigational drawer that allows users to easily access different sections of the app, such as Home, Profile, Cart, and more. This feature enhances navigation efficiency by consolidating all major sections in one accessible location.
+
+
+  ⚠️ **AlertDialog**: Alert dialogs are implemented to handle user confirmations and display important messages. For instance, users may receive confirmation prompts before finalizing a purchase or warnings for critical actions, ensuring they make informed decisions.
+
+
+  ⌨️ **TextFields**: `TextFields` are used for various user inputs, including search bars, forms, and login screens. These fields facilitate easy data entry and interaction, enhancing the overall user experience.
+
+
+  🔄 **Navigation Between Views**: Smooth navigation between different views in the app ensures a cohesive user experience. Users can transition seamlessly between pages, such as from the product catalog to the shopping cart, without any interruptions.
+
+
+  📉 **BottomNavigationBar**: A `BottomNavigationBar` allows users to switch between major sections of the app, such as Home, Search, Profile, and Cart. This feature provides quick and intuitive navigation, enhancing usability.
+
+
+ 📚 **Stack**: The `Stack` widget is used to overlay multiple widgets on top of each other. This feature allows for complex UI designs, such as placing text or icons on top of images, creating sophisticated layouts, and managing overlapping elements within the app.
+ 
+
+  🏷️ **AppBar**: The `AppBar` widget provides a consistent header across different screens. It typically includes the app’s title, navigation icons, and action buttons, offering a unified look and easy access to essential functions like search or settings.
+
+
+## Conclusion
+
+The **Home Class App** aims to revolutionize the way users shop for home furnishings by providing a visually appealing and highly functional platform. With its user-friendly design and a suite of robust features, the app ensures a seamless shopping experience from browsing to checkout. Whether users are creating an account, navigating through the product catalog, or managing their profile, the app is designed to deliver both convenience and elegance.
+
+## Outputs
+
+https://github.com/user-attachments/assets/d970da8c-c998-4504-b8b6-f8ac7a0cf983
+
+https://github.com/user-attachments/assets/c4d04baf-1e96-44d0-9d13-a1caad7c2c95
+
+Thanks 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
