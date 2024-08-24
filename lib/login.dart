@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:project4/homepage.dart';
+import 'package:project4/nav_bar.dart';
 
 class Login extends StatefulWidget {
 
@@ -101,7 +99,7 @@ class LoginFormState extends State<LoginForm> {
                 //   const SnackBar(content: Text('Login')),
                 // );
                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Homepage()),
+                    MaterialPageRoute(builder: (context) => const NavBar()),
                   );
               }
             },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project4/nav_bar.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -61,7 +62,8 @@ class Homepage extends StatelessWidget {
 
               ],
             ),
-          )
+          ),
+          
           ]
       )
     );
