@@ -62,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const Padding(
                     padding: EdgeInsets.only(
-                      top: 10,
+                      top: 20,
                       left: 30,
                     ),
                     child: Text(
@@ -73,11 +73,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                      top: 30,
+                      top: 90,
                       left: 40,
                     ),
                     child: Container(
-                      height: 550,
+                      height: 450,
                       width: 350,
                       decoration: BoxDecoration(
                           color: const Color(0xffBB9AB1).withOpacity(0.9),
