@@ -1,6 +1,5 @@
 export 'comb/action.dart';
 export 'common/common.dart';
-export '../core/images/logo.dart';
 export 'common/app_color.dart';
 export '../feature/main_screen/shopping.dart';
 export '../feature/main_screen/shopping_1.dart';
@@ -13,3 +12,4 @@ export '../feature/pages/devices/computers.dart';
 export '../feature/pages/devices/mobiles.dart';
 export '../feature/pages/bottom_page/account.dart';
 export '../feature/pages/bottom_page/cart.dart';
+export '../feature/main_screen/home_view.dart';

@@ -10,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int bottomIndex = 0;
 
-  List<Widget> pagesNavigationBottomBar = const [];
+  List<Widget> pagesNavigationBottomBar = const [HomeView(), PersonCart()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,15 +43,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       drawer: const MyDrawer(),
-      body: Column(
-        children: [
-          myPageViewShopping_1(),
-          const SizedBox(height: 10),
-          myPageViewShopping_2(),
-        ],
-      ),
+      body: pagesNavigationBottomBar[bottomIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: MyColors.colorWhite,
+        unselectedItemColor: Colors.blueGrey,
         backgroundColor: MyColors.colorBlack,
         currentIndex: bottomIndex,
         onTap: (index) {
@@ -61,35 +56,16 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ));
-                },
-                icon: Icon(Icons.home, color: MyColors.colorWhite)),
+            icon: Icon(Icons.home, color: MyColors.colorWhite),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PersonCart(),
-                  ));
-                },
-                icon: Icon(Icons.shopping_cart_outlined,
-                    color: MyColors.colorWhite)),
+            icon:
+                Icon(Icons.shopping_cart_outlined, color: MyColors.colorWhite),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const PersonAccount(),
-                  ));
-                },
-                icon:
-                    Icon(Icons.person_3_outlined, color: MyColors.colorWhite)),
+            icon: Icon(Icons.person_3_outlined, color: MyColors.colorWhite),
             label: '',
           ),
         ],

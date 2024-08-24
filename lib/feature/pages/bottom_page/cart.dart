@@ -6,26 +6,10 @@ class PersonCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyColors.colorWhite,
-      body: Column(
-        children: [
-          const SizedBox(height: 100),
-          Image(
-            image: const AssetImage('assets/images/intro/int1.png'),
-            width: getScreenSize(context).width / 2 + 150,
-          ),
-          const SizedBox(height: 30),
-          Text(
-            'Device Shop Buying and selling electronic devices',
-            style: TextStyle(
-              fontSize: getScreenSize(context).width / 20,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 30),
-        ],
-      ),
+    return Container(
+      color: MyColors.colorWhite,
+      height: 300,
+      child: const Image(image: AssetImage('assets/images/empty.png')),
     );
   }
 }
