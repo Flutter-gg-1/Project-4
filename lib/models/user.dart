@@ -6,12 +6,12 @@ class User {
   final String email;
   final String password;
   final String pic;
-  final List<Product>? cart;
+  List<Product> cart = [];
   
-  User({required this.name, required this.email, required this.password, required this.pic, this.cart});
+  User({required this.name, required this.email, required this.password, required this.pic});
   
   factory User.fromJson(Map<String,dynamic> json) {
-    return User(name: json['name'], email: json['email'], password: json['password'], pic: json['pic'], cart: json['cart']);
+    return User(name: json['name'], email: json['email'], password: json['password'], pic: json['pic']);
   }
 
   Map<String,dynamic> toJson() {
@@ -20,9 +20,7 @@ class User {
     map['email'] = email;
     map['password'] = password;
     map['pic'] = pic;
-    if(cart!=null) {
-      map['cart'] = cart;
-    }
+    map['cart'] = cart;
     return map;
   }
 }

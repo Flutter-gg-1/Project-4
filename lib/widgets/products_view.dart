@@ -19,12 +19,12 @@ class _ProductsViewState extends State<ProductsView> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         SectionTitle(title: widget.section),
         // start with a column of rows that represents how products will be viewed
         Column(
           // from 0 until half the products number
-          children: List.generate(widget.sectionProducts.length~/2, (colIndex) {
+          children: List.generate((widget.sectionProducts.length/2).ceil(), (colIndex) {
             // create a row
             return Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -36,7 +36,12 @@ class _ProductsViewState extends State<ProductsView> {
                 // column 2 will have rows 4,5 .. etc
                 // we notice if column is x the rows will be 2x and 2x+1
                 rowIndex = rowIndex == 0 ? 2*colIndex : (2*colIndex)+1;
-                return ProductCard(product: widget.sectionProducts[rowIndex], user: widget.user);
+                if(rowIndex < widget.sectionProducts.length) {
+                  return ProductCard(product: widget.sectionProducts[rowIndex], user: widget.user);
+                }
+                else {
+                  return SizedBox(height: 200,width: 150,);
+                }
               }),
             );
           }),

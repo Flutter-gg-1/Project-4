@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/globals/app_colors.dart';
 import 'package:shopping_app/models/user.dart';
+import 'package:shopping_app/screens/cart_screen.dart';
 import 'package:shopping_app/screens/categories_screen.dart';
 import 'package:shopping_app/screens/user_home_screen.dart';
 import 'package:shopping_app/widgets/app_drawer.dart';
@@ -17,7 +18,7 @@ class _UserScreenNavigatorState extends State<UserScreenNavigator> {
   late List<Widget> screens = [
       CategoriesScreen(user: widget.currentUser),
       UserHomeScreen(user : widget.currentUser),
-      const Placeholder(),
+      CartScreen(user: widget.currentUser,),
   ];
   List<String> screensLabels = ["Categories", "Home", "Cart"];
   List<IconData> screensIcons = [Icons.category, Icons.home, Icons.shopping_cart]; 

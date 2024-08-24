@@ -22,7 +22,7 @@ class _ProductCardState extends State<ProductCard> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 1000),(){
+    Future.delayed(const Duration(milliseconds: 200),(){
       setState(() {
         isLoading = false;
       });
@@ -44,52 +44,56 @@ class _ProductCardState extends State<ProductCard> {
       onTap: () {
         showModalBottomSheet(
           backgroundColor: thirdColor,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50))),
           context: context, builder: (context){
-          return Container(
+          return SizedBox(
             width: 400,
-            height: 350,
+            height: 300,
             child: AddToCart(product: widget.product, user:widget.user),
           );
         });
       },
       child: Container(
-          margin: const EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: secondaryColor),
-          child: Column(
-            children: [
-              Badge(
-                alignment: Alignment.topLeft,
-                isLabelVisible: widget.product.offer != 'no' ? true : false,
-                label: Text(widget.product.offer, style: GoogleFonts.poppins(fontSize: 15)),
-                child: Image.asset(widget.product.pic, width: 150, height: 150,)
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 10),
-                child: Text(widget.product.name, style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w500
-                )),
-              ),
-              Container(
-                alignment: Alignment.center,
-                width: 150,
-                decoration: BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)), color: Colors.white),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text("${widget.product.price} SR", textAlign: TextAlign.end, style: GoogleFonts.poppins(
-                      color: mainColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500
-                    ),
+        margin: const EdgeInsets.only(top: 10, bottom: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: secondaryColor,
+          boxShadow: [BoxShadow(color: Colors.black45, offset: Offset(1, 2), blurRadius: 5)]
+        ),
+        child: Column(
+          children: [
+            Badge(
+              alignment: Alignment.topLeft,
+              isLabelVisible: widget.product.offer != 'no' ? true : false,
+              label: Text(widget.product.offer, style: GoogleFonts.poppins(fontSize: 15)),
+              child: Image.asset(widget.product.pic, width: 150, height: 150,)
+            ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              child: Text(widget.product.name, style: GoogleFonts.poppins(
+                color: Colors.white,
+                fontSize: 13,
+                fontWeight: FontWeight.w500
+              )),
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: 150,
+              decoration: const BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)), color: Colors.white),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text("${widget.product.price} SR", textAlign: TextAlign.end, style: GoogleFonts.poppins(
+                    color: mainColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500
                   ),
-                  Row(children: List.generate(widget.product.stars, (index){return Icon(Icons.star, color: Colors.yellow, size: 10,);}))
-                ],
                 ),
+                Row(children: List.generate(widget.product.stars, (index){return const Icon(Icons.star, color: Colors.yellow, size: 10,);}))
+              ],
               ),
-            ],
+            ),
+          ],
         ),
       ),
     );

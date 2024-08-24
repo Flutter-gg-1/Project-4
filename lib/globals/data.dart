@@ -108,7 +108,7 @@ List<Product> products = [
     {
       'name' : 'Lenovo Laptop',
       'price' : '799',
-      'pic' : 'assets/electronics_pics/headphones.png',
+      'pic' : 'assets/electronics_pics/laptop.png',
       'offer' : '-30%',
       'section' : 'Electronics',
       'stars' : 4

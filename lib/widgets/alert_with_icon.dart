@@ -23,7 +23,7 @@ class AlertWithIcon extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon,color: iconColor,size: 85),
-            Text(alert,style: GoogleFonts.poppins(color: mainColor,fontSize: 24,fontWeight: FontWeight.w600)),
+            Text(alert, textAlign: TextAlign.center,style: GoogleFonts.poppins(color: mainColor,fontSize: 24,fontWeight: FontWeight.w600)),
           ],
         )
       ),

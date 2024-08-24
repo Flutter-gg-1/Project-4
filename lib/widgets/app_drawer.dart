@@ -24,8 +24,10 @@ class _AppDrawerState extends State<AppDrawer> {
           const CircleAvatar(backgroundColor: Colors.white,radius: 40,backgroundImage: AssetImage('assets/default_profile_pic.png')),
           Text(
             'Hello, ${widget.user.name}',
-            style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            style: GoogleFonts.poppins(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
           ),
+          Text(widget.user.email,
+          style: GoogleFonts.poppins(color: Colors.white, fontSize: 12)),
           const SizedBox(height: 30),
           Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: thirdColor),
