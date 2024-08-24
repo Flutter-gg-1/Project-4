@@ -37,7 +37,7 @@ class _StorePageState extends State<StorePage> {
         title: "pro1",
         price: 33,
         description: "good pro",
-        img: "asset/img/1.jpeg"),
+        img: "asset/img/3.jpeg"),
 
 
         ProductModel(
@@ -46,7 +46,7 @@ class _StorePageState extends State<StorePage> {
         title: "pro2",
         price: 33,
         description: "good pro",
-        img: "asset/img/1.jpeg"),
+        img: "asset/img/4.jpeg"),
 
 
 
@@ -56,7 +56,15 @@ class _StorePageState extends State<StorePage> {
         title: "pro3",
         price: 33,
         description: "good pro",
-        img: "asset/img/1.jpeg"),
+        img: "asset/img/5.jpeg"),
+
+          ProductModel(
+      id: 4,
+      
+        title: "pro3",
+        price: 33,
+        description: "good pro",
+        img: "asset/img/6.jpeg"),
    
    
   ];
@@ -89,14 +97,25 @@ class _StorePageState extends State<StorePage> {
         items: [
           BottomNavyBarItem(
               icon: const Icon(FontAwesome.house_solid),
-              title: const Text(" product")),
+              title: const Text(" product"),
+              activeColor: Colors.orange,
+              inactiveColor: Colors.blue
+              ),
+              
+
 
                BottomNavyBarItem(
               icon: const Icon(FontAwesome.cart_shopping_solid),
-              title: const Text("cart")),
+              title: const Text("cart"),
+              activeColor: Colors.orange,
+              inactiveColor: Colors.blue
+              ),
           BottomNavyBarItem(
               icon: const Icon(FontAwesome.phone_solid),
-              title: const Text("contact"))
+              title: const Text("contact"),
+              activeColor: Colors.orange,
+              inactiveColor: Colors.blue
+              )
         ],
       ),
       appBar: AppBar(

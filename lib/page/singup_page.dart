@@ -1,26 +1,31 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:pro4/global.dart';
 import 'package:pro4/models/user_model.dart';
-import 'package:pro4/page/singup_page.dart';
-import 'package:pro4/page/store_page.dart';
+import 'package:pro4/page/home_page.dart';
 import 'package:pro4/widget/button_widget.dart';
 import 'package:pro4/widget/texfiled_widget.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class SingupPage extends StatefulWidget {
+  const SingupPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SingupPage> createState() => _SingupPageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  bool notFound = false;
+class _SingupPageState extends State<SingupPage> {
+
+
+  String name = "";
+
+  String password = "";
+  String email = "";
+
+  
+  @override
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -54,10 +59,10 @@ class _HomePageState extends State<HomePage> {
                   height: 100,
                 ),
 
-                 notFound == true  ? Text("not Found" , style: GoogleFonts.lato(color: Colors.red),) : const SizedBox(),
+               
                 TexfiledWidget(
                   onChangeFun: (p0) {
-                    nameG = p0;
+                    name = p0;
                   },
                   validatorFun: (p0) {
                     if (p0 == null || p0.isEmpty) {
@@ -74,7 +79,24 @@ class _HomePageState extends State<HomePage> {
                 ),
                 TexfiledWidget(
                   onChangeFun: (p0) {
-                    passwordG = p0;
+                    email = p0;
+                  },
+                  validatorFun: (p0) {
+                    if (p0 == null || p0.isEmpty) {
+                      return "give tex";
+                    } else {
+                      return null;
+                    }
+                  },
+                  valG: passwordG,
+                  texHint: "email",
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                TexfiledWidget(
+                  onChangeFun: (p0) {
+                    password = p0;
                   },
                   validatorFun: (p0) {
                     if (p0 == null || p0.isEmpty) {
@@ -93,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "not Sigin up?    ",
+                      "you have account ?    ",
                       style: GoogleFonts.lato(),
                     ),
                     GestureDetector(
@@ -105,9 +127,21 @@ class _HomePageState extends State<HomePage> {
                             },
                           ));
                         },
-                        child: Text(
-                          "click here ",
-                          style: GoogleFonts.lato(color: Colors.blue),
+                        child: GestureDetector(
+                          onTap: () {
+
+
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) {
+                          return const HomePage();
+                        },
+                      ));
+                            
+                          },
+                          child: Text(
+                            "click here ",
+                            style: GoogleFonts.lato(color: Colors.blue),
+                          ),
                         )),
                   ],
                 ),
@@ -115,28 +149,16 @@ class _HomePageState extends State<HomePage> {
                   height: 30,
                 ),
                 ButtonWidget(
-                  tex: "Login",
+                  tex: "Singup",
                   fun: () {
-                    log(nameG);
-                    log(passwordG);
-
                     if (globalKey.currentState!.validate()) {
 
-
-                      if(UserModel.userFound(name: nameG , password: passwordG)){
-
-                      
+                      userList.add(UserModel(name: name, password: password, email: email));
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) {
-                          return const StorePage();
+                          return const HomePage();
                         },
                       ));
-                      }
-                      else{
-                        setState(() {
-                          notFound = true;
-                        });
-                      }
                     }
                   },
                 ),

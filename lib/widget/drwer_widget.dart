@@ -31,10 +31,7 @@ class DrwerWidget extends StatelessWidget {
             ),
     
             const Spacer(flex: 1,),
-            ButtonWidget(
-              tex: "Profile",
-              fun: () {},
-            ),
+            
             SizedBox(
               height: 20,
             ),
