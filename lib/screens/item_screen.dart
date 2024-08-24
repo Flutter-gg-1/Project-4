@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/utils/data/items_data.dart';
-import 'package:shopping_app/utils/navigation_heper.dart';
+import 'package:shopping_app/utils/navigation_helper.dart';
 
+import '../utils/data/user_data.dart';
 import '../utils/item.dart';
 
 class ItemScreen extends StatefulWidget {
@@ -34,7 +35,8 @@ class _ItemScreenState extends State<ItemScreen> {
           onPressed: () {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) {
-              return const NavigationHelper(
+              return NavigationHelper(
+                user: currentUser!,
                 index: 2,
               );
             }));

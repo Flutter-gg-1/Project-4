@@ -12,6 +12,11 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   int categoryIndex = -1;
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +32,15 @@ class _ExploreScreenState extends State<ExploreScreen> {
       if (categoryIndex != -1)
         PageView(
           children: [
-           ItemPageview(item: items[categoryIndex],),
-           ItemPageview(item: items[categoryIndex+1],),
-           ItemPageview(item: items[categoryIndex+2],),
+            ItemPageview(
+              item: items[categoryIndex],
+            ),
+            ItemPageview(
+              item: items[categoryIndex + 1],
+            ),
+            ItemPageview(
+              item: items[categoryIndex + 2],
+            ),
           ],
         )
       else
@@ -48,7 +59,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             ),
             InkWell(
               onTap: () {
-                 setState(() {
+                setState(() {
                   categoryIndex = 3;
                 });
               },

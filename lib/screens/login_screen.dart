@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/utils/navigation_heper.dart';
+import 'package:shopping_app/utils/navigation_helper.dart';
 import 'package:shopping_app/utils/data/user_data.dart';
 import 'package:shopping_app/widgets/login_textfield.dart';
 
@@ -46,39 +46,46 @@ class _LoginScreenState extends State<LoginScreen> {
               key: key,
               child: Column(
                 children: [
-                  LoginTextfield(hint: 'UserName', controller: nameController),
+                  LoginTextfield(hint: 'Username', controller: nameController),
                   const SizedBox(
                     height: 20,
                   ),
                   LoginTextfield(
                       hint: 'Password', controller: passwordController),
-                      SizedBox(height: 70,),
+                  const SizedBox(
+                    height: 70,
+                  ),
                   ElevatedButton(
-                     style: ElevatedButton.styleFrom(
+                      style: ElevatedButton.styleFrom(
                           shadowColor: Colors.black,
-                      elevation: 20,
-                      surfaceTintColor: Colors.green,
-                      fixedSize: Size(150, 50),
-                    backgroundColor: const Color.fromARGB(255, 236, 202, 169)),
+                          elevation: 20,
+                          surfaceTintColor: Colors.green,
+                          fixedSize: const Size(150, 50),
+                          backgroundColor:
+                              const Color.fromARGB(255, 236, 202, 169)),
                       onPressed: () {
                         if (key.currentState!.validate()) {
-                          for (var user in users['users']!) {
-                            if (user[0] == nameController.text &&
-                                user[1] == passwordController.text) {
+                          for (var user in users) {
+                            if (user.username == nameController.text &&
+                                user.password == passwordController.text) {
+                              currentUser = user;
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const NavigationHelper()));
+                                      builder: (context) => NavigationHelper(
+                                            user: user,
+                                          )));
                             }
                           }
                         }
                       },
-                      child: const Text('Login',
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),))
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ))
                 ],
               ),
             ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/item_screen.dart';
-import 'package:shopping_app/utils/navigation_heper.dart';
+import 'package:shopping_app/utils/navigation_helper.dart';
 
+import '../utils/data/user_data.dart';
 import '../utils/item.dart';
 
 class ItemPageview extends StatelessWidget {
@@ -90,7 +91,8 @@ class ItemPageview extends StatelessWidget {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NavigationHelper(
+                        builder: (context) => NavigationHelper(
+                              user: currentUser!,
                               index: 2,
                             )));
               },

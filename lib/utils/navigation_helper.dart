@@ -8,10 +8,12 @@ import 'package:shopping_app/widgets/alert_message.dart';
 
 import 'data/items_data.dart';
 import '../screens/home_screen.dart';
+import 'data/user_data.dart';
 
 class NavigationHelper extends StatefulWidget {
+  final User user;
   final int index;
-  const NavigationHelper({super.key, this.index = 0});
+  const NavigationHelper({super.key, required this.user, this.index = 0});
 
   @override
   State<NavigationHelper> createState() => _NavigationHelperState();
@@ -24,18 +26,21 @@ class _NavigationHelperState extends State<NavigationHelper> {
     Icons.explore,
     Icons.person
   ];
-  final List<Widget> pages = [
-    const HomeScreen(),
-    const FavoriteScreen(),
-    const ExploreScreen(),
-    const ProfileScreen(),
-  ];
+
+  final List<Widget> pages = [];
   int pageIndex = 0;
+  final user =currentUser;
 
   @override
   void initState() {
-    pageIndex = widget.index;
     super.initState();
+    pageIndex = widget.index;
+    pages.addAll([
+      const HomeScreen(),
+      const FavoriteScreen(),
+      const ExploreScreen(),
+      const ProfileScreen(),
+    ]);
   }
 
   @override
@@ -54,26 +59,26 @@ class _NavigationHelperState extends State<NavigationHelper> {
               clipBehavior: Clip.none,
               children: [
                 const Icon(Icons.shopping_cart),
-                if(cartItems !=0)
-                Positioned(
-                  left: 7,
-                  top: -7,
-                  child: Container(
-                    height: 12,
-                    width: 12,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red),
-                    child: Center(
-                        child: Text(
-                      '$cartItems',
-                      style: const TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    )),
-                  ),
-                )
+                if (cartItems != 0)
+                  Positioned(
+                    left: 7,
+                    top: -7,
+                    child: Container(
+                      height: 12,
+                      width: 12,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Colors.red),
+                      child: Center(
+                          child: Text(
+                        '$cartItems',
+                        style: const TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      )),
+                    ),
+                  )
               ],
             ),
             const SizedBox(

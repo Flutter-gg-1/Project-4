@@ -42,9 +42,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
           Positioned(
-            top: 10,
-            left: MediaQuery.of(context).size.width/5,
-            child: Text('Registration', style: TextStyle(fontSize: 36, color: Colors.green[700], fontWeight: FontWeight.bold),)),
+              top: 10,
+              left: MediaQuery.of(context).size.width / 5,
+              child: Text(
+                'Registration',
+                style: TextStyle(
+                    fontSize: 36,
+                    color: Colors.green[700],
+                    fontWeight: FontWeight.bold),
+              )),
           Positioned(
             top: 100,
             left: 50,
@@ -69,22 +75,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       hint: 'Password Confirmation',
                       controller: confirmationController,
                       password: passwordController.text),
-
-                      SizedBox(height: 40,),
+                  SizedBox(
+                    height: 40,
+                  ),
                   ElevatedButton(
-                     style: ElevatedButton.styleFrom(
-                      shadowColor: Colors.black,
-                      elevation: 20,
-                      surfaceTintColor: Colors.green,
-                      fixedSize: Size(150, 50),
-                    backgroundColor: const Color.fromARGB(255, 236, 202, 169)),
+                      style: ElevatedButton.styleFrom(
+                          shadowColor: Colors.black,
+                          elevation: 20,
+                          surfaceTintColor: Colors.green,
+                          fixedSize: Size(150, 50),
+                          backgroundColor:
+                              const Color.fromARGB(255, 236, 202, 169)),
                       onPressed: () {
                         if (key.currentState!.validate()) {
-                          users['users']!.add([
-                            nameController.text,
-                            passwordController.text,
-                            emailController.text
-                          ]);
+                          users.add(User.fromJson({
+                            'username': nameController.text,
+                            'password': passwordController.text,
+                            'email': emailController.text
+                          }));
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
@@ -92,11 +100,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           setState(() {});
                         }
                       },
-                      child: Text('Register',
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),))
+                      child: Text(
+                        'Register',
+                        style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ))
                 ],
               ),
             ),
