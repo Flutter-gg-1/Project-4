@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/laptop.dart';
-import 'package:shopping_app/widgets/loptop_bottom_sheet.dart';
+import 'package:shopping_app/widgets/loptop_bottom_sheet_widget.dart';
 
-class LaptopContainer extends StatefulWidget {
+class LaptopContainerWidget extends StatefulWidget {
   final Laptop laptop;
-  const LaptopContainer({
+  const LaptopContainerWidget({
     super.key,
     required this.laptop,
   });
 
   @override
-  State<LaptopContainer> createState() => _LaptopContainerState();
+  State<LaptopContainerWidget> createState() => _LaptopContainerWidgetState();
 }
 
-class _LaptopContainerState extends State<LaptopContainer> {
+class _LaptopContainerWidgetState extends State<LaptopContainerWidget> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,7 +27,7 @@ class _LaptopContainerState extends State<LaptopContainer> {
         showModalBottomSheet(
             context: context,
             builder: (builder) {
-              return LoptopBottomSheet(
+              return LoptopBottomSheetWidget(
                 laptop: widget.laptop,
               );
             });

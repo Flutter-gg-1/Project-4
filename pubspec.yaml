@@ -9,7 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  item_count_number_button: ^1.0.0
+  quickalert: ^1.1.0  
+  timelines: ^0.1.0
+  flutter_rating_bar: ^4.0.1
 
 
 dev_dependencies:

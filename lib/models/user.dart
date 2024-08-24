@@ -5,6 +5,6 @@ class User {
   String password;
   String email;
   List<CartItem> cart = [];
-
+  bool didPurchase = false;
   User({required this.name, required this.password, required this.email});
 }

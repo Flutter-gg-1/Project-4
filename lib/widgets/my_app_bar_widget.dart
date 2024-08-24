@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/pages/cart_page.dart';
 import 'package:shopping_app/pages/home_page.dart';
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const MyAppBar({super.key});
+class MyAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  const MyAppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +22,9 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
         ),
       ),
       centerTitle: true,
-      actions: [
-        IconButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const CartPage();
-                  },
-                ),
-              );
-            },
-            icon: const Icon(Icons.shopping_cart_outlined))
+      actions: const [
+
+
       ],
     );
   }

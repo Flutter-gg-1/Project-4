@@ -1,18 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/cart_item.dart';
 import 'package:shopping_app/models/laptop.dart';
 import 'package:shopping_app/shared.dart';
 
-class LoptopBottomSheet extends StatefulWidget {
+class LoptopBottomSheetWidget extends StatefulWidget {
   final Laptop laptop;
-  const LoptopBottomSheet({super.key, required this.laptop});
+  const LoptopBottomSheetWidget({super.key, required this.laptop});
 
+  setState() {}
   @override
-  State<LoptopBottomSheet> createState() => LoptopBottomSheetState();
+  State<LoptopBottomSheetWidget> createState() => _LoptopBottomSheetState();
 }
 
-class LoptopBottomSheetState extends State<LoptopBottomSheet> {
+class _LoptopBottomSheetState extends State<LoptopBottomSheetWidget> {
   String quantity = "1";
 
   @override
@@ -112,7 +112,14 @@ class LoptopBottomSheetState extends State<LoptopBottomSheet> {
                           return;
                         }
                       }
-                      user1.cart.add(cartItem);
+                      setState(() {
+                        user1.cart.add(cartItem);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Added to cart successfully'),
+                          ),
+                        );
+                      });
                     });
                   },
                   child: Container(
