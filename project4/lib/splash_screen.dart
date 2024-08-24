@@ -18,7 +18,7 @@ class SplashState extends State<SplashScreen> {
   }
 
   navigatetohme() async {
-    await Future.delayed(const Duration(milliseconds: 800), () {});
+    await Future.delayed(const Duration(milliseconds: 1600), () {});
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
