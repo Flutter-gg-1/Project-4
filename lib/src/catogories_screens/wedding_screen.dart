@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project4/src/widgets/card_widget.dart';
-import '../custom_paint/home_screen_background.dart';
 
-class GraduationScreen extends StatelessWidget {
-  const GraduationScreen({super.key});
+import '../custom_paint/home_screen_background.dart';
+import '../widgets/card_widget.dart';
+
+class WeddingScreen extends StatelessWidget {
+  const WeddingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class GraduationScreen extends StatelessWidget {
                         const SizedBox(
                           width: 300,
                           height: 40,
-                          child: Text("Graduation cards",
+                          child: Text("Weddding cards",
                            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                           ),
                         ),
@@ -67,27 +68,27 @@ class GraduationScreen extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 60,
                               child: const CardWidget(
-                                photPath: 'assets/graduation_images/graduation1.png',
+                                photPath: 'assets/wedding_images/White Beige Classy Floral Fall Wedding Invitation.png',
                                 price: '5SR',
-                                text: 'Graduation card',
+                                text: 'Weddding card',
                               ),
                             ),
                             const SizedBox(height: 20),
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 60,
                               child: const CardWidget(
-                                photPath: 'assets/graduation_images/2.png',
+                                photPath: 'assets/wedding_images/Pink and Green Floral Save the Date Card.png',
                                 price: '5SR',
-                                text: 'Graduation card',
+                                text: 'Weddding card',
                               ),
                             ),
                             const SizedBox(height: 20),
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 60,
                               child: const CardWidget(
-                                photPath: 'assets/graduation_images/1.png',
+                                photPath: 'assets/wedding_images/Green Floral Wedding Invitation Card.png',
                                 price: '5SR',
-                                text: 'Graduation card',
+                                text: 'Weddding card',
                               ),
                             ),
                           ],

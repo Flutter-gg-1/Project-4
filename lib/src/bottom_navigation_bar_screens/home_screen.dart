@@ -159,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                             child: Image.asset(
-                              "assets/Purple Modern Special Offers 8.8 Super Sale Facebook Ad.png",
+                              "assets/offers/Purple Modern Special Offers 8.8 Super Sale Facebook Ad.png",
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -189,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width - 60,
                             child: const CardWidget(
-                              photPath: 'assets/White Beige Classy Floral Fall Wedding Invitation.png',
+                              photPath: 'assets/wedding_images/White Beige Classy Floral Fall Wedding Invitation.png',
                               price: '5SR',
                               text: 'Wedding card',
                             ),
@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(
                             width: MediaQuery.of(context).size.width - 60,
                             child: const CardWidget(
-                              photPath: 'assets/Brown Floral Baby Shower Invitation Card.png',
+                              photPath: 'assets/event_images/Brown Floral Baby Shower Invitation Card.png',
                               price: '5SR',
                               text: 'Event card',
                             ),

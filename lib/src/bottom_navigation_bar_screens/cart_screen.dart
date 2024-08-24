@@ -16,19 +16,30 @@ class CartScreen extends StatelessWidget {
                 size: Size(MediaQuery.of(context).size.width, 180),
                 painter: RPSCustomPainter2(),
               ),
-              const Column(
+               Column(
                 children: [
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(left: 190, top: 50),
                             child: Text(
                               "Cart",
                               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 190, top: 330),
+                            child: Icon(Icons.shopping_cart_outlined, size: 50,)
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 150,),
+                            child: Text(
+                              "Empty cart",
+                              style: TextStyle(fontSize: 24, color: Colors.black.withOpacity(0.5)),
                             ),
                           ),
                         ],

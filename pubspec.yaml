@@ -24,3 +24,7 @@ flutter:
   assets:
     - assets/
     - assets/graduation_images/
+    - assets/wedding_images/
+    - assets/event_images/
+    - assets/offers/
+    - assets/anouncment_images/

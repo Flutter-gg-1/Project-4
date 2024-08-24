@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project4/src/widgets/card_widget.dart';
-import '../custom_paint/home_screen_background.dart';
 
-class GraduationScreen extends StatelessWidget {
-  const GraduationScreen({super.key});
+import '../custom_paint/home_screen_background.dart';
+import '../widgets/card_widget.dart';
+
+class EventScreen extends StatelessWidget {
+  const EventScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +49,9 @@ class GraduationScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          width: 300,
+                          width: 270,
                           height: 40,
-                          child: Text("Graduation cards",
+                          child: Text("Event cards",
                            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                           ),
                         ),
@@ -67,29 +68,12 @@ class GraduationScreen extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 60,
                               child: const CardWidget(
-                                photPath: 'assets/graduation_images/graduation1.png',
+                                photPath: 'assets/event_images/Brown Floral Baby Shower Invitation Card.png',
                                 price: '5SR',
-                                text: 'Graduation card',
+                                text: 'Event card',
                               ),
                             ),
-                            const SizedBox(height: 20),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width - 60,
-                              child: const CardWidget(
-                                photPath: 'assets/graduation_images/2.png',
-                                price: '5SR',
-                                text: 'Graduation card',
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width - 60,
-                              child: const CardWidget(
-                                photPath: 'assets/graduation_images/1.png',
-                                price: '5SR',
-                                text: 'Graduation card',
-                              ),
-                            ),
+                            
                           ],
                         ),
                       ),

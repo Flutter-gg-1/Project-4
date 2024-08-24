@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project4/src/catogories_screens/anouncment_screen.dart';
+import 'package:project4/src/catogories_screens/event_screen.dart';
 
 import '../catogories_screens/graduation_screen.dart';
+import '../catogories_screens/wedding_screen.dart';
 import '../registration_screens/register.dart';
 import 'alert_dialog_widget.dart';
 
@@ -18,9 +21,9 @@ class DrawerWidget extends StatelessWidget {
               leading: const Icon(Icons.event_outlined),
               title: const Text("Events"),
               onTap: () {
-                showDialog(context: context, builder: (context){
-                            return const AlertDialogWidget();
-                          }); 
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const EventScreen();
+                })); 
               },
             ),
             ListTile(
@@ -28,22 +31,31 @@ class DrawerWidget extends StatelessWidget {
               title: const Text("Graduation"),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                  return GraduationScreen();
+                  return const GraduationScreen();
                 })); 
               },
             ),
             ListTile(
-              leading: const Icon(Icons.celebration_outlined),
-              title: const Text("Party"),
+              leading: const Icon(Icons.announcement_outlined),
+              title: const Text("Anouncment"),
               onTap: () {
-                showDialog(context: context, builder: (context){
-                            return const AlertDialogWidget();
-                          }); 
+                 Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const AnouncmentScreen();
+                }));
               },
             ),
             ListTile(
               leading: const Icon(Icons.celebration_outlined),
               title: const Text("Wedding"),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                  return const WeddingScreen();
+                }));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.celebration_outlined),
+              title: const Text("Customize your card"),
               onTap: () {
                 showDialog(context: context, builder: (context){
                             return const AlertDialogWidget();

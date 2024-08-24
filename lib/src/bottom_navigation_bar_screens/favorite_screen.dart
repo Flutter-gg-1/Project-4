@@ -16,20 +16,27 @@ class FavoriteScreen extends StatelessWidget {
                 size: Size(MediaQuery.of(context).size.width, 180),
                 painter: RPSCustomPainter2(),
               ),
-              const Column(
+               Column(
                 children: [
                   
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(left: 170, top: 50),
                             child: Text(
-                              "favorite",
+                              "Favorite",
                               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          Padding(
+                            padding:  const EdgeInsets.only(left: 120, top: 350),
+                            child: Text(
+                              "There is no item",
+                              style: TextStyle(fontSize: 24, color: Colors.black.withOpacity(0.5)),
                             ),
                           ),
                         ],
