@@ -18,7 +18,10 @@ Widget myPageViewShopping_2() {
                           fontSize: getScreenSize(context).height / 25,
                           color: Colors.black)),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Mobiles()));
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius:
