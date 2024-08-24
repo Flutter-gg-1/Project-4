@@ -25,12 +25,10 @@ Widget myPageViewShopping_2() {
                             const BorderRadius.all(Radius.circular(10)),
                         border: Border.all(color: Colors.black),
                       ),
-                      width: getScreenSize(context).width / 2.2,
-                      height: getScreenSize(context).height / 4,
-                      child: const Image(
-                        image: AssetImage('assets/images/dev/i15.png'),
-                        fit: BoxFit.cover,
-                      ),
+                      child: myContainer(
+                          imagePath: 'assets/images/dev/i15.png',
+                          width: 2.2,
+                          height: 4),
                     ),
                   ),
                 ],
@@ -42,20 +40,14 @@ Widget myPageViewShopping_2() {
                           fontSize: getScreenSize(context).height / 25,
                           color: Colors.black)),
                   InkWell(
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        border: Border.all(color: Colors.black),
-                      ),
-                      width: getScreenSize(context).width / 2.2,
-                      height: getScreenSize(context).height / 4,
-                      child: const Image(
-                        image: AssetImage('assets/images/dev/hp15.6.png'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Computers()));
+                    },
+                    child: myContainer(
+                        imagePath: 'assets/images/dev/hp15.6.png',
+                        width: 2.2,
+                        height: 4),
                   ),
                 ],
               ),

@@ -9,3 +9,5 @@ export '../feature/pages/welcome_screen/intro/page_1.dart';
 export '../feature/pages/welcome_screen/intro/page_2.dart';
 export '../feature/pages/welcome_screen/views/intro_screen.dart';
 export '../feature/main_screen/my_drawer.dart';
+export '../feature/pages/devices/computers.dart';
+export '../feature/pages/devices/mobiles.dart';
