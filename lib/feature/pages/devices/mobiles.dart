@@ -33,8 +33,8 @@ class Mobiles extends StatelessWidget {
                       color: MyColors.colorWhite,
                     ),
                     child: const ListTile(
-                      title: Text('HP Laptop 15.6 inch'),
-                      subtitle: Text('Price: 2000 RS'),
+                      title: Text('iPhone 15'),
+                      subtitle: Text('Price: 3000 RS'),
                       leading: Icon(Icons.computer),
                       trailing: Icon(Icons.add_shopping_cart),
                     ),
@@ -58,8 +58,8 @@ class Mobiles extends StatelessWidget {
                       color: MyColors.colorWhite,
                     ),
                     child: const ListTile(
-                      title: Text('HP Notebook 15s'),
-                      subtitle: Text('Price: 1700 RS'),
+                      title: Text('iPhone 15'),
+                      subtitle: Text('Price: 2800 RS'),
                       leading: Icon(Icons.computer),
                       trailing: Icon(Icons.add_shopping_cart),
                     ),
