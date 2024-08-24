@@ -4,6 +4,7 @@ import 'package:shopping/src/cart_screen.dart';
 import 'package:shopping/src/home_screen.dart';
 import 'package:shopping/src/profile_screen.dart';
 import 'package:shopping/src/special_offer_screen.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
@@ -13,6 +14,7 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   List pages = const [SpecialOfferScreen(), HomeScreen(), CartScreen()];
   int selectedIndex = 1;
 
@@ -33,25 +35,17 @@ class _LandingScreenState extends State<LandingScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) => setState(() {
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Theme.of(context).colorScheme.surface,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        key: _bottomNavigationKey,
+        onTap: (int index) => setState(() {
           selectedIndex = index;
         }),
-        selectedIndex: selectedIndex,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.notifications_sharp),
-            label: 'Spechial Offer',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(Icons.home),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.shopping_cart),
-            label: 'Cart',
-          ),
+        items: const [
+          Icon(Icons.notifications_sharp),
+          Icon(Icons.home_outlined),
+          Icon(Icons.shopping_cart),
         ],
       ),
       body: SafeArea(
