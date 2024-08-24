@@ -7,13 +7,14 @@ Widget newCollectionsContainer({required image, required String text}) {
   return Container(
       height: 350,
       width: 300,
-      decoration: const BoxDecoration(
-      ),
+      decoration: const BoxDecoration(),
       child: Stack(
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset( image,)),
+              child: Image.asset(
+                image,
+              )),
           Positioned(
               top: 7,
               left: 10,

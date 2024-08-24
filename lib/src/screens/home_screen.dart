@@ -75,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+
       //drawer
       drawer: drawerBuild(),
 
@@ -121,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Recommended for you",
+                  "Popular",
                   style: GoogleFonts.abhayaLibre(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

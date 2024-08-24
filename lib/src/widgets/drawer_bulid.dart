@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 
+//drawer used in homeScreen and allProductScreen
 Widget drawerBuild() {
   return Drawer(
       width: 250,
@@ -9,7 +10,9 @@ Widget drawerBuild() {
       child: ListView(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color:  const Color.fromARGB(255, 230, 222, 212),),
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 230, 222, 212),
+            ),
             child: Text(
               "Lavender",
               style: GoogleFonts.luxuriousScript(
@@ -26,7 +29,6 @@ Widget drawerBuild() {
                 color: ColorsConstant.darkPurple),
           ),
           const Divider(),
-          
           ListTile(
             title: Text(
               "Peony",
@@ -37,7 +39,6 @@ Widget drawerBuild() {
                 color: ColorsConstant.darkPurple),
           ),
           const Divider(),
-
           ListTile(
             title: Text(
               "Roses",
@@ -48,7 +49,6 @@ Widget drawerBuild() {
                 color: ColorsConstant.darkPurple),
           ),
           const Divider(),
-
           ListTile(
             title: Text(
               "Orchid",
@@ -59,7 +59,6 @@ Widget drawerBuild() {
                 color: ColorsConstant.darkPurple),
           ),
           const Divider(),
-
           ListTile(
             title: Text(
               "Lilies",
@@ -70,7 +69,6 @@ Widget drawerBuild() {
                 color: ColorsConstant.darkPurple),
           ),
           const Divider(),
-
           ListTile(
             title: Text(
               "Tulip",

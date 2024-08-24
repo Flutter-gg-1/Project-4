@@ -7,6 +7,7 @@ import 'package:shopping_app/src/helper/colors.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shopping_app/src/widgets/user_card.dart';
 
+//contain user data, image  and logout
 class ProfileScreen extends StatefulWidget {
   final Map<String, String> userData;
   const ProfileScreen({super.key, required this.userData});
@@ -44,6 +45,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 30,
             ),
           ]),
+
+      //body
       body: Center(
           child: Column(children: [
         Container(
@@ -65,6 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 border: Border.all(width: 1, color: ColorsConstant.darkPurple)),
             child: Column(
               children: [
+                //image
                 Container(
                   height: 140,
                   width: 140,
@@ -89,6 +93,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(
                   height: 20,
                 ),
+
+                //image select botton
                 ElevatedButton(
                     onPressed: () async {
                       final image = await ImagePicker()
@@ -113,6 +119,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(
                   height: 10,
                 ),
+
+                //user data
                 Padding(
                   padding: const EdgeInsets.only(right: 220),
                   child: Text(
@@ -138,6 +146,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         const SizedBox(
           height: 30,
         ),
+
+        //logout botton
         ElevatedButton(
           onPressed: () {
             Navigator.popUntil(context, (route) => route.isFirst);

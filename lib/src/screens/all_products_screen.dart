@@ -7,6 +7,7 @@ import 'package:shopping_app/src/item_card.dart';
 import 'package:shopping_app/src/screens/item_screen.dart';
 import 'package:shopping_app/src/widgets/drawer_bulid.dart';
 
+//This class contain screen of all porduct
 class AllProductsScreen extends StatefulWidget {
   const AllProductsScreen({super.key});
 
@@ -151,6 +152,7 @@ class _AllProductsScreenState extends State<AllProductsScreen> {
                         )),
                   ]),
             ),
+
             //drawer
             drawer: drawerBuild(),
 
@@ -203,20 +205,20 @@ class _AllProductsScreenState extends State<AllProductsScreen> {
                 itemBuilder: (context, index) {
                   final item = cardItem[index];
                   return GestureDetector(
-                      onTap: (){
-        // Navigate to ItemScreen
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ItemScreen(
-              image: item['image'] ?? '',
-              title: item['title'] ?? '',
-              subtitle: item['subtitle'] ?? '',
-              price: item['price'] ?? '',
-            ),
-          ),
-        );
-      },
+                      onTap: () {
+                        // Navigate to ItemScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ItemScreen(
+                              image: item['image'] ?? '',
+                              title: item['title'] ?? '',
+                              subtitle: item['subtitle'] ?? '',
+                              price: item['price'] ?? '',
+                            ),
+                          ),
+                        );
+                      },
                       child: ItemCard(
                         image: item['image'] ?? '',
                         title: item['title'] ?? '',

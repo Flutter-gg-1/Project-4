@@ -5,6 +5,7 @@ import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/widgets/about_button.dart';
 import 'package:shopping_app/src/widgets/drawer_bulid.dart';
 
+//contain item data with alert dialog
 class ItemScreen extends StatefulWidget {
   final String image;
   final String title;
@@ -71,6 +72,7 @@ class _ItemScreenState extends State<ItemScreen> {
             ),
           ],
         ),
+
         //drawer
         drawer: drawerBuild(),
 
@@ -129,23 +131,24 @@ class _ItemScreenState extends State<ItemScreen> {
                         });
                       },
                     ),
-                    
                     IconButton(
-            icon: Icon(
-              isPressedCart
-                  ? FluentIcons.cart_24_filled
-                  : FluentIcons.cart_16_regular,
-              size: 37,
-              color: ColorsConstant.purple,
-            ),
-            onPressed: () {
-              setState(() {
-                isPressedCart = !isPressedCart;
-              });
-            },
-          ),
+                      icon: Icon(
+                        isPressedCart
+                            ? FluentIcons.cart_24_filled
+                            : FluentIcons.cart_16_regular,
+                        size: 37,
+                        color: ColorsConstant.purple,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isPressedCart = !isPressedCart;
+                        });
+                      },
+                    ),
                   ],
                 ),
+
+                //alert dialog
                 Padding(
                   padding: const EdgeInsets.only(left: 50, top: 140),
                   child: aboutBotton(context: context),

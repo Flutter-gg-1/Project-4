@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 
-//draw shape
+//draw shape will used in ItemCard
 class RPSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
