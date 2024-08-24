@@ -1,9 +1,11 @@
 import 'package:espresso_yourself/extensions/string_ext.dart';
 import 'package:espresso_yourself/reusable_components/background_img_decoration.dart';
+import 'package:espresso_yourself/screens/payment/order_sheet_view.dart';
 import 'package:espresso_yourself/screens/payment/payment_alert_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../extensions/color_ext.dart';
+import '../../mock_data.dart';
 import '../../model/credit_card.dart';
 import '../../reusable_components/buttons/custom_back_btn_view.dart';
 import '../../reusable_components/custom_text_field.dart';
@@ -46,6 +48,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   void _completeOrder(BuildContext context) {
     if (_isValidated()) {
       _showOrderCompletedSheet(context);
+      MockData().user.cart.items = [];
     } else {
       _showInvalidCardAlert(context);
     }
@@ -60,7 +63,17 @@ class _PaymentScreenState extends State<PaymentScreen> {
     );
   }
 
-  void _showOrderCompletedSheet(BuildContext context) {}
+  void _showOrderCompletedSheet(BuildContext context) => showModalBottomSheet(
+        elevation: 10,
+        backgroundColor: C.primary,
+        context: context,
+        builder: (context) => Container(
+          height: MediaQuery.of(context).size.height / 2,
+          color: Colors.transparent,
+          alignment: Alignment.center,
+          child: const OrderSheetView(),
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
