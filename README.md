@@ -1,4 +1,4 @@
-# Educational Kids Game in Flutter
+# Plants in Flutter
 
 ## Description
 An flutter app for shopping app, this is using custom widget, and packages, string, and images. 
