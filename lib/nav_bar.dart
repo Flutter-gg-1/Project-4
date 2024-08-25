@@ -18,7 +18,6 @@ class _NavBarState extends State<NavBar> {
     Homepage(),
     Discover(),
     Cart(),
-    // Profile(),
   ];
 
   void _onItemTapped(int index) {
@@ -69,13 +68,6 @@ class BottomNavBar extends StatelessWidget {
             color: selectedIndex == 2 ? const Color.fromARGB(255, 246, 189, 96) :const Color.fromARGB(255, 255, 255, 255),
           ),
           label: 'Cart',
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(
-            'assets/svg/profile.svg',
-            color: selectedIndex == 3 ? const Color.fromARGB(255, 246, 189, 96) :const Color.fromARGB(255, 255, 255, 255),
-          ),
-          label: 'Profile',
         ),
       ],
       currentIndex: selectedIndex,

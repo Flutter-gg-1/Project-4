@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:project4/discover.dart';
+import 'package:project4/drawer.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -10,7 +11,7 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         extendBodyBehindAppBar: true,
-  drawer: const Drawer(),
+  drawer: const AppDrawer(),
   appBar: AppBar(
     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
     iconTheme: const IconThemeData(color: Color.fromARGB(255, 133, 165, 157)),
