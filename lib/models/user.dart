@@ -5,7 +5,7 @@ class User {
   final String name;
   final String email;
   final String password;
-  final String pic;
+  String pic ="assets/default_profile_picture";
   List<Product> cart = [];
   
   User({required this.name, required this.email, required this.password, required this.pic});

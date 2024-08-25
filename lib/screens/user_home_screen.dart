@@ -31,7 +31,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
           Flexible(
             child: ListView(
               children: [
-                SectionTitle(title: 'Top Products'),
+                const SectionTitle(title: 'Top Products'),
                 Column(
                   children: List.generate(2, (colIndex) {
                     return Row(
@@ -47,7 +47,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                   }),
                 ),
                 const SizedBox(height: 30,),
-                SectionTitle(title: "Last Offers"),
+                const SectionTitle(title: "Last Offers"),
                 Column(
                   children: List.generate(2, (colIndex) {
                     return Row(

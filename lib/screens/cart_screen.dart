@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/globals/app_colors.dart';
@@ -50,7 +48,7 @@ class _CartScreenState extends State<CartScreen> {
           ),
           widget.user.cart.isEmpty ? const SizedBox()
           : Container(
-            margin: EdgeInsets.only(bottom: 20),
+            margin: const EdgeInsets.only(bottom: 20),
             child: ElevatedButton(
               style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(mainColor)),
               onPressed: () async{

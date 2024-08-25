@@ -10,31 +10,41 @@ Easy, Extraordinary, Exceptional online shopping experience 🛒🥳
 ## 1. Overview 📖
 In this project, we are supposed to build shopping application which contains a lot of features and user screens described later in this document. We were responsible of both **designing** and **coding** parts.
 
-## 2. Requirements ❓
+## 2. Why `Shopex` ❓
+
+## 2. Requirements ⚔️
+This Project requires multiple features which I will summerize below as follows.
 
 #### 2.1 Widgets 🎨
 
-- **Drawer Widget** :
-- **AlertDialog** :
-- **TextFields** :
-- **Navigation Between Views** :
-- **BottomNavigationBar** :
+- **Drawer Widget** : Used to change profile picture and sign out
 
-#### 2.2 Packages
-- **Shimmer** :
-- **GoogleFonts** :
-- **geolocator** :
-- **ImagePicker** :
-- **Fifth** :
+- **AlertDialog** : Used to display messages as tips or feedbacks to user
+
+- **TextFields** : Used to recieve input from user
+
+- **Navigation Between Views** : Used TabBar and TabBarView to navigate between categories.
+
+#### 2.2 Packages 📚
+
+- **Shimmer** : Shimmer was used to add loading effect on some content
+
+- **GoogleFonts** : GoogleFonts is a package with various styles and fonts/
+
+- **ImagePicker** : ImagePicker was used to build page appplication
+
+- **device_preview** : This package helped me visualize interfaces in many devices\
+
+- **animated_splash_screen** : Splash screen for `Shopex`.
 
 ## 3. Results ⭐
 
 #### 3.1 Screenshots 📸
 Here are some screenshots of the app interfaces.
 
-<img src='' alt='' style='border:5px solid #1c1651'>
-<img src='' alt='' style='border:5px solid #1c1651'>
-<img src='' alt='' style='border:5px solid #1c1651'>
+<img src='./readme_media/user_home.png' alt='' style='border:5px solid #1c1651'>
+<img src='./readme_media/' alt='' style='border:5px solid #1c1651'>
+<img src='./readme_media/' alt='' style='border:5px solid #1c1651'>
 <img src='' alt='' style='border:5px solid #1c1651'>
 <img src='' alt='' style='border:5px solid #1c1651'>
 <img src='' alt='' style='border:5px solid #1c1651'>

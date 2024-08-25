@@ -28,10 +28,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           children: [
             const SizedBox(height: 30),
             TabBar(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               labelStyle: TextStyle(color: mainColor),
               indicatorColor: mainColor,
-              labelPadding: EdgeInsets.symmetric(vertical: 10),
+              labelPadding: const EdgeInsets.symmetric(vertical: 10),
               onTap: (value) => setState(() {currentSection=value;}),
               tabs: List.generate(sections.length, (index){
                 return Container(

@@ -58,7 +58,7 @@ class _ProductCardState extends State<ProductCard> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: secondaryColor,
-          boxShadow: [BoxShadow(color: Colors.black45, offset: Offset(1, 2), blurRadius: 5)]
+          boxShadow: const [BoxShadow(color: Colors.black45, offset: Offset(1, 2), blurRadius: 5)]
         ),
         child: Column(
           children: [

@@ -28,7 +28,7 @@ class _AddToCartState extends State<AddToCart> {
           onPressed: (){
             widget.user.cart.add(widget.product);
             showDialog(context: context, builder: (context){
-              return AlertWithIcon(alert: 'Product is added to your cart', icon: Icons.check_circle_outline_outlined, iconColor: Colors.green);
+              return const AlertWithIcon(alert: 'Product is added to your cart', icon: Icons.check_circle_outline_outlined, iconColor: Colors.green);
             });
           }, child: Text('Add To Cart', style: GoogleFonts.poppins(
           color: Colors.white

@@ -40,7 +40,7 @@ class _ProductsViewState extends State<ProductsView> {
                   return ProductCard(product: widget.sectionProducts[rowIndex], user: widget.user);
                 }
                 else {
-                  return SizedBox(height: 200,width: 150,);
+                  return const SizedBox(height: 200,width: 150,);
                 }
               }),
             );
