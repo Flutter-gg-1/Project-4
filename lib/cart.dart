@@ -1,6 +1,6 @@
 import 'package:customizable_counter/customizable_counter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:project4/drawer.dart';
 
 
 class Cart extends StatelessWidget {
@@ -13,7 +13,7 @@ class Cart extends StatelessWidget {
         length: 2,
         child: Scaffold(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-          drawer: const Drawer(),
+          drawer: const AppDrawer(),
           appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           iconTheme: const IconThemeData(color: Color.fromARGB(255, 133, 165, 157)),
