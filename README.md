@@ -52,7 +52,7 @@ Here are some screenshots of the app interfaces.
 <img src='./readme_media/product.png' alt='product' style='border:5px solid #1c1651'>
 
 #### 4.2 Video 🎥
-For Storage purposes, Result as video is uploaded on drive [Click Here To See]('https://drive.google.com/file/d/1dEgFdar1HynnNUbriQKTe628VCfEUbm8/view?usp=drive_link')
+For Storage purposes, Result as video is uploaded on drive [Click Here To See](https://drive.google.com/file/d/1dEgFdar1HynnNUbriQKTe628VCfEUbm8/view?usp=drive_link)
 
 ## 5. Conclusion 🏁
 `Shopex` provides a smooth user experience where it gathers all daily needs in one app with a user-friendly and visually appealing interfaces.
