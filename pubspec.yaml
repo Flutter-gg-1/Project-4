@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image_picker: ^1.1.2
+  shimmer_animation: ^2.2.1
+  flutter_svg: ^2.0.10+1
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:
@@ -19,3 +23,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/offers/
+    - assets/plants/

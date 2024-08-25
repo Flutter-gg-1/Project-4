@@ -1,12 +1,13 @@
-// This file contains the UserRepository class which is responsible for user registration and login.
 class UserRepository {
-  static final UserRepository userRepository = UserRepository();
-  // Factory constructor to return the same instance of the UserRepository class
-  factory UserRepository() => userRepository;
+  // Private constructor
+  UserRepository._();
+
+  // Singleton instance
+  static final UserRepository instance = UserRepository._();
 
   // Registered users map
   final Map<String, String> registeredUsers = {
-    //Mock data for testing
+    // Mock data for testing
     'admin@gmail.com': 'admin123',
   };
 

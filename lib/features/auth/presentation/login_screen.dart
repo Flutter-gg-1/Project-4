@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_04/core/constants/strings.dart';
 import 'package:project_04/core/widghts/login/DontHaveAccountSection.dart';
 import 'package:project_04/core/widghts/login/login_header.dart';
-import 'package:project_04/core/widghts/common_widghts/CustomButton.dart';
+import 'package:project_04/core/widghts/login/CustomButtonLogin.dart';
 import 'package:project_04/core/widghts/common_widghts/CustomTextFormField.dart';
 import 'package:project_04/core/widghts/common_widghts/TextInputField.dart';
 import 'package:project_04/features/auth/data/user_repository.dart';
@@ -12,7 +12,8 @@ class LoginScreen extends StatelessWidget {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final UserRepository userRepository = UserRepository();
+
+  final UserRepository userRepository = UserRepository.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +34,14 @@ class LoginScreen extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              //Email Form Field
+              // Email Form Field
               const TextInputField(text: AppStrings.email),
               CustomTextFormField(
                   controller: emailController,
                   hint: AppStrings.emailHint,
                   prefixIcon: Icons.email),
 
-              //Password Form Field
+              // Password Form Field
               const SizedBox(height: 20),
               const TextInputField(text: AppStrings.password),
               CustomTextFormField(
@@ -48,14 +49,17 @@ class LoginScreen extends StatelessWidget {
                   hint: AppStrings.passwordHint,
                   prefixIcon: Icons.lock),
 
-              //Login Button
+              // Login Button
               const SizedBox(height: 40),
               CustomButton(
                   emailController: emailController,
                   passwordController: passwordController,
-                  userRepository: userRepository),
+                  userRepository: userRepository,
+                  success: AppStrings.loginSuccess,
+                  failed: AppStrings.loginFailed,
+                  operation: AppStrings.login),
 
-              //Don't have account section
+              // Don't have account section
               const SizedBox(height: 20),
               DontHaveAccountSection(),
             ],

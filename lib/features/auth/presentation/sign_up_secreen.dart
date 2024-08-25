@@ -3,8 +3,13 @@ import 'package:project_04/core/constants/colors.dart';
 import 'package:project_04/core/constants/images.dart';
 import 'package:project_04/core/constants/strings.dart';
 import 'package:project_04/core/utils/validators.dart';
+import 'package:project_04/core/widghts/common_widghts/CustomTextFormField.dart';
+import 'package:project_04/core/widghts/common_widghts/TextInputField.dart';
+import 'package:project_04/core/widghts/sign_up/CustomButtonSignUp.dart';
+import 'package:project_04/core/widghts/sign_up/haveAccountSection.dart';
+import 'package:project_04/core/widghts/sign_up/header.dart';
 import 'package:project_04/features/auth/data/user_repository.dart';
-import 'package:project_04/features/auth/presentation/login_screen.dart';
+
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
@@ -12,7 +17,11 @@ class SignUpScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
-  final UserRepository userRepository = UserRepository();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+
+final UserRepository userRepository = UserRepository.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -24,130 +33,28 @@ class SignUpScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset(AppImages.appLogo),
-                    const SizedBox(height: 15),
-                    const Text(
-                      AppStrings.registerUser,
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.secondaryColor,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    const Text(
-                      AppStrings.registerDescription,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
+                const SignUpHeader(),
                 const SizedBox(height: 50),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppStrings.firstName,
-                        style: TextStyle(color: AppColors.primaryColor),
-                      ),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: AppStrings.firstNameHint,
-                        hintStyle: const TextStyle(
-                          color: AppColors.accentColor,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                        ),
-                        prefixIcon: const Icon(Icons.person),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppStrings.lastName,
-                        style: TextStyle(color: AppColors.primaryColor),
-                      ),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: AppStrings.lastNameHint,
-                        hintStyle: const TextStyle(
-                          color: AppColors.accentColor,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                        ),
-                        prefixIcon: const Icon(Icons.person),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppStrings.phoneNumber,
-                        style: TextStyle(color: AppColors.primaryColor),
-                      ),
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: AppStrings.phoneNumberHint,
-                        hintStyle: const TextStyle(
-                          color: AppColors.accentColor,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                        ),
-                        prefixIcon: const Icon(Icons.phone),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppStrings.email,
-                        style: TextStyle(color: AppColors.primaryColor),
-                      ),
-                    ),
-                    TextFormField(
+                    const TextInputField(text: AppStrings.firstName),
+                    CustomTextFormField(
                       controller: emailController,
-                      decoration: InputDecoration(
-                        hintText: AppStrings.emailHint,
-                        hintStyle: const TextStyle(
-                          color: AppColors.accentColor,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 16,
-                        ),
-                        prefixIcon: const Icon(Icons.email),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      validator: validateEmail,
+                      hint: AppStrings.firstNameHint,
+                      prefixIcon: Icons.person,
                     ),
                     const SizedBox(height: 20),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppStrings.password,
-                        style: TextStyle(color: AppColors.primaryColor),
-                      ),
-                    ),
+                    const TextInputField(text: AppStrings.lastName),
+                    CustomTextFormField(controller: firstNameController, hint: AppStrings.lastNameHint, prefixIcon: Icons.person),
+                    const SizedBox(height: 20),
+                    const TextInputField(text: AppStrings.phoneNumber),
+                    CustomTextFormField(controller: phoneController, hint: AppStrings.phoneNumberHint, prefixIcon: Icons.phone),
+                    const SizedBox(height: 20),
+                    const TextInputField(text: AppStrings.email),
+                    CustomTextFormField(controller: emailController, hint: AppStrings.emailHint, prefixIcon: Icons.email),
+                    const SizedBox(height: 20),
+                    const TextInputField(text: AppStrings.password),  
                     TextFormField(
                       controller: passwordController,
                       decoration: InputDecoration(
@@ -199,75 +106,9 @@ class SignUpScreen extends StatelessWidget {
                       },
                     ),
                     const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        final email = emailController.text;
-                        final password = passwordController.text;
-
-                        final emailError = validateEmail(email);
-                        final passwordError = validatePassword(password);
-
-                        if (emailError == null && passwordError == null) {
-                          if (userRepository.registerUser(email, password)) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text(AppStrings.registerSuccess)),
-                            );
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()),
-                            );
-                          } else {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text(AppStrings.registerFailed)),
-                            );
-                          }
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                                content: Text(emailError ?? passwordError!)),
-                          );
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primaryColor,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 100,
-                          vertical: 20,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Text(
-                        AppStrings.register,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
+                    CustomButtonSignUp(emailController: emailController, passwordController: passwordController, userRepository: userRepository),
                     const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          AppStrings.haveAccount,
-                          style: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()),
-                            );
-                          },
-                          child: const Text(AppStrings.login, style: TextStyle(color: AppColors.primaryColor),)
-                        ),
-                      ],
-                    ),
+                    const HaveAccountSection(),
                   ],
                 ),
               ],
@@ -278,3 +119,6 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+
+
+
