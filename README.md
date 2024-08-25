@@ -71,6 +71,6 @@ The External libraries that are used:
 
 
 
-## created by
+## Created by
 Amjad Noor Elahi
 
