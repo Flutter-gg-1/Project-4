@@ -66,7 +66,7 @@ The External libraries that are used:
 
 ## Output 
 
-[Watch the video](<../../../Desktop/Screen Recording 1446-02-21 at 7.26.41 AM.mov>)
+![Watch the video](assets/output.mov)
 
 
 
