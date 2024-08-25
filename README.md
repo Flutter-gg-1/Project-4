@@ -1,44 +1,13 @@
-# Shopping App Design & Implementation
+# Lavender Store - Flutter Shopping App
 
-## Overview
-In this individual project, you will design and implement a shopping app of your choice using Flutter. This project is an opportunity for you to showcase your creativity and apply various Flutter concepts and widgets to create a unique and engaging user experience. You are required to implement at least **five different UIs** and use the following mandatory concepts:
+Lavender Store is a beautifully designed shopping app built with Flutter. It features a collection of lavender products, providing users with a smooth and visually appealing shopping experience. The app includes custom UI elements, animations, and essential shopping functionalities like adding items to the cart, profile management, and easy navigation.
 
-## Mandatory Requirements
-1. **Drawer Widget**: Create a navigational drawer to manage different sections of your app.
-2. **AlertDialog**: Implement alert dialogs to handle user confirmations or important messages.
-3. **TextFields**: Use TextFields for user input, such as search bars, forms, or login screens.
-4. **Navigation Between Views**: Implement smooth navigation across different views in your app.
-5. **BottomNavigationBar**: Use a BottomNavigationBar to allow users to switch between major sections of your app.
-6. **External Packages**: Utilize at least five external packages to enhance your app's UI.
+## Features
 
-## Bonus Points
-- **Bottom Sheet**: Implement a bottom sheet to display additional options or information.
-- **TabBarView and TabBar**: Add tabs for organizing content in your app.
-- **PageView**: Create a scrollable view for navigating between pages.
-
-## Guidelines
-- This is an **individual project**; each student is expected to work independently.
-- You are encouraged to explore and demonstrate your creativity. Your design and implementation should reflect your unique vision and skills.
-
-## Submission Requirements
-- **Screenshots/Videos**: Include clear screenshots or a short video of your project demonstrating its key features and UI.
-- **Documented README File**: Your project should include a README file that clearly describes:
-  - The purpose and features of your app.
-  - The widgets and external packages used.
-  - Instructions for running the app.
-  - Any additional notes or explanations about your design choices.
-
-
-## Resources
-- **Widgets Documentation & Examples**: [Material Design Components](https://m3.material.io/components/badges/overview)
-- **External UI Packages**: [Flutter Gems](https://fluttergems.dev/)
-- **Color Palettes**: [Color Hunt](https://colorhunt.co/)
-- **Design Inspiration**: Figma Community, Pinterest, Dribbble, Mobbin
-
-## Deadline
-- **Submission Deadline**: 25 August, 9:59 AM
-
-## Submission
-Ensure that your project meets all the mandatory requirements. Submit your project files along with a brief documentation describing the features and functionalities you've implemented.
-
-Good luck, and have fun creating your shopping app! 🎨📱
+- **Home Screen**: Displays a list of lavender products with images, names, descriptions, and prices. Users can tap on products to interact with them.
+- **Custom Bottom Navigation Bar**: A unique bottom navigation bar with a blur effect and rounded corners, offering smooth navigation between different sections of the app.
+- **Drawer Navigation**: A side drawer that allows users to navigate between the Home, Cart, and Profile screens.
+- **Cart Management**: A dedicated Cart screen where users can view and manage their selected items, including the ability to remove items with a confirmation dialog.
+- **Profi
+ 
+<img src="assets/screen_record.gif" width="300"/>
