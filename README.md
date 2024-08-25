@@ -66,9 +66,9 @@ The External libraries that are used:
 
 ## Output 
 
-<p align="center">
-<img src="assets/output.gif" alt="Tuwaiq" width="200"/>
-<br/>
+[Watch the video](<../../../Desktop/Screen Recording 1446-02-21 at 7.26.41 AM.mov>)
+
+
 
 
 ## created by

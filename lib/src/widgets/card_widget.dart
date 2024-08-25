@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../credit_card_screen.dart';
+import 'alert_dialog_widget.dart';
 
 class CardWidget extends StatelessWidget {
   final String photPath;
@@ -63,7 +64,7 @@ class CardWidget extends StatelessWidget {
                             ),
                             ElevatedButton(onPressed: (){
                               Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                                return CreditCardScreen();
+                                return const CreditCardScreen();
                               }));
                             }, style: ElevatedButton.styleFrom(
                                       backgroundColor: const Color(0xff582277),
@@ -78,15 +79,21 @@ class CardWidget extends StatelessWidget {
                                       backgroundColor: const Color(0xff582277),
                                       minimumSize:
                                           const Size(20, 25)),
-                                  child: const Text("Preview", style: TextStyle(color: Colors.white),),
+                                  child: const Text("Preview", style: TextStyle(color: Color(0xffFEFBD8)),),
                                 ),
                                 ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return const AlertDialogWidget();
+                                  });
+                                  },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: const Color(0xff582277),
                                       minimumSize:
                                           const Size(20, 20)),
-                                  child: const Icon(Icons.favorite_border_rounded, color: Colors.white,)
+                                  child: const Icon(Icons.favorite_border_rounded, color: Color(0xffFEFBD8),)
                                 ),
                               ],
                             )

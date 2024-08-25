@@ -32,9 +32,9 @@ class FavoriteScreen extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding:  const EdgeInsets.only(left: 120, top: 350),
+                            padding:  const EdgeInsets.only(left: 70, top: 350),
                             child: Text(
-                              "There is no item",
+                              "There is no favorite item",
                               style: TextStyle(fontSize: 24, color: Colors.black.withOpacity(0.5)),
                             ),
                           ),

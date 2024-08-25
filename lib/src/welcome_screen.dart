@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'widgets/custom_paint/background_custom_shape.dart';
 import 'widgets/custom_paint/logo.dart';
 import 'registration_screens/register.dart';
@@ -33,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
             child: Text(
               "invites..",
               style:
-                  TextStyle(fontSize: 20, color: Color.fromARGB(255, 6, 1, 1)),
+                  TextStyle(fontSize: 30, color: Color(0xff582277), fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
           ),

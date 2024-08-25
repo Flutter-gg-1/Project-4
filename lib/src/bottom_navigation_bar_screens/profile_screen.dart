@@ -66,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       left: 30,
                     ),
                     child: Text(
-                      "name",
+                      "Amjad",
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
