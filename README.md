@@ -66,12 +66,9 @@ The External libraries that are used:
 
 ## Output 
 
-
 <video width="490" height="400" controls>
   <source src="assets/output.mp4" type="video/mp4">
 </video>
-
-
 
 
 ## Created by
