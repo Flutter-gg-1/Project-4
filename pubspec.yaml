@@ -7,10 +7,13 @@ environment:
   sdk: ^3.5.1
 
 dependencies:
+  device_preview: ^1.2.0
   floating_bottom_navigation_bar: ^1.5.2
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.7.0
+  geolocator: ^13.0.1
+  shimmer_animation: ^2.2.1
 
 dev_dependencies:
   flutter_test:

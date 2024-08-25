@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app_project/src/home_screen.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -8,12 +9,18 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffBCC3C3),
       appBar: AppBar(
-        title: const Text('My Bag'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         leading: IconButton(
           onPressed: () {
-            // Handle back navigation
+            Navigator.of(context).pop(MaterialPageRoute(builder: (context) {
+              return const HomeScreen();
+            }));
           },
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            size: 50,
+          ),
         ),
       ),
       body: ListView(
@@ -71,76 +78,9 @@ class CartScreen extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget buildCartItem({
-    required String productName,
-    required String color,
-    required String price,
-    required int quantity,
-    required String image,
-  }) {
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            image,
-            width: 100,
-            height: 100,
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  productName,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Color: $color',
-                      style: const TextStyle(fontSize: 14),
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      '₱$price',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.remove),
-                    ),
-                    Text(
-                      '$quantity',
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.add),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          const SizedBox(
+            height: 20,
+          )
         ],
       ),
     );

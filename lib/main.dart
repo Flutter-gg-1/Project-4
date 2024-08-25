@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app_project/src/login_screen.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(DevicePreview(
+    enabled: true,
+    builder: (context) => const MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {

@@ -763,8 +763,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -808,8 +808,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -853,8 +853,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -898,8 +898,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -943,8 +943,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -992,8 +992,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1037,8 +1037,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1082,8 +1082,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1127,8 +1127,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1172,8 +1172,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1221,8 +1221,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1266,8 +1266,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1311,8 +1311,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1356,8 +1356,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [
@@ -1401,8 +1401,8 @@ class HomeScreen extends StatelessWidget {
                           ListTile(
                             leading: Image.asset(
                               'assets/larg_sofa-removebg-preview.png',
-                              width: 200,
-                              height: 200,
+                              width: 150,
+                              height: 150,
                             ),
                             title: const Column(
                               children: [

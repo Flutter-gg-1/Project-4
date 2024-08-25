@@ -135,8 +135,8 @@ class _ProductScreenState extends State<ProductScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: 80,
-                          height: 80,
+                          width: 60,
+                          height: 48,
                           decoration: BoxDecoration(
                               color: Colors.black12,
                               borderRadius: BorderRadius.circular(40)),
@@ -144,14 +144,14 @@ class _ProductScreenState extends State<ProductScreen> {
                             onPressed: () {},
                             icon: const FaIcon(
                               FontAwesomeIcons.cartPlus,
-                              size: 40,
+                              size: 30,
                             ),
                           ),
                         ),
                         const SizedBox(width: 10),
                         Container(
-                          height: 70,
-                          width: 260,
+                          height: 48,
+                          width: 230,
                           decoration: BoxDecoration(
                               color: Colors.yellow,
                               borderRadius: BorderRadius.circular(20)),
