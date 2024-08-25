@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  bool passwordVisible = false;
+  bool visibleOff = true;
 
   bool validateEmail(String email) {
     return EmailValidator.validate(email.trim());
@@ -105,13 +105,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextFormField(
                             controller: passController,
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: passwordVisible,
+                            obscureText: visibleOff,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             decoration: InputDecoration(
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    passwordVisible
+                                    visibleOff
                                         ? Icons.visibility
                                         : Icons.visibility_off,
                                     color: ColorsConstant.darkPurple,
@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   onPressed: () {
                                     setState(
                                       () {
-                                        passwordVisible = !passwordVisible;
+                                        visibleOff = !visibleOff;
                                       },
                                     );
                                   },
@@ -173,17 +173,17 @@ class _LoginScreenState extends State<LoginScreen> {
                           userData: widget.data,
                         ),
                       ));
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'Invalid email or password',
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          duration: Duration(seconds: 3),
-                        ),
-                      );
                     }
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Invalid email or password',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                        duration: Duration(seconds: 3),
+                      ),
+                    );
                   }
                 },
                 style: ElevatedButton.styleFrom(

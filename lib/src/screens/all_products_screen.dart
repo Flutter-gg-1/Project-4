@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/helper/lists.dart';
-import 'package:shopping_app/src/item_card.dart';
+import 'package:shopping_app/src/helper/item_card.dart';
 import 'package:shopping_app/src/screens/item_screen.dart';
-import 'package:shopping_app/src/widgets/drawer_bulid.dart';
 
 //This class contain screen of all porduct
 class AllProductsScreen extends StatefulWidget {
@@ -29,12 +28,12 @@ class _AllProductsScreenState extends State<AllProductsScreen> {
               leading: Builder(
                 builder: (context) => IconButton(
                   icon: Icon(
-                    Icons.menu,
+                    Icons.arrow_back_ios_new_rounded,
                     size: 34,
                     color: ColorsConstant.purple,
                   ),
                   onPressed: () {
-                    Scaffold.of(context).openDrawer();
+                    Navigator.of(context).pop();
                   },
                 ),
               ),
@@ -152,9 +151,6 @@ class _AllProductsScreenState extends State<AllProductsScreen> {
                         )),
                   ]),
             ),
-
-            //drawer
-            drawer: drawerBuild(),
 
             //body
             body: TabBarView(children: [

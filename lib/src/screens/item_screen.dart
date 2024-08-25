@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/widgets/about_button.dart';
-import 'package:shopping_app/src/widgets/drawer_bulid.dart';
 
 //contain item data with alert dialog
 class ItemScreen extends StatefulWidget {
@@ -39,12 +38,12 @@ class _ItemScreenState extends State<ItemScreen> {
           leading: Builder(
             builder: (context) => IconButton(
               icon: Icon(
-                Icons.menu,
+                Icons.arrow_back_ios_new_rounded,
                 size: 34,
                 color: ColorsConstant.purple,
               ),
               onPressed: () {
-                Scaffold.of(context).openDrawer();
+                Navigator.of(context).pop();
               },
             ),
           ),
@@ -72,9 +71,6 @@ class _ItemScreenState extends State<ItemScreen> {
             ),
           ],
         ),
-
-        //drawer
-        drawer: drawerBuild(),
 
         //body
         body: Padding(

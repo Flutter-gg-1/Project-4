@@ -5,7 +5,7 @@ import 'package:shopping_app/src/helper/lists.dart';
 import 'package:shopping_app/src/helper/colors.dart';
 import 'package:shopping_app/src/screens/all_products_screen.dart';
 import 'package:shopping_app/src/widgets/drawer_bulid.dart';
-import 'package:shopping_app/src/item_card.dart';
+import 'package:shopping_app/src/helper/item_card.dart';
 import 'package:shopping_app/src/widgets/new_collections_container.dart';
 import 'package:shopping_app/src/widgets/shimmer_container.dart';
 
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       //drawer
-      drawer: drawerBuild(),
+      drawer: drawerBuild(context),
 
       //body
       body: ListView(

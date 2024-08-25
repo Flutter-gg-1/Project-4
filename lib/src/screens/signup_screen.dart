@@ -23,7 +23,8 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController rePasswordController = TextEditingController();
 
   Map<String, String> data = {};
-  bool passwordVisible = false;
+  bool visibleOff = true;
+  bool rePasswordVisibleOff = true;
 
   bool validateEmail(String email) {
     return EmailValidator.validate(email.trim());
@@ -158,13 +159,13 @@ class _SignupScreenState extends State<SignupScreen> {
                         TextFormField(
                             controller: passController,
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: passwordVisible,
+                            obscureText: visibleOff,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             decoration: InputDecoration(
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    passwordVisible
+                                    visibleOff
                                         ? Icons.visibility
                                         : Icons.visibility_off,
                                     color: ColorsConstant.darkPurple,
@@ -172,7 +173,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   onPressed: () {
                                     setState(
                                       () {
-                                        passwordVisible = !passwordVisible;
+                                        visibleOff = !visibleOff;
                                       },
                                     );
                                   },
@@ -203,13 +204,13 @@ class _SignupScreenState extends State<SignupScreen> {
                         TextFormField(
                             controller: rePasswordController,
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: passwordVisible,
+                            obscureText: rePasswordVisibleOff,
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             decoration: InputDecoration(
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    passwordVisible
+                                    rePasswordVisibleOff
                                         ? Icons.visibility
                                         : Icons.visibility_off,
                                     color: ColorsConstant.darkPurple,
@@ -217,7 +218,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                   onPressed: () {
                                     setState(
                                       () {
-                                        passwordVisible = !passwordVisible;
+                                        rePasswordVisibleOff =
+                                            !rePasswordVisibleOff;
                                       },
                                     );
                                   },
