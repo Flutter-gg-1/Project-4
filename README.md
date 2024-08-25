@@ -1,44 +1,37 @@
-# Shopping App Design & Implementation
+# Flowers Store App
 
 ## Overview
-In this individual project, you will design and implement a shopping app of your choice using Flutter. This project is an opportunity for you to showcase your creativity and apply various Flutter concepts and widgets to create a unique and engaging user experience. You are required to implement at least **five different UIs** and use the following mandatory concepts:
+The Flowers Store App 'Warda' is a beautifully designed mobile application that allows users to browse and purchase a variety of flowers. The app features a clean and intuitive user interface, with a focus on showcasing the products and providing a seamless shopping experience.
 
-## Mandatory Requirements
-1. **Drawer Widget**: Create a navigational drawer to manage different sections of your app.
-2. **AlertDialog**: Implement alert dialogs to handle user confirmations or important messages.
-3. **TextFields**: Use TextFields for user input, such as search bars, forms, or login screens.
-4. **Navigation Between Views**: Implement smooth navigation across different views in your app.
-5. **BottomNavigationBar**: Use a BottomNavigationBar to allow users to switch between major sections of your app.
-6. **External Packages**: Utilize at least five external packages to enhance your app's UI.
+## Figma Design
+The Flowers Store App was designed using Figma. You can view the design files at the following link:
 
-## Bonus Points
-- **Bottom Sheet**: Implement a bottom sheet to display additional options or information.
-- **TabBarView and TabBar**: Add tabs for organizing content in your app.
-- **PageView**: Create a scrollable view for navigating between pages.
+[Figma Design Files]([https://www.figma.com/file/YOUR_FIGMA_FILE_ID/Flowers-Store-App](https://www.figma.com/design/m4BDGxjteziaEBjBW0mIFN/flower-app-warda?node-id=0-1&t=ylxIMfUywXTI6d8x-1))
 
-## Guidelines
-- This is an **individual project**; each student is expected to work independently.
-- You are encouraged to explore and demonstrate your creativity. Your design and implementation should reflect your unique vision and skills.
+## Features
+- **Login Screen**: Users can log in to the app by entering their username and password. The app validates that the fields are not empty.
+- **Splash Screen**: When the app is launched, a splash screen is displayed, providing a smooth transition into the app.
+- **Home Page**: The home page features a hero element and a call-to-action (CTA) button that navigates to the Discover page.
+- **Discover Page**: The Discover page displays a collection of products and categories. Users can tap on a product to view its details in a bottom sheet and add it to the cart.
+- **Cart Page**: The Cart page has two tabs: "In Cart" and "Bought Before". Users can view the products they have added to the cart and their previous purchases.
+- **Drawer Menu**: The app includes a side menu (drawer) that displays the user's profile image, username, and email. It also provides access to settings and a sign-out option.
 
-## Submission Requirements
-- **Screenshots/Videos**: Include clear screenshots or a short video of your project demonstrating its key features and UI.
-- **Documented README File**: Your project should include a README file that clearly describes:
-  - The purpose and features of your app.
-  - The widgets and external packages used.
-  - Instructions for running the app.
-  - Any additional notes or explanations about your design choices.
+## Technologies Used
+The Flowers Store App was implemented using Flutter. The app utilizes the following dependencies to enhance the user interface:
 
+1. **buttons_tabbar**: Used to create the tabs in buttons in the Cart page.
+2. **customizable_counter**: Used the couunter to allow users to adjust the quantity of products in the cart.
+3. **flutter_native_splash**: Provides a smooth splash screen experience.
+4. **flutter_svg**: Used to display external icons in the app.
+5. **google_fonts**: Integrates the Raleway font throughout the app.
 
-## Resources
-- **Widgets Documentation & Examples**: [Material Design Components](https://m3.material.io/components/badges/overview)
-- **External UI Packages**: [Flutter Gems](https://fluttergems.dev/)
-- **Color Palettes**: [Color Hunt](https://colorhunt.co/)
-- **Design Inspiration**: Figma Community, Pinterest, Dribbble, Mobbin
+## Running the App
+To run the Flowers Store App, follow these steps:
 
-## Deadline
-- **Submission Deadline**: 25 August, 9:59 AM
+1. Ensure you have Flutter installed on your machine.
+2. Clone the repository or download the source code.
+3. Open the project in your preferred Flutter IDE (e.g., Android Studio, Visual Studio Code).
+4. Run the app on an emulator or a physical device.
 
-## Submission
-Ensure that your project meets all the mandatory requirements. Submit your project files along with a brief documentation describing the features and functionalities you've implemented.
-
-Good luck, and have fun creating your shopping app! 🎨📱
+## Conclusion
+Warda's App showcases a well-designed and user-friendly mobile application for flower enthusiasts. While the app is not fully functional, the focus on the design aspect provides a strong foundation for future development and implementation of the app's features.
