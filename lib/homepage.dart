@@ -8,6 +8,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         extendBodyBehindAppBar: true,
   drawer: const Drawer(),
   appBar: AppBar(
@@ -60,7 +61,7 @@ class Homepage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                  const Text('Discover categories',  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0)),),
-                 SizedBox(height: 10,),
+                 const SizedBox(height: 10,),
                 SvgPicture.asset('assets/svg/categories.svg',),
 
               ],

@@ -24,9 +24,9 @@ class Discover extends StatelessWidget {
             bottom: 
             ButtonsTabBar(
               elevation:0,
-              height: 90,
-              width: 90,
-              contentPadding: EdgeInsets.fromLTRB(15, 0, 5, 0),
+              height: 80,
+              width: 80,
+              contentPadding: EdgeInsets.fromLTRB(12, 2, 5, 2),
               backgroundColor: const Color.fromARGB(255, 242, 132, 130),
                 unselectedBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
                 unselectedLabelStyle: const TextStyle(color: Colors.black),

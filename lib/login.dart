@@ -61,9 +61,9 @@ class LoginFormState extends State<LoginForm> {
         const Text('Username', style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)),),
          TextFormField(
           validator: (value){
-            // if(value == null || value.isEmpty){
-            //   return 'Please enter some text';
-            // }
+            if(value == null || value.isEmpty){
+              return 'Please enter a username';
+            }
             return null;
           }
         ),
@@ -71,9 +71,9 @@ class LoginFormState extends State<LoginForm> {
         const Text('Password', style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)),),
          TextFormField(
           validator: (value){
-            // if(value == null || value.isEmpty){
-            //   return 'Please enter some text';
-            // }
+            if(value == null || value.isEmpty){
+              return 'Please enter a password';
+            }
             return null;
           }
         ),
@@ -94,10 +94,6 @@ class LoginFormState extends State<LoginForm> {
             onPressed: () {
               // Validate returns 
               if (formKey.currentState!.validate()) {
-                // 
-                // ScaffoldMessenger.of(context).showSnackBar(
-                //   const SnackBar(content: Text('Login')),
-                // );
                  Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const NavBar()),
                   );

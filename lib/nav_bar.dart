@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project4/cart.dart';
 import 'package:project4/discover.dart';
 import 'package:project4/homepage.dart';
 
@@ -16,7 +17,7 @@ class _NavBarState extends State<NavBar> {
   static const List<Widget> _widgetOptions = <Widget>[
     Homepage(),
     Discover(),
-    Homepage(),
+    Cart(),
     // Profile(),
   ];
 
