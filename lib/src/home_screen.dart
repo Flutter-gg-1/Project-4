@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shopping_app_project/src/login_screen.dart';
 import 'package:shopping_app_project/src/product_screen.dart';
+import 'package:shopping_app_project/src/profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,9 +20,83 @@ class HomeScreen extends StatelessWidget {
       child: DefaultTabController(
         length: 4,
         child: Scaffold(
+          drawer: Drawer(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 90,
+                ),
+                Container(
+                  width: 130,
+                  height: 130,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          width: 3,
+                          color: const Color.fromARGB(255, 117, 122, 122)),
+                      color: Colors.white,
+                      shape: BoxShape.circle),
+                  child: const Icon(
+                    Icons.person_outline_outlined,
+                    size: 86,
+                    color: Color(0xffB3B3B3),
+                  ),
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                Container(
+                  width: 229,
+                  height: 60,
+                  color: const Color(0xffAABB5D),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ProfileScreen()));
+                    },
+                    title: const Text(
+                      "Profile",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff4E4E4E)),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 229,
+                  height: 60,
+                  color: const Color(0xffAABB5D),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginScreen()));
+                    },
+                    title: const Text(
+                      "LogOut",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff4E4E4E)),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
           backgroundColor: Colors.transparent,
           extendBodyBehindAppBar: true,
-          drawer: const Drawer(),
           appBar: AppBar(
             toolbarHeight: 90,
             title: const Column(
@@ -670,9 +746,693 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const Text('2'),
-            const Text('3'),
-            const Text('4')
+            ListView(
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            ListView(
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            ListView(
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Container(
+                      width: 400,
+                      height: 131,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(18),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ListTile(
+                            leading: Image.asset(
+                              'assets/larg_sofa-removebg-preview.png',
+                              width: 200,
+                              height: 200,
+                            ),
+                            title: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Text('Turquoise Sofa'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.solidStar),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                    FaIcon(FontAwesomeIcons.starHalf),
+                                  ],
+                                )
+                              ],
+                            ),
+                            subtitle: const Row(
+                              children: [Text('₱ 6200.00')],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ]),
         ),
       ),
