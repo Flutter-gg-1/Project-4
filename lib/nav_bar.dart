@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project4/discover.dart';
 import 'package:project4/homepage.dart';
-import 'package:project4/login.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class _NavBarState extends State<NavBar> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     Homepage(),
-    Login(),
+    Discover(),
     Homepage(),
     // Profile(),
   ];
