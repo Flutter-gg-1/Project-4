@@ -17,7 +17,7 @@ class Cart extends StatelessWidget {
           appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           iconTheme: const IconThemeData(color: Color.fromARGB(255, 133, 165, 157)),
-          title: const Text('Cart',  style: TextStyle(fontSize: 24, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157)),),
+          title: const Text('Cart',  style: TextStyle(fontSize: 24, fontFamily: "Raleway", color: Color.fromARGB(255, 133, 165, 157)),),
           elevation: 0,
       
             bottom: 
@@ -25,7 +25,7 @@ class Cart extends StatelessWidget {
               indicatorColor: Color.fromARGB(255, 242, 132, 130),
                 unselectedLabelStyle: TextStyle(color: Color.fromARGB(255, 124, 124, 124)),
                 labelStyle:
-                  TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 242, 132, 130)
+                  TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 242, 132, 130)
                    ),
               tabs: [
                   Tab(
@@ -96,8 +96,8 @@ class CartItems extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                    height: 120,
-                    width: 125,
+                    height: 115,
+                    width: 120,
                     decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(100)),
@@ -109,16 +109,16 @@ class CartItems extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              title, style: const TextStyle(fontSize: 18, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124))
+                              title, style: const TextStyle(fontSize: 18, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124))
                             ),
                             const SizedBox(height: 40,),
                             Row(
                               children: [
                                 Text(
-                                  price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)
+                                  price, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124)
                                   ),
                                 ),
-                                const SizedBox(width: 25,),
+                                const SizedBox(width: 20,),
                                 const CustomizableCounter(
                                 borderWidth: 0,
                                 count: 1,
@@ -143,9 +143,9 @@ class CartItems extends StatelessWidget {
     const Divider(),
     Row(
       children: [
-        const Text('Total', style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124),)),
+        const Text('Total', style: TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124),)),
         const Spacer(),
-        Text(price, style: const TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124),)),
+        Text(price, style: const TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124),)),
       ],
     ),
     const SizedBox(height: 10,),
@@ -159,7 +159,7 @@ class CartItems extends StatelessWidget {
           color: const Color.fromARGB(255, 242, 132, 130),
           onPressed: () {
           },
-          child: const Text('Place Order', style: TextStyle(fontSize: 18, fontFamily: "Gilroy", color: Color.fromARGB(255, 255, 255, 255))),
+          child: const Text('Place Order', style: TextStyle(fontSize: 18, fontFamily: "Raleway", color: Color.fromARGB(255, 255, 255, 255))),
         ),
         const SizedBox(height: 30,)
       ]
@@ -179,7 +179,7 @@ class BoughtBefore extends StatelessWidget {
       children: [
         Image(image: AssetImage('assets/images/flower.png'), width: 200, height: 200,),
         SizedBox(height: 10,),
-        Text("Nothing yet", style: TextStyle(fontSize: 20, fontFamily: "Gilroy", color: Color.fromARGB(255, 242, 132, 130),))
+        Text("Nothing yet", style: TextStyle(fontSize: 20, fontFamily: "Raleway", color: Color.fromARGB(255, 242, 132, 130),))
       ]
 
     );

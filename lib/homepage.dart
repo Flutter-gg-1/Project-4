@@ -15,7 +15,7 @@ class Homepage extends StatelessWidget {
   appBar: AppBar(
     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
     iconTheme: const IconThemeData(color: Color.fromARGB(255, 133, 165, 157)),
-    title: const Text('Home',  style: TextStyle(fontSize: 24, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157)),),
+    title: const Text('Home',  style: TextStyle(fontSize: 24, fontFamily: "Raleway", color: Color.fromARGB(255, 133, 165, 157)),),
     elevation: 0,
       ),
       body: ListView(
@@ -32,9 +32,9 @@ class Homepage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Blooming Moments',  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Gilroy", color: Color.fromARGB(255, 255, 255, 255)),),
+                    const Text('Blooming Moments',  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Raleway", color: Color.fromARGB(255, 255, 255, 255)),),
                     const SizedBox(height: 10,),
-                    const Text("Celebrate life's special occasions with beautiful flowers.",  style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 255, 255, 255)),),
+                    const Text("Celebrate life's special occasions with beautiful flowers.",  style: TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 255, 255, 255)),),
                     const SizedBox(height: 10,),
                     MaterialButton(
                       elevation: 0,
@@ -49,7 +49,7 @@ class Homepage extends StatelessWidget {
                               MaterialPageRoute(builder: (context) => const Discover()),
                             );
                       },
-                        child: const Text('Explore The Garden', style: TextStyle(fontSize: 18, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157))),
+                        child: const Text('Explore The Garden', style: TextStyle(fontSize: 18, fontFamily: "Raleway", color: Color.fromARGB(255, 133, 165, 157))),
                       ),
                   ],
                 ),
@@ -61,7 +61,7 @@ class Homepage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 const Text('Discover categories',  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0)),),
+                 const Text('Discover categories',  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Raleway", color: Color.fromARGB(255, 0, 0, 0)),),
                  const SizedBox(height: 10,),
                 SvgPicture.asset('assets/svg/categories.svg',),
 

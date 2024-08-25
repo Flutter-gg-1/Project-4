@@ -24,9 +24,9 @@ class _LoginState extends State<Login> {
             children: [
               Center(child:  SvgPicture.asset('assets/svg/logo.svg')),
               const SizedBox(height: 60),
-              const Text("Log in", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Gilroy"),),
+              const Text("Log in", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: "Raleway"),),
               const SizedBox(height: 15),
-              const Text("Enter your username and password", style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)),),
+              const Text("Enter your username and password", style: TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124)),),
               const SizedBox(height: 30),
               const LoginForm()
               
@@ -58,7 +58,7 @@ class LoginFormState extends State<LoginForm> {
       child: Column(
          crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        const Text('Username', style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)),),
+        const Text('Username', style: TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124)),),
          TextFormField(
           validator: (value){
             if(value == null || value.isEmpty){
@@ -68,7 +68,7 @@ class LoginFormState extends State<LoginForm> {
           }
         ),
         const SizedBox(height: 20,),
-        const Text('Password', style: TextStyle(fontSize: 16, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)),),
+        const Text('Password', style: TextStyle(fontSize: 16, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124)),),
          TextFormField(
           validator: (value){
             if(value == null || value.isEmpty){
@@ -80,7 +80,7 @@ class LoginFormState extends State<LoginForm> {
         const SizedBox(height: 20,),
         const Align(
           alignment: Alignment.topRight,
-          child: Text('Forgot Password?', style: TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0)),)
+          child: Text('Forgot Password?', style: TextStyle(fontSize: 14, fontFamily: "Raleway", color: Color.fromARGB(255, 0, 0, 0)),)
           ),
           const SizedBox(height: 20,),
           MaterialButton(
@@ -99,14 +99,14 @@ class LoginFormState extends State<LoginForm> {
                   );
               }
             },
-            child: const Text('Log In', style: TextStyle(fontSize: 18, fontFamily: "Gilroy", color: Color.fromARGB(255, 255, 255, 255))),
+            child: const Text('Log In', style: TextStyle(fontSize: 18, fontFamily: "Raleway", color: Color.fromARGB(255, 255, 255, 255))),
           ),
           const SizedBox(height: 20,),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Don’t have an account?', style: TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0)),),
-              Text('Signgup', style: TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157)),)
+              Text('Don’t have an account?', style: TextStyle(fontSize: 14, fontFamily: "Raleway", color: Color.fromARGB(255, 0, 0, 0)),),
+              Text('Signgup', style: TextStyle(fontSize: 14, fontFamily: "Raleway", color: Color.fromARGB(255, 133, 165, 157)),)
             ],
            ),
         ],

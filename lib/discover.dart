@@ -18,7 +18,7 @@ class Discover extends StatelessWidget {
           appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           iconTheme: const IconThemeData(color: Color.fromARGB(255, 133, 165, 157)),
-          title: const Text('Discover',  style: TextStyle(fontSize: 24, fontFamily: "Gilroy", color: Color.fromARGB(255, 133, 165, 157)),),
+          title: const Text('Discover',  style: TextStyle(fontSize: 24, fontFamily: "Raleway", color: Color.fromARGB(255, 133, 165, 157)),),
           elevation: 0,
       
             bottom: 
@@ -96,7 +96,7 @@ class VazeList extends StatelessWidget {
           children: [
           Card(img: "assets/images/vase3.png", title: "Lavender", desc: "Lorem ipsum dolor sit amet.", price: "150 SAR",),
           Spacer(),
-          Card(img: "assets/images/vase4.png", title: "Gardenflower", desc: "Lorem ipsum dolor sit amet.", price: "160 SAR",),
+          Card(img: "assets/images/vase4.png", title: "Garden", desc: "Lorem ipsum dolor sit amet.", price: "160 SAR",),
           ],
         ),
               ]
@@ -165,7 +165,7 @@ class BouquetList extends StatelessWidget {
           children: [
           Card(img: "assets/images/flower_img3.png", title: "Lavender", desc: "Lorem ipsum dolor sit amet.", price: "150 SAR",),
           Spacer(),
-          Card(img: "assets/images/flower_img4.png", title: "Gardenflower", desc: "Lorem ipsum dolor sit amet.", price: "160 SAR",),
+          Card(img: "assets/images/flower_img4.png", title: "Garden", desc: "Lorem ipsum dolor sit amet.", price: "160 SAR",),
           ],
         ),
         SizedBox(height: 20,),
@@ -227,10 +227,10 @@ class Card extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124))
+                          title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124))
                         ),
                         Text(
-                        price, style: const TextStyle(fontSize: 14, fontFamily: "Gilroy", color: Color.fromARGB(255, 124, 124, 124)
+                        price, style: const TextStyle(fontSize: 14, fontFamily: "Raleway", color: Color.fromARGB(255, 124, 124, 124)
                         ),
                       ),
                       ]
@@ -264,15 +264,15 @@ class Card extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               const SizedBox(height: 10,),
-                                                      Text(title,  style: const TextStyle(fontSize: 24, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0))),
-                                                      Text(desc, style: const TextStyle(fontSize: 14,fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0))),
+                                                      Text(title,  style: const TextStyle(fontSize: 24, fontFamily: "Raleway", color: Color.fromARGB(255, 0, 0, 0))),
+                                                      Text(desc, style: const TextStyle(fontSize: 14,fontFamily: "Raleway", color: Color.fromARGB(255, 0, 0, 0))),
                                                       const SizedBox(height: 20,),
                                               Row(
                                                 children: [
                                                   Column(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                      Text(price, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: "Gilroy", color: Color.fromARGB(255, 0, 0, 0))),
+                                                      Text(price, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: "Raleway", color: Color.fromARGB(255, 0, 0, 0))),
                                                     ],
                                                   ),
                                                   const Spacer(),
@@ -319,7 +319,7 @@ class Card extends StatelessWidget {
                                                         MaterialPageRoute(builder: (context) => const Discover()),
                                                       );
                                                 },
-                                                child: const Text('Add to cart', style: TextStyle(fontSize: 18, fontFamily: "Gilroy", color: Color.fromARGB(255, 255, 255, 255))),
+                                                child: const Text('Add to cart', style: TextStyle(fontSize: 18, fontFamily: "Raleway", color: Color.fromARGB(255, 255, 255, 255))),
                                               ),
                                             ],
                                           ),

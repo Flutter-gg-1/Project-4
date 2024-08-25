@@ -12,6 +12,7 @@ class AppDrawer extends StatelessWidget {
             children: [
               UserAccountsDrawerHeader(
              currentAccountPicture: CircleAvatar(
+              
               backgroundImage: Image.asset(
                 'assets/images/profile.png',
                 fit: BoxFit.cover,
@@ -20,7 +21,7 @@ class AppDrawer extends StatelessWidget {
                 accountEmail: const Text('Linda@gmail.com'),
                 accountName: const Text(
                   'Linda',
-                  style: TextStyle(fontSize: 24, fontFamily: "Gilroy", color: Color.fromARGB(255, 255, 255, 255)),
+                  style: TextStyle(fontSize: 24, fontFamily: "Raleway", color: Color.fromARGB(255, 255, 255, 255)),
                 ),
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 242, 132, 130),
@@ -29,13 +30,13 @@ class AppDrawer extends StatelessWidget {
               const ListTile(
                 title: const Text(
                   'Settings',
-                  style: TextStyle(fontSize: 20, fontFamily: "Gilroy",)
+                  style: TextStyle(fontSize: 20, fontFamily: "Raleway",)
                 ),
               ),
               ListTile(
                 title:  const Text(
                   'Sign out',
-                  style: TextStyle(fontSize: 20, fontFamily: "Gilroy", ),
+                  style: TextStyle(fontSize: 20, fontFamily: "Raleway", ),
                 ),
                 onTap: () {
                   Navigator.pushReplacement(
