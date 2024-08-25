@@ -29,11 +29,10 @@ class _CartScreenState extends State<CartScreen> {
               itemCount: widget.user.cart.length,
               itemBuilder: (context,index){
                 return Container(
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: thirdColor),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: borderColor, width: 3),color: thirdColor),
                   margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: ListTile(
                     leading: Image.asset(widget.user.cart[index].pic),
-                    tileColor: mainColor,
                     title: Text(widget.user.cart[index].name, style: GoogleFonts.poppins(
                       color: Colors.black
                     ),),
